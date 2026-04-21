@@ -1,6 +1,3 @@
-using System.Linq;
-using UnityEditor.AddressableAssets;
-using UnityEditor.AddressableAssets.Settings;
 using UnityEngine;
 
 namespace GameStartupScripts
@@ -11,14 +8,14 @@ namespace GameStartupScripts
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
         public static void InitializeGame()
         {
-            AddressableAssetGroup group = AddressableAssetSettingsDefaultObject.Settings.FindGroup("Scenes");
-            SceneLoadingHandler.LoadScenes(group.entries.ToArray());
+            SceneLoadingHandler.LoadScenes();
             SceneLoadingHandler.OnSceneLoaded += SetMenuSceneActive;
         }
 
         private static void SetMenuSceneActive()
         {
             SceneLoadingHandler.OnSceneLoaded -= SetMenuSceneActive;
+            Debug.Log("Loading menu scene");
         }
     }
 }

@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using ScenesOperatingScripts;
-using UnityEditor.AddressableAssets.Settings;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.ResourceProviders;
 using UnityEngine.SceneManagement;
@@ -15,15 +14,24 @@ namespace GameStartupScripts
     
         public static Action OnSceneLoaded;
 
-        public static async void LoadScenes(AddressableAssetEntry[] scenesEntries)
+        public static async void LoadScenes()
         {
-            Task[] tasks = new Task[scenesEntries.Length];
-            for (int i = 0; i < scenesEntries.Length; i++)
+            var scenesLoadEntry = Addressables.LoadAssetsAsync<Scene>("scene", 
+                ad =>
+                {
+                    var h = Addressables.LoadSceneAsync(ad, LoadSceneMode.Additive, false);
+                    SceneRoots.Add(h.Result.Scene, h.Result.Scene.GetRootGameObjects()[0].GetComponent<SceneRootHolder>());
+                }, Addressables.MergeMode.Union, false);
+            await scenesLoadEntry.Task;
+            OnSceneLoaded?.Invoke();
+            /*
+            Task[] tasks = new Task[scenesLoadEntry.Result.Count];
+            for (int i = 0; i < scenesLoadEntry.Result.Count; i++)
             {
-                tasks[i] = LoadScenes(scenesEntries[i].MainAsset.name);
+                tasks[i] = LoadScenes(scenesLoadEntry.Result[i].name);
             }
             await Task.WhenAll(tasks);
-            OnSceneLoaded?.Invoke();
+            */
         }
 
         private static async Task<SceneInstance> LoadScenes(string sceneName)

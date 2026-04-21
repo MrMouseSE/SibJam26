@@ -1,16 +1,24 @@
+using System.Linq;
+using UnityEditor.AddressableAssets;
+using UnityEditor.AddressableAssets.Settings;
 using UnityEngine;
 
-public class GameStartScript : MonoBehaviour
+namespace GameStartupScripts
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    
+    public class GameStartScript
     {
-        
-    }
+        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
+        public static void InitializeGame()
+        {
+            AddressableAssetGroup group = AddressableAssetSettingsDefaultObject.Settings.FindGroup("Scenes");
+            SceneLoadingHandler.LoadScenes(group.entries.ToArray());
+            SceneLoadingHandler.OnSceneLoaded += SetMenuSceneActive;
+        }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        private static void SetMenuSceneActive()
+        {
+            SceneLoadingHandler.OnSceneLoaded -= SetMenuSceneActive;
+        }
     }
 }

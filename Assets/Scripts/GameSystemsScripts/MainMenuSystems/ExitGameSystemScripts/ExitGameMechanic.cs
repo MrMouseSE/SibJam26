@@ -1,0 +1,38 @@
+using Cysharp.Threading.Tasks;
+using MainMenuScripts.StartGameSystemScripts;
+using ScenesOperatingScripts;
+using UnityEngine;
+
+namespace MainMenuScripts.ExitGameSystemScripts
+{
+    public class ExitGameMechanic : IGameMechanic
+    {
+        public ExitGameComponent Component;
+        public ExitGameMechanic(ExitGameComponent component)
+        {
+            Component = component;
+            Component.Container.OnButtonPushed += ExitGameMethod;
+        }
+
+        private void ExitGameMethod()
+        {
+            Component.IsGameExitProcess = true;
+        }
+
+        public void DisposeMechanic()
+        {
+            Component.Container.OnButtonPushed -= ExitGameMethod;
+            ExitApplication().Forget();
+        }
+
+        private async UniTaskVoid ExitApplication()
+        {
+            await UniTask.WaitForSeconds(1f);
+            #if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+            #else
+            Application.Quit();
+            #endif
+        }
+    }
+}

@@ -6,6 +6,9 @@ namespace ScenesOperatingScripts
     public class SceneRootHolder : MonoBehaviour, ISceneRoot
     {
         public List<GameObject> VisibleObjects;
+        
+        [Space]
+        public SceneSystemsContainer SceneSystemsContainer;
 
         public bool TryRemoveObjectFromVisibility(GameObject go)
         {
@@ -25,8 +28,9 @@ namespace ScenesOperatingScripts
             }
         }
 
-        public void InitializeSceneSystems()
+        public void InitializeSceneSystems(GameSystemsHandler systemsHandler)
         {
+            SceneSystemsContainer.InitializeSceneSystems(systemsHandler);
         }
     }
 }

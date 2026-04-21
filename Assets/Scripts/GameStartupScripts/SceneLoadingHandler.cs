@@ -34,13 +34,15 @@ namespace GameStartupScripts
             var rootObject = handle.Result.Scene.GetRootGameObjects()[0].GetComponent<ISceneRoot>();
             SceneRoots.Add(handle.Result.Scene.name, new ValueTuple<AsyncOperationHandle<SceneInstance>, ISceneRoot>(handle, rootObject));
             rootObject.SetSceneObjectsVisibility(false);
-            rootObject.InitializeSceneSystems();
             return handle.Result;
         }
 
         public static void SetSceneActive(string sceneName)
         {
-            SceneRoots[sceneName].Item2.SetSceneObjectsVisibility(true);
+            foreach (var sceneRoot in SceneRoots)
+            {
+                sceneRoot.Value.Item2.SetSceneObjectsVisibility(sceneRoot.Key == sceneName);
+            }
             SceneManager.SetActiveScene(SceneManager.GetSceneByName(sceneName));
         }
     }

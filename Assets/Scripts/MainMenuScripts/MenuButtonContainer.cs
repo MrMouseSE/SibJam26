@@ -1,10 +1,10 @@
-using Cysharp.Threading.Tasks;
+using System;
 using SoundsComponentsScripts;
 using UnityEngine;
 
 namespace MainMenuScripts
 {
-    public class ButtonScript : MonoBehaviour
+    public class MenuButtonContainer : MonoBehaviour
     {
         public Animation AnimationComponent;
         public AnimationClip PushClip;
@@ -13,6 +13,8 @@ namespace MainMenuScripts
 
         [Space]
         public SoundComponent ButtonSounds;
+        
+        public Action OnButtonPushed;
         
         private bool _isButtonPushed = false;
     
@@ -35,6 +37,7 @@ namespace MainMenuScripts
             StopAndRewind();
             AnimationComponent.Play(PushClip.name);
             ButtonSounds.PlaySound(SoundType.AppearSound);
+            OnButtonPushed?.Invoke();
         }
 
         private void OnMouseUp()

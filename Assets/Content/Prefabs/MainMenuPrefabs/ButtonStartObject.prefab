@@ -66,7 +66,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 443293da58f0d3846a7e4b08853871b6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -174,6 +174,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e09e0410810d7e24ca5886c043d54d1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SoundsComponentsScripts.SoundComponent
+  SoundsTransform: {fileID: 1447385167087113511}
   AppearClips:
   - Name: Appear
     Sound: {fileID: 8300000, guid: 5bbc06799768d5a429402868269131a2, type: 3}

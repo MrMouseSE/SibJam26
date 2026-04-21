@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using ScenesOperatingScripts;
 using UnityEngine.AddressableAssets;
+using UnityEngine.ResourceManagement.AsyncOperations;
 using UnityEngine.ResourceManagement.ResourceProviders;
 using UnityEngine.SceneManagement;
 
@@ -10,36 +11,37 @@ namespace GameStartupScripts
 {
     public static class SceneLoadingHandler
     {
-        public static Dictionary<Scene, SceneRootHolder> SceneRoots = new();
+        public static Dictionary<string, (AsyncOperationHandle<SceneInstance>, ISceneRoot)> SceneRoots = new();
     
         public static Action OnSceneLoaded;
 
-        public static async void LoadScenes()
+        public static async void LoadScenes(AssetReference[] scenesLoadAtStart)
         {
-            var scenesLoadEntry = Addressables.LoadAssetsAsync<Scene>("scene", 
-                ad =>
-                {
-                    var h = Addressables.LoadSceneAsync(ad, LoadSceneMode.Additive, false);
-                    SceneRoots.Add(h.Result.Scene, h.Result.Scene.GetRootGameObjects()[0].GetComponent<SceneRootHolder>());
-                }, Addressables.MergeMode.Union, false);
-            await scenesLoadEntry.Task;
-            OnSceneLoaded?.Invoke();
-            /*
-            Task[] tasks = new Task[scenesLoadEntry.Result.Count];
-            for (int i = 0; i < scenesLoadEntry.Result.Count; i++)
+            Task[] tasks = new Task[scenesLoadAtStart.Length];
+            for (var index = 0; index < scenesLoadAtStart.Length; index++)
             {
-                tasks[i] = LoadScenes(scenesLoadEntry.Result[i].name);
+                var location = scenesLoadAtStart[index];
+                tasks[index] = LoadScenes(location);
             }
             await Task.WhenAll(tasks);
-            */
+            OnSceneLoaded?.Invoke();
         }
 
-        private static async Task<SceneInstance> LoadScenes(string sceneName)
+        private static async Task<SceneInstance> LoadScenes(AssetReference sceneLocation)
         {
-            var h = Addressables.LoadSceneAsync(sceneName, LoadSceneMode.Additive, false);
-            await h.Task;
-            SceneRoots.Add(h.Result.Scene, h.Result.Scene.GetRootGameObjects()[0].GetComponent<SceneRootHolder>());
-            return h.Result;
+            var handle = Addressables.LoadSceneAsync(sceneLocation, LoadSceneMode.Additive, true);
+            await handle.Task;
+            var rootObject = handle.Result.Scene.GetRootGameObjects()[0].GetComponent<ISceneRoot>();
+            SceneRoots.Add(handle.Result.Scene.name, new ValueTuple<AsyncOperationHandle<SceneInstance>, ISceneRoot>(handle, rootObject));
+            rootObject.SetSceneObjectsVisibility(false);
+            rootObject.InitializeSceneSystems();
+            return handle.Result;
+        }
+
+        public static void SetSceneActive(string sceneName)
+        {
+            SceneRoots[sceneName].Item2.SetSceneObjectsVisibility(true);
+            SceneManager.SetActiveScene(SceneManager.GetSceneByName(sceneName));
         }
     }
 }

@@ -16,7 +16,7 @@ namespace TweenScripts
 
         public override void Evaluate(float value)
         {
-            RectTransform.sizeDelta = Vector2.Lerp(FromSize, ToSize, GetRuleValue(value));
+            RectTransform.sizeDelta = Vector2.LerpUnclamped(FromSize, ToSize, GetRuleValue(value));
         }
     }
 }

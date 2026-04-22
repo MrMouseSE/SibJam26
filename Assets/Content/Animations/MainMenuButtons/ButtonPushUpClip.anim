@@ -48,7 +48,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Mesh
+    path: Root
   m_ScaleCurves:
   - curve:
       serializedVersion: 2
@@ -83,7 +83,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Mesh
+    path: Root/Mesh
   m_FloatCurves: []
   m_PPtrCurves: []
   m_SampleRate: 60
@@ -150,7 +150,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.x
-    path: Mesh
+    path: Root
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -189,7 +189,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.y
-    path: Mesh
+    path: Root
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -228,7 +228,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.z
-    path: Mesh
+    path: Root
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -267,7 +267,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalScale.x
-    path: Mesh
+    path: Root/Mesh
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -306,7 +306,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalScale.y
-    path: Mesh
+    path: Root/Mesh
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -345,7 +345,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalScale.z
-    path: Mesh
+    path: Root/Mesh
     classID: 4
     script: {fileID: 0}
     flags: 0

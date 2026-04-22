@@ -15,11 +15,6 @@ MonoBehaviour:
   m_GroupName: Sounds
   m_GUID: 91cacc13e2f8d1c40ad96b5aebe0db7a
   m_SerializeEntries:
-  - m_GUID: 5bbc06799768d5a429402868269131a2
-    m_Address: test
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: c4171901eb30a37488fdd0cb8e13c8ac
     m_Address: SoundObjectPrefab
     m_ReadOnly: 0

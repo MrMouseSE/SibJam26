@@ -50,7 +50,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6505438414749557142, guid: bb24d2d047e62e14b80d73b9f71df238, type: 3}
       propertyPath: m_Name
-      value: ButtonExitObject Variant
+      value: ButtonExitObject
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

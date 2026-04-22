@@ -6,6 +6,23 @@ namespace TweenScripts
     {
         public AnimationCurve AnimationRule;
         
+        [Space]
+        public bool AnimateByUpdate;
+        public float Duration;
+        
+        private float _currentTime;
+
+        public void Update()
+        {
+            if (!AnimateByUpdate) return;
+            _currentTime -= Time.deltaTime;
+            if (_currentTime < 0)
+            {
+                _currentTime = Duration;
+            }
+            Evaluate(_currentTime/Duration);
+        }
+        
         public virtual void SetForceState(bool isForceStart)
         {}
         

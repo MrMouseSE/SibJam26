@@ -16,7 +16,7 @@ namespace TweenScripts
 
         public override void Evaluate(float value)
         {
-            RectTransform.anchoredPosition = Vector2.Lerp(FromPosition, ToPosition, GetRuleValue(value));
+            RectTransform.anchoredPosition = Vector2.LerpUnclamped(FromPosition, ToPosition, GetRuleValue(value));
         }
     }
 }

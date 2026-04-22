@@ -2,6 +2,7 @@ using ScenesOperatingScripts;
 using SoundsComponentsScripts;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
+using UnityEngine.Audio;
 
 namespace GameStartupScripts
 {
@@ -9,12 +10,15 @@ namespace GameStartupScripts
     {
         public AssetReference SoundObjectReference;
         public AssetReference[] ScenesLoadAtStart;
+        public AudioMixer GameAudioMixer;
         
         private GameSystemsHandler _gameSystemsHandler;
+        private AudioMixerHandler _audioMixerHandler;
         
         public void Awake()
         {
             _gameSystemsHandler = new GameSystemsHandler();
+            _audioMixerHandler = new AudioMixerHandler(GameAudioMixer);
             SoundMixerController.SetRefObject(SoundObjectReference);
             SceneLoadingHandler.LoadScenes(ScenesLoadAtStart);
             SceneLoadingHandler.OnSceneLoaded += SetMenuSceneActive;

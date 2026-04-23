@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
@@ -14,18 +15,11 @@ namespace SoundsComponentsScripts
 
         private static SoundObjectComponent _refSoundObject;
 
-        public static async void SetRefObject(AssetReference refObject)
+        public static async Task SetRefObject(AssetReference refObject)
         {
-            try
-            {
-                var handle = Addressables.LoadAssetAsync<GameObject>(refObject);
-                await handle;
-                _refSoundObject = handle.Result.GetComponent<SoundObjectComponent>();
-            }
-            catch (Exception e)
-            {
-                Debug.Log("dont load SoundObject");
-            }
+            var handle = Addressables.LoadAssetAsync<GameObject>(refObject);
+            await handle;
+            _refSoundObject = handle.Result.GetComponent<SoundObjectComponent>();
         }
 
         public static void FillPool(int poolSize)
@@ -52,9 +46,42 @@ namespace SoundsComponentsScripts
             ReturnToPool(soundObject, clip.length).Forget();
         }
 
+        public static SoundObjectComponent PlayMusicAtPosition(Transform point, AudioClip clip)
+        {
+            if (_soundObjectsPool.Count < 1)
+                FillPool(1);
+            
+            var soundObject = _soundObjectsPool[0];
+            soundObject.SoundTrasform.position = point.position;
+            soundObject.ObjectAudioSource.clip = clip;
+            soundObject.ObjectAudioSource.Play();
+            _soundObjectsPool.Remove(soundObject);
+            _usedObjectsPool.Add(soundObject);
+            return soundObject;
+        }
+
+        public static void StopAllSounds()
+        {
+            foreach (var objectComponent in _usedObjectsPool)
+            {
+                StopMusic(objectComponent);
+            }
+        }
+
+        public static bool StopMusic(SoundObjectComponent soundObject)
+        {
+            var contains = _usedObjectsPool.Contains(soundObject);
+            soundObject.OnObjectStop?.Invoke();
+            soundObject.ObjectAudioSource.Stop();
+            _usedObjectsPool.Remove(soundObject);
+            _soundObjectsPool.Add(soundObject);
+            return contains;
+        }
+
         private static async UniTaskVoid ReturnToPool(SoundObjectComponent soundObject, float time)
         {
             await UniTask.WaitForSeconds(time);
+            soundObject.ObjectAudioSource.Stop();
             _usedObjectsPool.Remove(soundObject);
             _soundObjectsPool.Add(soundObject);
         }

@@ -17,12 +17,12 @@ namespace GameStartupScripts
         private GameSystemsHandler _gameSystemsHandler;
         private AudioMixerHandler _audioMixerHandler;
         
-        public void Awake()
+        public async void Awake()
         {
+            await SoundInstancerController.SetRefObject(SoundObjectReference);
             _gameSystemsHandler = new GameSystemsHandler();
             _audioMixerHandler = new AudioMixerHandler(GameAudioMixer);
             SettingsHandler.Mixer = _audioMixerHandler;
-            SoundInstancerController.SetRefObject(SoundObjectReference);
             SceneLoadingHandler.LoadScenes(ScenesLoadAtStart);
             SceneLoadingHandler.OnSceneLoaded += SetMenuSceneActive;
         }

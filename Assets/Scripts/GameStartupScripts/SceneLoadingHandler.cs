@@ -33,7 +33,7 @@ namespace GameStartupScripts
             await handle.Task;
             var rootObject = handle.Result.Scene.GetRootGameObjects()[0].GetComponent<ISceneRoot>();
             SceneRoots.Add(handle.Result.Scene.name, new ValueTuple<AsyncOperationHandle<SceneInstance>, ISceneRoot>(handle, rootObject));
-            rootObject.SetSceneObjectsVisibility(false);
+            rootObject.SetSceneObjectsActive(false);
             return handle.Result;
         }
 
@@ -41,7 +41,7 @@ namespace GameStartupScripts
         {
             foreach (var sceneRoot in SceneRoots)
             {
-                sceneRoot.Value.Item2.SetSceneObjectsVisibility(sceneRoot.Key == sceneName);
+                sceneRoot.Value.Item2.SetSceneObjectsActive(sceneRoot.Key == sceneName);
             }
             SceneManager.SetActiveScene(SceneManager.GetSceneByName(sceneName));
         }

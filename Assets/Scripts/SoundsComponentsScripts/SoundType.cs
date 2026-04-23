@@ -5,5 +5,6 @@ namespace SoundsComponentsScripts
         AppearSound,
         ActionSound,
         DeathSound,
+        AreaMusic
     }
 }

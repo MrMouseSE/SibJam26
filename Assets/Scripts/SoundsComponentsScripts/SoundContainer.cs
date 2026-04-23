@@ -1,23 +1,12 @@
-using UnityEngine;
-
 namespace SoundsComponentsScripts
 {
-    public class SoundComponent : MonoBehaviour
+    public class SoundContainer : AudioContainer
     {
-        public Transform SoundsTransform;
         public SoundPair[] AppearClips;
         public SoundPair[] ActionClips;
         public SoundPair[] DeathClips;
 
-        private void OnValidate()
-        {
-            if (SoundsTransform == null)
-            {
-                SoundsTransform = transform;
-            }
-        }
-
-        public void PlaySound(SoundType soundType)
+        public override void Play(SoundType soundType)
         {
             switch (soundType)
             {
@@ -31,12 +20,6 @@ namespace SoundsComponentsScripts
                     PlayRandomSound(DeathClips);
                     break;
             }
-        }
-
-        private void PlayRandomSound(SoundPair[] appearClips)
-        {
-            var clip = appearClips[Random.Range(0, appearClips.Length)].Sound;
-            SoundInstancerController.PlaySoundAtPosition(SoundsTransform, clip);
         }
     }
 }

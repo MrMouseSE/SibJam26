@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using SoundsComponentsScripts;
 using UnityEngine;
 
 namespace ScenesOperatingScripts
@@ -6,6 +7,8 @@ namespace ScenesOperatingScripts
     public class SceneRootHolder : MonoBehaviour, ISceneRoot
     {
         public List<GameObject> VisibleObjects;
+        
+        public AreaMusicContainer SceneMusicContainer;
         
         [Space]
         public SceneSystemsContainer SceneSystemsContainer;
@@ -20,11 +23,13 @@ namespace ScenesOperatingScripts
             VisibleObjects.Add(go);
         }
 
-        public void SetSceneObjectsVisibility(bool visible)
+        public void SetSceneObjectsActive(bool active)
         {
+            SceneMusicContainer?.SwitchMusic(active);
+            
             foreach (var visibleObject in VisibleObjects)
             {
-                visibleObject.SetActive(visible);
+                visibleObject.SetActive(active);
             }
         }
 

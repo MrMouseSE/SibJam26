@@ -6,7 +6,7 @@ namespace ScenesOperatingScripts
     {
         public bool TryRemoveObjectFromVisibility(GameObject go);
         public void AddObjectToSceneVisibility(GameObject go);
-        public void SetSceneObjectsVisibility(bool visible);
+        public void SetSceneObjectsActive(bool active);
         public void InitializeSceneSystems(GameSystemsHandler systemsHandler);
     }
 }

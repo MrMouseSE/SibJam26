@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace SoundsComponentsScripts
@@ -6,5 +7,7 @@ namespace SoundsComponentsScripts
     {
         public Transform SoundTrasform;
         public AudioSource ObjectAudioSource;
+
+        public Action OnObjectStop;
     }
 }

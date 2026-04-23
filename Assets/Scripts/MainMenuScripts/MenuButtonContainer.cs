@@ -12,7 +12,7 @@ namespace MainMenuScripts
         public AnimationClip PushUpClip;
 
         [Space]
-        public SoundComponent ButtonSounds;
+        public AudioContainer ButtonSounds;
         
         public Action OnButtonPushed;
         
@@ -22,7 +22,7 @@ namespace MainMenuScripts
         {
             if(_isButtonPushed) return;
             AnimationComponent.Play(OverClip.name);
-            ButtonSounds.PlaySound(SoundType.ActionSound);
+            ButtonSounds.Play(SoundType.ActionSound);
         }
 
         private void OnMouseExit()
@@ -36,7 +36,7 @@ namespace MainMenuScripts
             _isButtonPushed = true;
             StopAndRewind();
             AnimationComponent.Play(PushClip.name);
-            ButtonSounds.PlaySound(SoundType.AppearSound);
+            ButtonSounds.Play(SoundType.AppearSound);
             OnButtonPushed?.Invoke();
         }
 
@@ -45,7 +45,7 @@ namespace MainMenuScripts
             _isButtonPushed = false;
             StopAndRewind();
             AnimationComponent.Play(PushUpClip.name);
-            ButtonSounds.PlaySound(SoundType.DeathSound);
+            ButtonSounds.Play(SoundType.DeathSound);
         }
 
         private void StopAndRewind()

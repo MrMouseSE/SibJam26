@@ -24,7 +24,7 @@ namespace TweenScripts
                 {
                     tweenAnimation.Evaluate(evaluateTime);
                 }
-                await UniTask.Yield(cancellationToken: token);
+                await UniTask.Yield(cancellationToken: token, true);
             }
             AnimationCompleted?.Invoke(this);
         }
@@ -41,7 +41,7 @@ namespace TweenScripts
                 float evaluateTime = baseValue + mult * animationTime / time;
                 
                 tweenAnimation.Evaluate(evaluateTime);
-                await UniTask.Yield(cancellationToken: token);
+                await UniTask.Yield(cancellationToken: token, true);
             }
             AnimationCompleted?.Invoke(this);
         }

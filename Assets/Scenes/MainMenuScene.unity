@@ -4125,6 +4125,54 @@ PrefabInstance:
       propertyPath: FromScale.x
       value: 2.7838
       objectReference: {fileID: 0}
+    - target: {fileID: 1490592969840928725, guid: 8d19f744f9d5a954c8e87c1f482aa594, type: 3}
+      propertyPath: FromScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1490592969840928725, guid: 8d19f744f9d5a954c8e87c1f482aa594, type: 3}
+      propertyPath: FromScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1490592969840928725, guid: 8d19f744f9d5a954c8e87c1f482aa594, type: 3}
+      propertyPath: AnimationRule.m_Curve.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1490592969840928725, guid: 8d19f744f9d5a954c8e87c1f482aa594, type: 3}
+      propertyPath: AnimationRule.m_Curve.Array.data[1].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1490592969840928725, guid: 8d19f744f9d5a954c8e87c1f482aa594, type: 3}
+      propertyPath: AnimationRule.m_Curve.Array.data[0].value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1490592969840928725, guid: 8d19f744f9d5a954c8e87c1f482aa594, type: 3}
+      propertyPath: AnimationRule.m_Curve.Array.data[1].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1490592969840928725, guid: 8d19f744f9d5a954c8e87c1f482aa594, type: 3}
+      propertyPath: AnimationRule.m_Curve.Array.data[1].inSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1490592969840928725, guid: 8d19f744f9d5a954c8e87c1f482aa594, type: 3}
+      propertyPath: AnimationRule.m_Curve.Array.data[1].inWeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1490592969840928725, guid: 8d19f744f9d5a954c8e87c1f482aa594, type: 3}
+      propertyPath: AnimationRule.m_Curve.Array.data[1].outSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1490592969840928725, guid: 8d19f744f9d5a954c8e87c1f482aa594, type: 3}
+      propertyPath: AnimationRule.m_Curve.Array.data[0].outWeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1490592969840928725, guid: 8d19f744f9d5a954c8e87c1f482aa594, type: 3}
+      propertyPath: AnimationRule.m_Curve.Array.data[1].outWeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1490592969840928725, guid: 8d19f744f9d5a954c8e87c1f482aa594, type: 3}
+      propertyPath: AnimationRule.m_Curve.Array.data[1].tangentMode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1635314979744446076, guid: 8d19f744f9d5a954c8e87c1f482aa594, type: 3}
       propertyPath: m_text
       value: 'Exit
@@ -4195,6 +4243,9 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7040267505716030907, guid: 8d19f744f9d5a954c8e87c1f482aa594, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7888908784484618998}
     - targetCorrespondingSourceObject: {fileID: 9010974564317698468, guid: 8d19f744f9d5a954c8e87c1f482aa594, type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}
@@ -4215,6 +4266,58 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5090630036895213159, guid: 8d19f744f9d5a954c8e87c1f482aa594, type: 3}
   m_PrefabInstance: {fileID: 7888908784484618993}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &7888908784484618996 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7669155018567530514, guid: 8d19f744f9d5a954c8e87c1f482aa594, type: 3}
+  m_PrefabInstance: {fileID: 7888908784484618993}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7888908784484618997 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7040267505716030907, guid: 8d19f744f9d5a954c8e87c1f482aa594, type: 3}
+  m_PrefabInstance: {fileID: 7888908784484618993}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7888908784484618998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7888908784484618997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41d2b31fc83547b2880dabf1e1c47fc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TweenScripts.PositionTweenAnimation
+  AnimateByUpdate: 0
+  Duration: 0
+  AnimationRule:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  TweenTransform: {fileID: 7888908784484618996}
+  FromPosition: {x: 0, y: 0, z: 0}
+  ToPosition: {x: 0, y: -0.4, z: 0}
+  LocalAnimate: 1
 --- !u!1001 &8855956607126797525
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4279,6 +4382,58 @@ PrefabInstance:
       propertyPath: FromScale.x
       value: 3.8484
       objectReference: {fileID: 0}
+    - target: {fileID: 5051928552483001493, guid: bb24d2d047e62e14b80d73b9f71df238, type: 3}
+      propertyPath: FromScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5051928552483001493, guid: bb24d2d047e62e14b80d73b9f71df238, type: 3}
+      propertyPath: FromScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5051928552483001493, guid: bb24d2d047e62e14b80d73b9f71df238, type: 3}
+      propertyPath: AnimationRule.m_Curve.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5051928552483001493, guid: bb24d2d047e62e14b80d73b9f71df238, type: 3}
+      propertyPath: AnimationRule.m_Curve.Array.data[1].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5051928552483001493, guid: bb24d2d047e62e14b80d73b9f71df238, type: 3}
+      propertyPath: AnimationRule.m_Curve.Array.data[0].value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5051928552483001493, guid: bb24d2d047e62e14b80d73b9f71df238, type: 3}
+      propertyPath: AnimationRule.m_Curve.Array.data[1].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5051928552483001493, guid: bb24d2d047e62e14b80d73b9f71df238, type: 3}
+      propertyPath: AnimationRule.m_Curve.Array.data[1].inSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5051928552483001493, guid: bb24d2d047e62e14b80d73b9f71df238, type: 3}
+      propertyPath: AnimationRule.m_Curve.Array.data[1].inWeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5051928552483001493, guid: bb24d2d047e62e14b80d73b9f71df238, type: 3}
+      propertyPath: AnimationRule.m_Curve.Array.data[1].outSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5051928552483001493, guid: bb24d2d047e62e14b80d73b9f71df238, type: 3}
+      propertyPath: AnimationRule.m_Curve.Array.data[0].outWeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5051928552483001493, guid: bb24d2d047e62e14b80d73b9f71df238, type: 3}
+      propertyPath: AnimationRule.m_Curve.Array.data[1].outWeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5051928552483001493, guid: bb24d2d047e62e14b80d73b9f71df238, type: 3}
+      propertyPath: AnimationRule.m_Curve.Array.data[1].tangentMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5947263776341812256, guid: bb24d2d047e62e14b80d73b9f71df238, type: 3}
+      propertyPath: 'Animations.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8855956607126797529}
     - target: {fileID: 6505438414749557142, guid: bb24d2d047e62e14b80d73b9f71df238, type: 3}
       propertyPath: m_Name
       value: ButtonStartObject
@@ -4295,6 +4450,9 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3677089962812694267, guid: bb24d2d047e62e14b80d73b9f71df238, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8855956607126797529}
     - targetCorrespondingSourceObject: {fileID: 3440400160491547364, guid: bb24d2d047e62e14b80d73b9f71df238, type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}
@@ -4310,6 +4468,58 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd217b0453b79394786e3a53b6ae6218, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ButtonScript
+--- !u!4 &8855956607126797527 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4097686268054866770, guid: bb24d2d047e62e14b80d73b9f71df238, type: 3}
+  m_PrefabInstance: {fileID: 8855956607126797525}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8855956607126797528 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3677089962812694267, guid: bb24d2d047e62e14b80d73b9f71df238, type: 3}
+  m_PrefabInstance: {fileID: 8855956607126797525}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8855956607126797529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8855956607126797528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41d2b31fc83547b2880dabf1e1c47fc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TweenScripts.PositionTweenAnimation
+  AnimateByUpdate: 0
+  Duration: 0
+  AnimationRule:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  TweenTransform: {fileID: 8855956607126797527}
+  FromPosition: {x: 0, y: 0, z: 0}
+  ToPosition: {x: 0, y: -0.4, z: 0}
+  LocalAnimate: 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

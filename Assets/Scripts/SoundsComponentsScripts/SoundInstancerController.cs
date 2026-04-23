@@ -7,7 +7,7 @@ using Object = UnityEngine.Object;
 
 namespace SoundsComponentsScripts
 {
-    public static class SoundMixerController
+    public static class SoundInstancerController
     {
         private static readonly List<SoundObjectComponent> _soundObjectsPool = new();
         private static readonly List<SoundObjectComponent> _usedObjectsPool = new();

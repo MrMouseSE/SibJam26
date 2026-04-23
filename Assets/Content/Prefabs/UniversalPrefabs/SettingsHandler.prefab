@@ -172,6 +172,8 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  AnimateByUpdate: 0
+  Duration: 0
   RectTransform: {fileID: 6608678501217985149}
   FromPosition: {x: 0, y: 5}
   ToPosition: {x: -16.5, y: 5}
@@ -287,6 +289,8 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  AnimateByUpdate: 0
+  Duration: 0
   Image: {fileID: 1936963712042237551}
   FromColor: {r: 1, g: 1, b: 1, a: 1}
   ToColor: {r: 1, g: 1, b: 1, a: 0}
@@ -1059,6 +1063,8 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  AnimateByUpdate: 0
+  Duration: 0
   RectTransform: {fileID: 5706733444081270150}
   FromPosition: {x: 0, y: 5}
   ToPosition: {x: -32.4, y: 5}
@@ -1313,6 +1319,8 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  AnimateByUpdate: 0
+  Duration: 0
   RectTransform: {fileID: 7123216928898111369}
   FromPosition: {x: 0, y: 0}
   ToPosition: {x: -32, y: 0}
@@ -1373,6 +1381,8 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  AnimateByUpdate: 0
+  Duration: 0
   CanvasGroup: {fileID: 7882076759368165431}
   AlphaFrom: 0
   AlphaTo: 1
@@ -1746,6 +1756,8 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  AnimateByUpdate: 0
+  Duration: 0
   RectTransform: {fileID: 350043606672274838}
   FromSize: {x: 50, y: 50}
   ToSize: {x: 150, y: 180}
@@ -1823,6 +1835,8 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  AnimateByUpdate: 0
+  Duration: 0
   RectTransform: {fileID: 5210358821811358581}
   FromPosition: {x: 0, y: 0}
   ToPosition: {x: 0, y: -41}
@@ -1878,7 +1892,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: caeb3303d51b10b4faa17c478d993f64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SettingsHandlerContainer
-  AnimationDescription: {fileID: 11400000, guid: 052e3b0f23ca8e94eaa948ab2d11dc7e, type: 2}
+  FoldTime: 0.35
+  UnfoldTime: 0.5
   Animations:
   - {fileID: 5339462682221337627}
   - {fileID: 766781197009922810}
@@ -1888,6 +1903,9 @@ MonoBehaviour:
   - {fileID: 1055168705426403986}
   - {fileID: 2106856457685805022}
   - {fileID: 2592814771267628001}
+  MasterSound: {fileID: 8001248835436090338}
+  SFXSound: {fileID: 1459835932355320003}
+  MusicSound: {fileID: 7858317497377135678}
 --- !u!222 &8184083906341585606
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2188,6 +2206,8 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  AnimateByUpdate: 0
+  Duration: 0
   Image: {fileID: 395837448007316262}
   FromColor: {r: 1, g: 1, b: 1, a: 0}
   ToColor: {r: 1, g: 1, b: 1, a: 1}

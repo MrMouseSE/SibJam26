@@ -36,7 +36,7 @@ namespace SoundsComponentsScripts
         private void PlayRandomSound(SoundPair[] appearClips)
         {
             var clip = appearClips[Random.Range(0, appearClips.Length)].Sound;
-            SoundMixerController.PlaySoundAtPosition(SoundsTransform, clip);
+            SoundInstancerController.PlaySoundAtPosition(SoundsTransform, clip);
         }
     }
 }

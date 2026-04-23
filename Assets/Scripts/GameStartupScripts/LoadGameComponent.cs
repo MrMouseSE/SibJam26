@@ -1,3 +1,4 @@
+using MainMenuScripts.SettingsHanlderScripts;
 using ScenesOperatingScripts;
 using SoundsComponentsScripts;
 using UnityEngine;
@@ -11,6 +12,7 @@ namespace GameStartupScripts
         public AssetReference SoundObjectReference;
         public AssetReference[] ScenesLoadAtStart;
         public AudioMixer GameAudioMixer;
+        public SettingsHandlerContainer SettingsHandler;
         
         private GameSystemsHandler _gameSystemsHandler;
         private AudioMixerHandler _audioMixerHandler;
@@ -19,7 +21,8 @@ namespace GameStartupScripts
         {
             _gameSystemsHandler = new GameSystemsHandler();
             _audioMixerHandler = new AudioMixerHandler(GameAudioMixer);
-            SoundMixerController.SetRefObject(SoundObjectReference);
+            SettingsHandler.Mixer = _audioMixerHandler;
+            SoundInstancerController.SetRefObject(SoundObjectReference);
             SceneLoadingHandler.LoadScenes(ScenesLoadAtStart);
             SceneLoadingHandler.OnSceneLoaded += SetMenuSceneActive;
         }

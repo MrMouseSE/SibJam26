@@ -165,7 +165,8 @@ MonoBehaviour:
     m_SubObjectType: 
     m_SubObjectGUID: 
     m_EditorAssetChanged: 0
-  GameAudioMixer: {fileID: 0}
+  GameAudioMixer: {fileID: 24100000, guid: 877a0be7d3c07c24192605b5a8ad4f4b, type: 2}
+  SettingsHandler: {fileID: 1195930455}
 --- !u!4 &727603418
 Transform:
   m_ObjectHideFlags: 0
@@ -288,6 +289,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 6907555454436173911, guid: 1f8a1bb4a21425149b17f61aac5c88d7, type: 3}
   m_PrefabInstance: {fileID: 8810901975511022646}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1195930455 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6066714935474047115, guid: 1f8a1bb4a21425149b17f61aac5c88d7, type: 3}
+  m_PrefabInstance: {fileID: 8810901975511022646}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: caeb3303d51b10b4faa17c478d993f64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SettingsHandlerContainer
 --- !u!1 &2042541738
 GameObject:
   m_ObjectHideFlags: 0

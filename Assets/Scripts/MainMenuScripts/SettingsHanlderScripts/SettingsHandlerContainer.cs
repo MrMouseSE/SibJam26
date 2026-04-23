@@ -1,8 +1,9 @@
 using System.Threading;
-using Cysharp.Threading.Tasks;
+using SoundsComponentsScripts;
 using TweenScripts;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 namespace MainMenuScripts.SettingsHanlderScripts
 {
@@ -13,6 +14,12 @@ namespace MainMenuScripts.SettingsHanlderScripts
         
         public TweenAnimation[] Animations;
 
+        [Space]
+        public Slider MasterSound;
+        public Slider SFXSound;
+        public Slider MusicSound;
+        public AudioMixerHandler Mixer;
+
         private int _animatingProcessState;
         private CancellationTokenSource _animationCancellationToken = new();
 
@@ -22,44 +29,71 @@ namespace MainMenuScripts.SettingsHanlderScripts
             {
                 tweenAnimation.SetForceState(true);
             }
-        }
 
+            SubscribeToValuesChanges();
+        }
+        
         public void OnPointerEnter(PointerEventData eventData)
         {
             if (_animatingProcessState == 1) return;
             _animatingProcessState = 1;
-            _animationCancellationToken.Cancel();
-            _animationCancellationToken = new CancellationTokenSource();
-            StartFoldAnimation(_animationCancellationToken.Token, UnfoldTime, true).Forget();
+            StartUniTaskAnimationProcess(UnfoldTime, true);
         }
-
+        
         public void OnPointerExit(PointerEventData eventData)
         {
             if(_animatingProcessState == -1) return;
             _animatingProcessState = -1;
-            _animationCancellationToken.Cancel();
-            _animationCancellationToken = new CancellationTokenSource();
-            StartFoldAnimation(_animationCancellationToken.Token, FoldTime, false).Forget();
+            StartUniTaskAnimationProcess(FoldTime, false);
         }
 
-        private async UniTaskVoid StartFoldAnimation(CancellationToken token, float time, bool isUnfoldAnimation)
+        private void StartUniTaskAnimationProcess(float time, bool isForward)
         {
-            float foldTime = time;
-            float baseValue = isUnfoldAnimation ? 0 : 1f;
-            float mult = isUnfoldAnimation ? -1f : 1f;
-            
-            while (foldTime > 0f)
-            {
-                foldTime -= Time.deltaTime;
-                float evaluateTime = baseValue + mult * foldTime / time;
-                
-                foreach (var tweenAnimation in Animations)
-                {
-                    tweenAnimation.Evaluate(evaluateTime);
-                }
-                await UniTask.Yield(cancellationToken: token);
-            }
+            _animationCancellationToken.Cancel();
+            _animationCancellationToken = new CancellationTokenSource();
+            UniTaskAnimationObject uniTaskAnimationObject = new();
+            uniTaskAnimationObject.StartAnimation(Animations, _animationCancellationToken.Token, time, isForward).Forget();
+            uniTaskAnimationObject.AnimationCompleted += ResetState;
+        }
+
+        private void ResetState(UniTaskAnimationObject uniTaskAnimationObject)
+        {
+            uniTaskAnimationObject.AnimationCompleted -= ResetState;
             _animatingProcessState = 0;
+        }
+
+        private void OnDestroy()
+        {
+            UnsubscribeFromValuesChanges();
+        }
+
+        private void SubscribeToValuesChanges()
+        {
+            MasterSound.onValueChanged.AddListener(SetMasterVolume);
+            SFXSound.onValueChanged.AddListener(SetSfxVolume);
+            MusicSound.onValueChanged.AddListener(SetMusicVolume);
+        }
+
+        private void SetMasterVolume(float volume)
+        {
+            Mixer.SetVolumeValueByIndex(0, volume);
+        }
+        
+        private void SetSfxVolume(float volume)
+        {
+            Mixer.SetVolumeValueByIndex(1, volume);
+        }
+
+        private void SetMusicVolume(float volume)
+        {
+            Mixer.SetVolumeValueByIndex(2, volume);
+        }
+
+        private void UnsubscribeFromValuesChanges()
+        {
+            MasterSound.onValueChanged.RemoveAllListeners();
+            SFXSound.onValueChanged.RemoveAllListeners();
+            MusicSound.onValueChanged.RemoveAllListeners();
         }
     }
 }

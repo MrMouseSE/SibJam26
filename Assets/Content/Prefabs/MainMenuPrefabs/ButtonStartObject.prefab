@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 6792627241693838761}
   - component: {fileID: 6004966594424822498}
   - component: {fileID: 3489347034944611637}
+  - component: {fileID: 946836203671741666}
+  - component: {fileID: 5051928552483001493}
   m_Layer: 0
   m_Name: Mesh
   m_TagString: Untagged
@@ -90,6 +92,106 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &946836203671741666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1914085329578137845}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53b1dcea27864bb29f7bb0e01a425979, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TweenScripts.ScaleTweenAnimation
+  AnimateByUpdate: 0
+  Duration: 0
+  AnimationRule:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.4978038
+      value: 0
+      inSlope: -0.008785009
+      outSlope: -0.008785009
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  TweenTransform: {fileID: 6792627241693838761}
+  FromScale: {x: 1, y: 1, z: 1}
+  ToScale: {x: 1, y: 1, z: 1}
+--- !u!114 &5051928552483001493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1914085329578137845}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53b1dcea27864bb29f7bb0e01a425979, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TweenScripts.ScaleTweenAnimation
+  AnimateByUpdate: 0
+  Duration: 0
+  AnimationRule:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.4978038
+      value: 0
+      inSlope: -0.008785009
+      outSlope: -0.008785009
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  TweenTransform: {fileID: 6792627241693838761}
+  FromScale: {x: 1, y: 1, z: 1}
+  ToScale: {x: 1.2, y: 0.8, z: 1.2}
 --- !u!1 &3440400160491547364
 GameObject:
   m_ObjectHideFlags: 0
@@ -291,6 +393,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4097686268054866770}
+  - component: {fileID: 6720776808148106920}
   m_Layer: 0
   m_Name: Root
   m_TagString: Untagged
@@ -315,6 +418,57 @@ Transform:
   - {fileID: 6029865569290643856}
   m_Father: {fileID: 1447385167087113511}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6720776808148106920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3677089962812694267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41d2b31fc83547b2880dabf1e1c47fc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TweenScripts.PositionTweenAnimation
+  AnimateByUpdate: 0
+  Duration: 0
+  AnimationRule:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.4978038
+      value: 0
+      inSlope: -0.008785009
+      outSlope: -0.008785009
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  TweenTransform: {fileID: 4097686268054866770}
+  FromPosition: {x: 0, y: 0, z: 0}
+  ToPosition: {x: 0, y: -0.4, z: 0}
+  LocalAnimate: 1
 --- !u!1 &6505438414749557142
 GameObject:
   m_ObjectHideFlags: 0
@@ -325,9 +479,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1447385167087113511}
   - component: {fileID: 8424443882933232457}
-  - component: {fileID: 1542640543452494913}
   - component: {fileID: 1247817581673100018}
   - component: {fileID: 7340313960354319270}
+  - component: {fileID: 7973249210919283493}
+  - component: {fileID: 5947263776341812256}
   m_Layer: 0
   m_Name: ButtonStartObject
   m_TagString: Untagged
@@ -363,30 +518,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd217b0453b79394786e3a53b6ae6218, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ButtonScript
-  AnimationComponent: {fileID: 1542640543452494913}
-  PushClip: {fileID: 7400000, guid: df502e7586bf97e4daf4482f5fb69673, type: 2}
-  OverClip: {fileID: 7400000, guid: 9bdc62e0cc58dd34489a60dee64f62fe, type: 2}
-  PushUpClip: {fileID: 7400000, guid: fb3570998c2d86347894ce5e1c70f007, type: 2}
+  IdleAnimationTime: 0.3
+  AnimationIdleGroup: {fileID: 7973249210919283493}
+  PushAnimationTime: 0.25
+  AnimationPushGroup: {fileID: 5947263776341812256}
   ButtonSounds: {fileID: 1247817581673100018}
---- !u!111 &1542640543452494913
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6505438414749557142}
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Animation: {fileID: 0}
-  m_Animations:
-  - {fileID: 7400000, guid: 9bdc62e0cc58dd34489a60dee64f62fe, type: 2}
-  - {fileID: 7400000, guid: df502e7586bf97e4daf4482f5fb69673, type: 2}
-  - {fileID: 7400000, guid: fb3570998c2d86347894ce5e1c70f007, type: 2}
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_UpdateMode: 0
-  m_CullingType: 0
 --- !u!114 &1247817581673100018
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -399,7 +535,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e09e0410810d7e24ca5886c043d54d1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SoundsComponentsScripts.SoundComponent
-  SoundsTransform: {fileID: 1447385167087113511}
+  AudioTransform: {fileID: 1447385167087113511}
   AppearClips:
   - Name: Appear
     Sound: {fileID: 8300000, guid: 51b812a60dd30e94ba11febd8fa3c7bc, type: 3}
@@ -430,3 +566,49 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &7973249210919283493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6505438414749557142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56398574961c7444f9054921a775a21a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TweenScripts.TweenGroupAnimation
+  AnimateByUpdate: 0
+  Duration: 0
+  AnimationRule:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  Animations:
+  - {fileID: 6720776808148106920}
+  - {fileID: 946836203671741666}
+--- !u!114 &5947263776341812256
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6505438414749557142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56398574961c7444f9054921a775a21a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TweenScripts.TweenGroupAnimation
+  AnimateByUpdate: 0
+  Duration: 0
+  AnimationRule:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  Animations:
+  - {fileID: 6720776808148106920}
+  - {fileID: 5051928552483001493}

@@ -428,6 +428,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2af8b79a919d4201b154386336f1cd4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TweenScripts.RotateTweenAnimation
+  AnimateByUpdate: 1
+  Duration: 14
   AnimationRule:
     serializedVersion: 2
     m_Curve:
@@ -479,8 +481,6 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  AnimateByUpdate: 1
-  Duration: 14
   TweenTransform: {fileID: 357709766}
   FromRotation: {x: 0, y: 0, z: 0}
   ToRotation: {x: -1.7, y: 2, z: 0}
@@ -626,6 +626,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a12236795d9a4986b34fef8528ec8f8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TweenScripts.LightAnimateTween
+  AnimateByUpdate: 1
+  Duration: 1.3
   AnimationRule:
     serializedVersion: 2
     m_Curve:
@@ -659,8 +661,6 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  AnimateByUpdate: 1
-  Duration: 1.3
   TweenLight: {fileID: 229444996}
   IntensityFrom: 0.2
   IntensityTo: 0.35
@@ -894,6 +894,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2af8b79a919d4201b154386336f1cd4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TweenScripts.RotateTweenAnimation
+  AnimateByUpdate: 1
+  Duration: 12
   AnimationRule:
     serializedVersion: 2
     m_Curve:
@@ -945,8 +947,6 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  AnimateByUpdate: 1
-  Duration: 12
   TweenTransform: {fileID: 357709766}
   FromRotation: {x: 0, y: 0, z: 0}
   ToRotation: {x: 1.7, y: -1.7, z: 0}
@@ -2269,6 +2269,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a12236795d9a4986b34fef8528ec8f8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TweenScripts.LightAnimateTween
+  AnimateByUpdate: 1
+  Duration: 2
   AnimationRule:
     serializedVersion: 2
     m_Curve:
@@ -2302,8 +2304,6 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  AnimateByUpdate: 1
-  Duration: 2
   TweenLight: {fileID: 1358424331}
   IntensityFrom: 0.2
   IntensityTo: 0.35
@@ -2538,6 +2538,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a12236795d9a4986b34fef8528ec8f8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TweenScripts.LightAnimateTween
+  AnimateByUpdate: 1
+  Duration: 5
   AnimationRule:
     serializedVersion: 2
     m_Curve:
@@ -2571,8 +2573,6 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  AnimateByUpdate: 1
-  Duration: 5
   TweenLight: {fileID: 1383754935}
   IntensityFrom: 90
   IntensityTo: 110
@@ -3006,6 +3006,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a12236795d9a4986b34fef8528ec8f8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TweenScripts.LightAnimateTween
+  AnimateByUpdate: 1
+  Duration: 3.5
   AnimationRule:
     serializedVersion: 2
     m_Curve:
@@ -3039,8 +3041,6 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  AnimateByUpdate: 1
-  Duration: 3.5
   TweenLight: {fileID: 1584269480}
   IntensityFrom: 0.8
   IntensityTo: 1.1
@@ -3706,6 +3706,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41d2b31fc83547b2880dabf1e1c47fc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TweenScripts.PositionTweenAnimation
+  AnimateByUpdate: 1
+  Duration: 15
   AnimationRule:
     serializedVersion: 2
     m_Curve:
@@ -3739,8 +3741,6 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  AnimateByUpdate: 1
-  Duration: 15
   TweenTransform: {fileID: 2060219422}
   FromPosition: {x: 0, y: 0, z: 0.15}
   ToPosition: {x: 0, y: 0, z: 0}
@@ -3791,6 +3791,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a12236795d9a4986b34fef8528ec8f8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TweenScripts.LightAnimateTween
+  AnimateByUpdate: 1
+  Duration: 3
   AnimationRule:
     serializedVersion: 2
     m_Curve:
@@ -3824,8 +3826,6 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  AnimateByUpdate: 1
-  Duration: 3
   TweenLight: {fileID: 2129847641}
   IntensityFrom: 0.2
   IntensityTo: 0.35
@@ -3969,6 +3969,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a12236795d9a4986b34fef8528ec8f8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TweenScripts.LightAnimateTween
+  AnimateByUpdate: 1
+  Duration: 4
   AnimationRule:
     serializedVersion: 2
     m_Curve:
@@ -4002,8 +4004,6 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  AnimateByUpdate: 1
-  Duration: 4
   TweenLight: {fileID: 2146173427}
   IntensityFrom: 0.35
   IntensityTo: 0.45
@@ -4117,6 +4117,14 @@ PrefabInstance:
       propertyPath: m_LocalScale.x
       value: 2.7838
       objectReference: {fileID: 0}
+    - target: {fileID: 1490592969840928725, guid: 8d19f744f9d5a954c8e87c1f482aa594, type: 3}
+      propertyPath: ToScale.x
+      value: 3.34056
+      objectReference: {fileID: 0}
+    - target: {fileID: 1490592969840928725, guid: 8d19f744f9d5a954c8e87c1f482aa594, type: 3}
+      propertyPath: FromScale.x
+      value: 2.7838
+      objectReference: {fileID: 0}
     - target: {fileID: 1635314979744446076, guid: 8d19f744f9d5a954c8e87c1f482aa594, type: 3}
       propertyPath: m_text
       value: 'Exit
@@ -4175,6 +4183,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6886143101897955234, guid: 8d19f744f9d5a954c8e87c1f482aa594, type: 3}
+      propertyPath: ToScale.x
+      value: 2.7838
+      objectReference: {fileID: 0}
+    - target: {fileID: 6886143101897955234, guid: 8d19f744f9d5a954c8e87c1f482aa594, type: 3}
+      propertyPath: FromScale.x
+      value: 2.7838
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4207,6 +4223,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1971672453}
     m_Modifications:
+    - target: {fileID: 946836203671741666, guid: bb24d2d047e62e14b80d73b9f71df238, type: 3}
+      propertyPath: ToScale.x
+      value: 3.8484
+      objectReference: {fileID: 0}
+    - target: {fileID: 946836203671741666, guid: bb24d2d047e62e14b80d73b9f71df238, type: 3}
+      propertyPath: FromScale.x
+      value: 3.8484
+      objectReference: {fileID: 0}
     - target: {fileID: 1447385167087113511, guid: bb24d2d047e62e14b80d73b9f71df238, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -4246,6 +4270,14 @@ PrefabInstance:
     - target: {fileID: 1447385167087113511, guid: bb24d2d047e62e14b80d73b9f71df238, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5051928552483001493, guid: bb24d2d047e62e14b80d73b9f71df238, type: 3}
+      propertyPath: ToScale.x
+      value: 4.61808
+      objectReference: {fileID: 0}
+    - target: {fileID: 5051928552483001493, guid: bb24d2d047e62e14b80d73b9f71df238, type: 3}
+      propertyPath: FromScale.x
+      value: 3.8484
       objectReference: {fileID: 0}
     - target: {fileID: 6505438414749557142, guid: bb24d2d047e62e14b80d73b9f71df238, type: 3}
       propertyPath: m_Name

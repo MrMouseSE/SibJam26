@@ -6,9 +6,6 @@ namespace MainMenuScripts.SettingsHanlderScripts
     public class SettingsHandlerAnimationDescription : ScriptableObject
     {
         public float FoldTime;
-        public AnimationCurve FoldRuleCurve;
-        
         public float UnfoldTime;
-        public AnimationCurve UnfoldRuleCurve;
     }
 }

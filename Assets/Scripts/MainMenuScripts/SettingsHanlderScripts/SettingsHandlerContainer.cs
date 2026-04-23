@@ -8,7 +8,8 @@ namespace MainMenuScripts.SettingsHanlderScripts
 {
     public class SettingsHandlerContainer : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     {
-        public SettingsHandlerAnimationDescription AnimationDescription;
+        public float FoldTime;
+        public float UnfoldTime;
         
         public TweenAnimation[] Animations;
 
@@ -29,7 +30,7 @@ namespace MainMenuScripts.SettingsHanlderScripts
             _animatingProcessState = 1;
             _animationCancellationToken.Cancel();
             _animationCancellationToken = new CancellationTokenSource();
-            StartFoldAnimation(_animationCancellationToken.Token, true).Forget();
+            StartFoldAnimation(_animationCancellationToken.Token, UnfoldTime, true).Forget();
         }
 
         public void OnPointerExit(PointerEventData eventData)
@@ -38,40 +39,23 @@ namespace MainMenuScripts.SettingsHanlderScripts
             _animatingProcessState = -1;
             _animationCancellationToken.Cancel();
             _animationCancellationToken = new CancellationTokenSource();
-            StartFoldAnimation(_animationCancellationToken.Token, false).Forget();
+            StartFoldAnimation(_animationCancellationToken.Token, FoldTime, false).Forget();
         }
 
-        private async UniTaskVoid StartFoldAnimation(CancellationToken token, bool isUnfoldAnimation)
+        private async UniTaskVoid StartFoldAnimation(CancellationToken token, float time, bool isUnfoldAnimation)
         {
-            float foldTime;
-            AnimationCurve ruleCurve;
-            if (isUnfoldAnimation)
-            {
-                foldTime = AnimationDescription.UnfoldTime;
-                ruleCurve = AnimationDescription.UnfoldRuleCurve;
-            }
-            else
-            {
-                foldTime = AnimationDescription.FoldTime;
-                ruleCurve = AnimationDescription.FoldRuleCurve;
-            }
+            float foldTime = time;
+            float baseValue = isUnfoldAnimation ? 0 : 1f;
+            float mult = isUnfoldAnimation ? -1f : 1f;
             
             while (foldTime > 0f)
             {
                 foldTime -= Time.deltaTime;
-                float evaluateTime;
-                if (isUnfoldAnimation)
-                {
-                    evaluateTime = 1 - foldTime / AnimationDescription.FoldTime;
-                }
-                else
-                {
-                    evaluateTime = foldTime / AnimationDescription.FoldTime;
-                }
-                float evaluateVal = ruleCurve.Evaluate(evaluateTime);
+                float evaluateTime = baseValue + mult * foldTime / time;
+                
                 foreach (var tweenAnimation in Animations)
                 {
-                    tweenAnimation.Evaluate(evaluateVal);
+                    tweenAnimation.Evaluate(evaluateTime);
                 }
                 await UniTask.Yield(cancellationToken: token);
             }

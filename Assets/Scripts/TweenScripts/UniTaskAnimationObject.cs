@@ -28,5 +28,22 @@ namespace TweenScripts
             }
             AnimationCompleted?.Invoke(this);
         }
+        
+        public async UniTaskVoid StartAnimation(TweenAnimation tweenAnimation, CancellationToken token, float time, bool isForward)
+        {
+            float animationTime = time;
+            float baseValue = isForward ? 1f : 0;
+            float mult = isForward ? -1f : 1f;
+            
+            while (animationTime > 0f)
+            {
+                animationTime -= Time.deltaTime;
+                float evaluateTime = baseValue + mult * animationTime / time;
+                
+                tweenAnimation.Evaluate(evaluateTime);
+                await UniTask.Yield(cancellationToken: token);
+            }
+            AnimationCompleted?.Invoke(this);
+        }
     }
 }

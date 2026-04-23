@@ -4,11 +4,11 @@ namespace TweenScripts
 {
     public class TweenAnimation : MonoBehaviour
     {
-        public AnimationCurve AnimationRule;
-        
-        [Space]
         public bool AnimateByUpdate;
         public float Duration;
+        
+        [Space]
+        public AnimationCurve AnimationRule;
         
         private float _currentTime;
 

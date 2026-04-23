@@ -12,7 +12,7 @@ namespace MainMenuScripts.SettingsHanlderScripts
         public float FoldTime;
         public float UnfoldTime;
         
-        public TweenAnimation[] Animations;
+        public TweenAnimation Animations;
 
         [Space]
         public Slider MasterSound;
@@ -25,10 +25,7 @@ namespace MainMenuScripts.SettingsHanlderScripts
 
         private void Awake()
         {
-            foreach (var tweenAnimation in Animations)
-            {
-                tweenAnimation.SetForceState(true);
-            }
+            Animations.SetForceState(true);
 
             SubscribeToValuesChanges();
         }

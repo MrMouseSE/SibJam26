@@ -1,5 +1,6 @@
 using CameraScripts;
 using GameSystemsScripts.CameraSystem;
+using GameSystemsScripts.GameInputScripts;
 using MainMenuScripts.SettingsHanlderScripts;
 using ScenesOperatingScripts;
 using SoundsComponentsScripts;
@@ -24,7 +25,8 @@ namespace GameStartupScripts
         {
             await SoundInstancerController.SetRefObjects(SoundObjectReference, GameAudioMixer);
             _gameSystemsHandler = new GameSystemsHandler();
-            _gameSystemsHandler.AddGameSystem(new CameraSystem(CameraContainer));
+            _gameSystemsHandler.AddCameraSystem(new GameCameraSystem(CameraContainer));
+            _gameSystemsHandler.AddGameSystem(new GameInputSystem());
             _audioMixerHandler = new AudioMixerHandler(GameAudioMixer);
             SettingsHandler.Mixer = _audioMixerHandler;
             SceneLoadingHandler.LoadScenes(ScenesLoadAtStart);
@@ -39,7 +41,7 @@ namespace GameStartupScripts
                 sceneRoot.Value.Item2.InitializeSceneSystems(_gameSystemsHandler);
             }
             SceneLoadingHandler.SetSceneActive(SceneNamesConst.MainMenuScene);
-            var cameraSystem = _gameSystemsHandler.GetGameSystem(typeof(CameraSystem)) as CameraSystem;
+            var cameraSystem = _gameSystemsHandler.GetGameSystem(typeof(GameCameraSystem)) as GameCameraSystem;
             cameraSystem.Component.CurrentCameraHolder = 
                 SceneLoadingHandler.SceneRoots[SceneNamesConst.MainMenuScene].Item2.GetCameraHolder();
             cameraSystem.Component.IsCameraUpdating = true;

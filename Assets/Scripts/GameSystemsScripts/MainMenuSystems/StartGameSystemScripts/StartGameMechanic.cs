@@ -20,7 +20,7 @@ namespace GameSystemsScripts.MainMenuSystems.StartGameSystemScripts
         public void UpdateMechanic(GameSystemsHandler gameSystemsHandler, float deltaTime)
         {
             var root = SceneLoadingHandler.SetSceneActive(SceneNamesConst.GameScene);
-            var cameraSystem = gameSystemsHandler.GetGameSystem((typeof(CameraSystem.CameraSystem))) as CameraSystem.CameraSystem;
+            var cameraSystem = gameSystemsHandler.GetGameSystem((typeof(CameraSystem.GameCameraSystem))) as CameraSystem.GameCameraSystem;
             cameraSystem.Component.CurrentCameraHolder = root.GetCameraHolder();
             cameraSystem.Component.IsCameraUpdating = true;
         }

@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Threading;
 using Cysharp.Threading.Tasks;
+using GameSystemsScripts.CameraSystem;
 using UnityEngine;
 
 namespace ScenesOperatingScripts
@@ -13,10 +14,22 @@ namespace ScenesOperatingScripts
         private CancellationTokenSource _updateCancellationTokenSource = new CancellationTokenSource();
         private bool _isProcess;
         
+        private GameCameraSystem _cameraSystem;
+        
         public GameSystemsHandler()
         {
             _isProcess = true;
             UpdateSystems(_updateCancellationTokenSource.Token).Forget();
+        }
+
+        public void AddCameraSystem(GameCameraSystem cameraSystem)
+        {
+            GameSystems.Add(typeof(GameCameraSystem), cameraSystem);
+        }
+
+        public GameCameraSystem GetCameraSystem()
+        {
+            return _cameraSystem;
         }
 
         public void AddGameSystem(IGameSystem gameSystem)

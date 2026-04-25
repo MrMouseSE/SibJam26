@@ -3,12 +3,12 @@ using ScenesOperatingScripts;
 
 namespace GameSystemsScripts.CameraSystem
 {
-    public class CameraSystem : IGameSystem
+    public class GameCameraSystem : IGameSystem
     {
         public CameraMechanic Mechanic;
         public CameraComponent Component;
 
-        public CameraSystem(CameraContainer container)
+        public GameCameraSystem(CameraContainer container)
         {
             Component = new CameraComponent(container);
             Mechanic = new CameraMechanic(Component);

@@ -1,9 +1,9 @@
-using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
+using UnityEngine.Audio;
 using Object = UnityEngine.Object;
 
 namespace SoundsComponentsScripts
@@ -14,9 +14,11 @@ namespace SoundsComponentsScripts
         private static readonly List<SoundObjectComponent> _usedObjectsPool = new();
 
         private static SoundObjectComponent _refSoundObject;
+        private static AudioMixer _gameAudioMixer;
 
-        public static async Task SetRefObject(AssetReference refObject)
+        public static async Task SetRefObjects(AssetReference refObject, AudioMixer gameAudioMixer)
         {
+            _gameAudioMixer = gameAudioMixer;
             var handle = Addressables.LoadAssetAsync<GameObject>(refObject);
             await handle;
             _refSoundObject = handle.Result.GetComponent<SoundObjectComponent>();
@@ -40,6 +42,7 @@ namespace SoundsComponentsScripts
             var soundObject = _soundObjectsPool[0];
             soundObject.SoundTrasform.position = point.position;
             soundObject.ObjectAudioSource.clip = clip;
+            soundObject.ObjectAudioSource.outputAudioMixerGroup = _gameAudioMixer.FindMatchingGroups("SoundsFX")[0];
             soundObject.ObjectAudioSource.Play();
             _soundObjectsPool.Remove(soundObject);
             _usedObjectsPool.Add(soundObject);
@@ -54,6 +57,7 @@ namespace SoundsComponentsScripts
             var soundObject = _soundObjectsPool[0];
             soundObject.SoundTrasform.position = point.position;
             soundObject.ObjectAudioSource.clip = clip;
+            soundObject.ObjectAudioSource.outputAudioMixerGroup = _gameAudioMixer.FindMatchingGroups("Music")[0];
             soundObject.ObjectAudioSource.Play();
             _soundObjectsPool.Remove(soundObject);
             _usedObjectsPool.Add(soundObject);

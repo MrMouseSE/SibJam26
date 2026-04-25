@@ -19,7 +19,7 @@ namespace GameStartupScripts
         
         public async void Awake()
         {
-            await SoundInstancerController.SetRefObject(SoundObjectReference);
+            await SoundInstancerController.SetRefObjects(SoundObjectReference, GameAudioMixer);
             _gameSystemsHandler = new GameSystemsHandler();
             _audioMixerHandler = new AudioMixerHandler(GameAudioMixer);
             SettingsHandler.Mixer = _audioMixerHandler;

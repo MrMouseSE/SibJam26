@@ -2189,11 +2189,35 @@ PrefabInstance:
       value: MainMenuMusic
       objectReference: {fileID: 0}
     - target: {fileID: 2417264433075969242, guid: ca26a3ebbe954af40b82894b8b2338d7, type: 3}
+      propertyPath: MusicClips.Array.data[2].Name
+      value: MainMenuMusic
+      objectReference: {fileID: 0}
+    - target: {fileID: 2417264433075969242, guid: ca26a3ebbe954af40b82894b8b2338d7, type: 3}
+      propertyPath: MusicClips.Array.data[3].Name
+      value: MainMenuMusic
+      objectReference: {fileID: 0}
+    - target: {fileID: 2417264433075969242, guid: ca26a3ebbe954af40b82894b8b2338d7, type: 3}
+      propertyPath: MusicClips.Array.data[4].Name
+      value: MainMenuMusic
+      objectReference: {fileID: 0}
+    - target: {fileID: 2417264433075969242, guid: ca26a3ebbe954af40b82894b8b2338d7, type: 3}
       propertyPath: MusicClips.Array.data[0].Sound
       value: 
       objectReference: {fileID: 8300000, guid: 4455b952899cc40429628246d2116529, type: 3}
     - target: {fileID: 2417264433075969242, guid: ca26a3ebbe954af40b82894b8b2338d7, type: 3}
       propertyPath: MusicClips.Array.data[1].Sound
+      value: 
+      objectReference: {fileID: 8300000, guid: eccba45cf6b2ab54d9f96bd6a5a6a2ae, type: 3}
+    - target: {fileID: 2417264433075969242, guid: ca26a3ebbe954af40b82894b8b2338d7, type: 3}
+      propertyPath: MusicClips.Array.data[2].Sound
+      value: 
+      objectReference: {fileID: 8300000, guid: eccba45cf6b2ab54d9f96bd6a5a6a2ae, type: 3}
+    - target: {fileID: 2417264433075969242, guid: ca26a3ebbe954af40b82894b8b2338d7, type: 3}
+      propertyPath: MusicClips.Array.data[3].Sound
+      value: 
+      objectReference: {fileID: 8300000, guid: eccba45cf6b2ab54d9f96bd6a5a6a2ae, type: 3}
+    - target: {fileID: 2417264433075969242, guid: ca26a3ebbe954af40b82894b8b2338d7, type: 3}
+      propertyPath: MusicClips.Array.data[4].Sound
       value: 
       objectReference: {fileID: 8300000, guid: eccba45cf6b2ab54d9f96bd6a5a6a2ae, type: 3}
     m_RemovedComponents: []

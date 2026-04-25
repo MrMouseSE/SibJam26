@@ -61,4 +61,6 @@ MonoBehaviour:
   AudioTransform: {fileID: 562644735866342297}
   MusicClips:
   - Name: MainMenuMusic
-    Sound: {fileID: 0}
+    Sound: {fileID: 8300000, guid: 4455b952899cc40429628246d2116529, type: 3}
+  - Name: MainMenuMusic
+    Sound: {fileID: 8300000, guid: eccba45cf6b2ab54d9f96bd6a5a6a2ae, type: 3}

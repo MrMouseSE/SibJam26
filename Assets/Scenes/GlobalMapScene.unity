@@ -153,7 +153,7 @@ MonoBehaviour:
   - {fileID: 1684397764}
   - {fileID: 1162454664}
   SceneMusicContainer: {fileID: 1363052642}
-  SceneSystemsContainer: {fileID: 0}
+  SceneSystemsContainer: {fileID: 1684397767}
 --- !u!4 &21613461
 Transform:
   m_ObjectHideFlags: 0

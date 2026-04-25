@@ -1,10 +1,14 @@
 using System.Collections.Generic;
-using UnityEngine;
+using ScenesOperatingScripts;
 
 namespace GlobalMapScripts
 {
-    public class GlobalMapSystemContainer : MonoBehaviour
+    public class GlobalMapSystemContainer : SceneSystemsContainer
     {
         public List<PointOfInterestContainer> PointOfInterestContainer;
+
+        public override void InitializeSceneSystems(GameSystemsHandler systemsHandler)
+        {
+        }
     }
 }

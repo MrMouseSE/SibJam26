@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using CameraScripts;
 using SoundsComponentsScripts;
 using UnityEngine;
 
@@ -9,6 +10,7 @@ namespace ScenesOperatingScripts
         public List<GameObject> VisibleObjects;
         
         public AreaMusicContainer SceneMusicContainer;
+        public CameraHolder CameraHolder;
         
         [Space]
         public SceneSystemsContainer SceneSystemsContainer;
@@ -36,6 +38,11 @@ namespace ScenesOperatingScripts
         public void InitializeSceneSystems(GameSystemsHandler systemsHandler)
         {
             SceneSystemsContainer.InitializeSceneSystems(systemsHandler);
+        }
+
+        public CameraHolder GetCameraHolder()
+        {
+            return CameraHolder;
         }
     }
 }

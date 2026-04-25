@@ -1,5 +1,4 @@
 using MainMenuScripts;
-using MainMenuScripts.StartGameSystemScripts;
 using ScenesOperatingScripts;
 
 namespace GameSystemsScripts.MainMenuSystems.StartGameSystemScripts
@@ -18,7 +17,7 @@ namespace GameSystemsScripts.MainMenuSystems.StartGameSystemScripts
         public void UpdateSystem(GameSystemsHandler gameSystemsHandler, float deltaTime)
         {
             if (Component.IsActionLock) return;
-            if (Component.IsStartGameButtonPushed) Mechanic.StartGame();
+            if (Component.IsStartGameButtonPushed) Mechanic.UpdateMechanic(gameSystemsHandler, deltaTime);
         }
 
         public void DisposeSystem()

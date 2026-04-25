@@ -1,3 +1,4 @@
+using CameraScripts;
 using UnityEngine;
 
 namespace ScenesOperatingScripts
@@ -8,5 +9,6 @@ namespace ScenesOperatingScripts
         public void AddObjectToSceneVisibility(GameObject go);
         public void SetSceneObjectsActive(bool active);
         public void InitializeSceneSystems(GameSystemsHandler systemsHandler);
+        public CameraHolder GetCameraHolder();
     }
 }

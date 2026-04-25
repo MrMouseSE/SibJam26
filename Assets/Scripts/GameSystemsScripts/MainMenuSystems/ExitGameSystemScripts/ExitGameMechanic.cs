@@ -1,5 +1,5 @@
 using Cysharp.Threading.Tasks;
-using MainMenuScripts.StartGameSystemScripts;
+using ScenesOperatingScripts;
 
 namespace GameSystemsScripts.MainMenuSystems.ExitGameSystemScripts
 {
@@ -15,6 +15,10 @@ namespace GameSystemsScripts.MainMenuSystems.ExitGameSystemScripts
         private void ExitGameMethod()
         {
             Component.IsGameExitProcess = true;
+        }
+
+        public void UpdateMechanic(GameSystemsHandler gameSystemsHandler, float deltaTime)
+        {
         }
 
         public void DisposeMechanic()

@@ -1,4 +1,5 @@
-using MainMenuScripts.StartGameSystemScripts;
+using GameSystemsScripts;
+using ScenesOperatingScripts;
 
 namespace GlobalMapScripts.GlobalMapPointsOfInterest
 {
@@ -9,6 +10,11 @@ namespace GlobalMapScripts.GlobalMapPointsOfInterest
         public PointOfInterestMechanic(PointOfInterestComponent component)
         {
             Component = component;
+        }
+
+        public void UpdateMechanic(GameSystemsHandler gameSystemsHandler, float deltaTime)
+        {
+            throw new System.NotImplementedException();
         }
 
         public void DisposeMechanic()

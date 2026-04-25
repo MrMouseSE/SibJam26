@@ -37,13 +37,17 @@ namespace GameStartupScripts
             return handle.Result;
         }
 
-        public static void SetSceneActive(string sceneName)
+        public static ISceneRoot SetSceneActive(string sceneName)
         {
+            ISceneRoot root = null;
             foreach (var sceneRoot in SceneRoots)
             {
                 sceneRoot.Value.Item2.SetSceneObjectsActive(sceneRoot.Key == sceneName);
+                if (sceneRoot.Key == sceneName)
+                    root = sceneRoot.Value.Item2;
             }
             SceneManager.SetActiveScene(SceneManager.GetSceneByName(sceneName));
+            return root;
         }
     }
 }

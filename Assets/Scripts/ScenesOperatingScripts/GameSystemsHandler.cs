@@ -12,6 +12,7 @@ namespace ScenesOperatingScripts
 
         private CancellationTokenSource _updateCancellationTokenSource = new CancellationTokenSource();
         private bool _isProcess;
+        
         public GameSystemsHandler()
         {
             _isProcess = true;

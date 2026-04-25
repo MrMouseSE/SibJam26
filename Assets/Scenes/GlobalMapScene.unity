@@ -153,6 +153,7 @@ MonoBehaviour:
   - {fileID: 1684397764}
   - {fileID: 1162454664}
   SceneMusicContainer: {fileID: 1363052642}
+  CameraHolder: {fileID: 512127415887224982}
   SceneSystemsContainer: {fileID: 1684397767}
 --- !u!4 &21613461
 Transform:
@@ -809,6 +810,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5015039516329808185, guid: 43728e781c956124ba779ce097681103, type: 3}
   m_PrefabInstance: {fileID: 512127415887224980}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &512127415887224982 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6639119678751670420, guid: 43728e781c956124ba779ce097681103, type: 3}
+  m_PrefabInstance: {fileID: 512127415887224980}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44918c7e32a44b5689c9abab05779172, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CameraScripts.CameraHolder
 --- !u!1001 &2947079030616298445
 PrefabInstance:
   m_ObjectHideFlags: 0

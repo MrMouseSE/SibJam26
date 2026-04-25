@@ -1,9 +1,7 @@
 using Cysharp.Threading.Tasks;
 using MainMenuScripts.StartGameSystemScripts;
-using ScenesOperatingScripts;
-using UnityEngine;
 
-namespace MainMenuScripts.ExitGameSystemScripts
+namespace GameSystemsScripts.MainMenuSystems.ExitGameSystemScripts
 {
     public class ExitGameMechanic : IGameMechanic
     {

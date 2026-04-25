@@ -153,7 +153,7 @@ MonoBehaviour:
   - {fileID: 1684397764}
   - {fileID: 1162454664}
   SceneMusicContainer: {fileID: 1363052642}
-  SceneSystemsContainer: {fileID: 1684397765}
+  SceneSystemsContainer: {fileID: 0}
 --- !u!4 &21613461
 Transform:
   m_ObjectHideFlags: 0
@@ -388,13 +388,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 906147265}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: 0.9837233, z: -0, w: 0.1796904}
+  m_LocalPosition: {x: -0.01, y: 0, z: 0.46}
   m_LocalScale: {x: 0.10529125, y: 0.10529125, z: 0.10529125}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1112056558}
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 159.297, z: 0}
 --- !u!212 &906147267
 SpriteRenderer:
   serializedVersion: 2
@@ -935,13 +935,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1434724179}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalRotation: {x: -0, y: 0.9966138, z: -0, w: 0.08222504}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.087608635, y: 0.087608635, z: 0.087608635}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1446910912}
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 170.567, z: 0}
 --- !u!212 &1434724181
 SpriteRenderer:
   serializedVersion: 2
@@ -1042,6 +1042,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1507928243}
+  - component: {fileID: 1507928244}
   m_Layer: 0
   m_Name: MainTower
   m_TagString: Untagged
@@ -1065,6 +1066,23 @@ Transform:
   - {fileID: 1589225027}
   m_Father: {fileID: 84991411}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1507928244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1507928242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a25933b78a47b346a41a8e2e96abb3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GlobalMapScripts.GlobalMapEnvironmentContainer
+  EnvironmentTransform: {fileID: 0}
+  EnvironmentRenderer: {fileID: 0}
+  EnvironmentParticleSystem: {fileID: 0}
+  EnvironmentCollider: {fileID: 0}
+  AudioContainer: {fileID: 0}
 --- !u!1 &1589225026
 GameObject:
   m_ObjectHideFlags: 0
@@ -1106,7 +1124,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1684397766}
-  - component: {fileID: 1684397765}
+  - component: {fileID: 1684397767}
   m_Layer: 0
   m_Name: ----InteractiveObjects----
   m_TagString: Untagged
@@ -1114,20 +1132,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1684397765
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1684397764}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1fe79a24e26753458da2ee46562fbe5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::MainMenuSystemContainer
-  StartButtonContainer: {fileID: 0}
-  ExitButtonContainer: {fileID: 0}
 --- !u!4 &1684397766
 Transform:
   m_ObjectHideFlags: 0
@@ -1145,6 +1149,18 @@ Transform:
   - {fileID: 939880630}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1684397767
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1684397764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9743288b883d4c245a10ee63360c1b01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GlobalMapSystemContainer
 --- !u!1 &1687005944
 GameObject:
   m_ObjectHideFlags: 0
@@ -1202,13 +1218,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2109126792}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalRotation: {x: -0, y: 0.98690724, z: -0, w: 0.16128911}
   m_LocalPosition: {x: 0, y: 0, z: -0.06}
   m_LocalScale: {x: 0.2177378, y: 0.2177378, z: 0.2177378}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1589225027}
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 161.437, z: 0}
 --- !u!212 &2109126794
 SpriteRenderer:
   serializedVersion: 2

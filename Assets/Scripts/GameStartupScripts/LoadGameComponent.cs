@@ -1,6 +1,6 @@
 using CameraScripts;
 using GameSystemsScripts.CameraSystem;
-using GameSystemsScripts.GameInputScripts;
+using GameSystemsScripts.GameInputSystem;
 using MainMenuScripts.SettingsHanlderScripts;
 using ScenesOperatingScripts;
 using SoundsComponentsScripts;

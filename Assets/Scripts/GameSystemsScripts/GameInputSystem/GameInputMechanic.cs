@@ -1,9 +1,8 @@
-using GameSystemsScripts.CameraSystem;
 using ScenesOperatingScripts;
 using SupportScripts;
 using UnityEngine.InputSystem;
 
-namespace GameSystemsScripts.GameInputScripts
+namespace GameSystemsScripts.GameInputSystem
 {
     public class GameInputMechanic : IGameMechanic
     {

@@ -1,6 +1,6 @@
 using MainMenuScripts;
 
-namespace GameSystemsScripts.MainMenuSystems.ExitGameSystemScripts
+namespace GameSystemsScripts.MainMenuSystems.ExitGameSystem
 {
     public class ExitGameComponent
     {

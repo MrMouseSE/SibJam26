@@ -1,5 +1,5 @@
-using GameSystemsScripts.MainMenuSystems.ExitGameSystemScripts;
-using GameSystemsScripts.MainMenuSystems.StartGameSystemScripts;
+using GameSystemsScripts.MainMenuSystems.ExitGameSystem;
+using GameSystemsScripts.MainMenuSystems.StartGameSystem;
 using ScenesOperatingScripts;
 
 namespace MainMenuScripts

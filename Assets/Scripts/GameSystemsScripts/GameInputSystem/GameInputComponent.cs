@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace GameSystemsScripts.GameInputScripts
+namespace GameSystemsScripts.GameInputSystem
 {
     public class GameInputComponent
     {

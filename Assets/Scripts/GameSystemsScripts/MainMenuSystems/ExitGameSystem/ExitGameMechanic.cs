@@ -1,7 +1,7 @@
 using Cysharp.Threading.Tasks;
 using ScenesOperatingScripts;
 
-namespace GameSystemsScripts.MainMenuSystems.ExitGameSystemScripts
+namespace GameSystemsScripts.MainMenuSystems.ExitGameSystem
 {
     public class ExitGameMechanic : IGameMechanic
     {

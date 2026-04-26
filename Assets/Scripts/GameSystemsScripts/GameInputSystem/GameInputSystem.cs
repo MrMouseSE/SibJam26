@@ -1,6 +1,6 @@
 using ScenesOperatingScripts;
 
-namespace GameSystemsScripts.GameInputScripts
+namespace GameSystemsScripts.GameInputSystem
 {
     public class GameInputSystem : IGameSystem
     {

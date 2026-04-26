@@ -1,6 +1,6 @@
 using MainMenuScripts;
 
-namespace GameSystemsScripts.MainMenuSystems.StartGameSystemScripts
+namespace GameSystemsScripts.MainMenuSystems.StartGameSystem
 {
     public class StartGameComponent
     {

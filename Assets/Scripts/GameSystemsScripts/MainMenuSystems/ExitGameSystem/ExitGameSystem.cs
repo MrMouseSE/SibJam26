@@ -1,7 +1,7 @@
 using MainMenuScripts;
 using ScenesOperatingScripts;
 
-namespace GameSystemsScripts.MainMenuSystems.ExitGameSystemScripts
+namespace GameSystemsScripts.MainMenuSystems.ExitGameSystem
 {
     public class ExitGameSystem : IGameSystem
     {

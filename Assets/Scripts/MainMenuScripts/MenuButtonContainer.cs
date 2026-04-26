@@ -58,7 +58,6 @@ namespace MainMenuScripts
         
         private UniTaskAnimationObject StartUniTaskAnimationProcess(TweenGroupAnimation animations, float time, bool isForward)
         {
-            
             _animationCancellationToken.Cancel();
             _animationCancellationToken = new CancellationTokenSource();
             UniTaskAnimationObject uniTaskAnimationObject = new();

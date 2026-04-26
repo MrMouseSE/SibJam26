@@ -1,7 +1,7 @@
 using MainMenuScripts;
 using ScenesOperatingScripts;
 
-namespace GameSystemsScripts.MainMenuSystems.StartGameSystemScripts
+namespace GameSystemsScripts.MainMenuSystems.StartGameSystem
 {
     public class StartGameSystem : IGameSystem
     {

@@ -1,7 +1,7 @@
 using GameStartupScripts;
 using ScenesOperatingScripts;
 
-namespace GameSystemsScripts.MainMenuSystems.StartGameSystemScripts
+namespace GameSystemsScripts.MainMenuSystems.StartGameSystem
 {
     public class StartGameMechanic : IGameMechanic
     {

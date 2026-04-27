@@ -1,3 +1,4 @@
+using GameSystemsScripts.GlobalMapSystems.PointsOfInterest;
 using ScenesOperatingScripts;
 
 namespace GlobalMapScripts.GlobalMapPointsOfInterest
@@ -15,7 +16,7 @@ namespace GlobalMapScripts.GlobalMapPointsOfInterest
     
         public void UpdateSystem(GameSystemsHandler gameSystemsHandler, float deltaTime)
         {
-            throw new System.NotImplementedException();
+            Mechanic.UpdateMechanic(gameSystemsHandler, deltaTime);
         }
 
         public void DisposeSystem()

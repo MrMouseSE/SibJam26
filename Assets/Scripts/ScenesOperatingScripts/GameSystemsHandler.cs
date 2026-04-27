@@ -22,16 +22,6 @@ namespace ScenesOperatingScripts
             UpdateSystems(_updateCancellationTokenSource.Token).Forget();
         }
 
-        public void AddCameraSystem(GameCameraSystem cameraSystem)
-        {
-            GameSystems.Add(typeof(GameCameraSystem), cameraSystem);
-        }
-
-        public GameCameraSystem GetCameraSystem()
-        {
-            return _cameraSystem;
-        }
-
         public void AddGameSystem(IGameSystem gameSystem)
         {
             GameSystems.Add(gameSystem.GetType(), gameSystem);

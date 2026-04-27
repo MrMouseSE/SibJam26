@@ -19,9 +19,15 @@ namespace GameCharactersScripts
             return component;
         }
 
-        public static CharacterGroupComponent GenerateCharacterGroup()
+        public static CharacterGroupComponent GenerateCharacterRandomGroup(CharactersGenerationDescriptionsHolder description, int groupSize)
         {
-            
+            CharacterGroupComponent component = new CharacterGroupComponent();
+            component.Characters = new CharacterComponent[groupSize];
+            for (int i = 0; i < groupSize; i++)
+            {
+                component.Characters[i] = GenerateCharacterFromDescription(description.GetRandomCharacter());
+            }
+            return component;
         }
     }
 }

@@ -25,7 +25,7 @@ namespace GameStartupScripts
         {
             await SoundInstancerController.SetRefObjects(SoundObjectReference, GameAudioMixer);
             _gameSystemsHandler = new GameSystemsHandler();
-            _gameSystemsHandler.AddCameraSystem(new GameCameraSystem(CameraContainer));
+            _gameSystemsHandler.AddGameSystem(new GameCameraSystem(CameraContainer));
             _gameSystemsHandler.AddGameSystem(new GameInputSystem());
             _audioMixerHandler = new AudioMixerHandler(GameAudioMixer);
             SettingsHandler.Mixer = _audioMixerHandler;

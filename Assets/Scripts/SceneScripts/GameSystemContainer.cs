@@ -1,6 +1,6 @@
 using ScenesOperatingScripts;
 
-namespace GameScripts
+namespace SceneScripts
 {
     public class GameSystemContainer : SceneSystemsContainer
     {

@@ -5,13 +5,10 @@ namespace GameCharactersScripts
     [CreateAssetMenu(menuName = "ScriptableObjects/GameSO/Create CharacterGenerationDescription", fileName = "CharacterGenerationDescription", order = 0)]
     public class CharacterGenerationDescription : ScriptableObject
     {
-        public Vector2Int CharacterMinMaxItemSlotsAvailable;
-        public Sprite[] CharacterSprite;
-
-        [Space]
+        public Vector2 MinMaxHits;
         public Vector2 MinMaxMorale;
         public Vector2 MinMaxDamage;
-        public Vector2 MinMaxHits;
+        public Vector2Int CharacterMinMaxItemSlotsAvailable;
 
         [Space]
         public CharacterHistoryDescription[] CharacterHistoryes;

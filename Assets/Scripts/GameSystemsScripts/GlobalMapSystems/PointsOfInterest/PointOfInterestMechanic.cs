@@ -1,7 +1,9 @@
-using GameSystemsScripts;
+using GameSystemsScripts.CameraSystem;
+using GlobalMapScripts.GlobalMapPointsOfInterest;
 using ScenesOperatingScripts;
+using SupportScripts;
 
-namespace GlobalMapScripts.GlobalMapPointsOfInterest
+namespace GameSystemsScripts.GlobalMapSystems.PointsOfInterest
 {
     public class PointOfInterestMechanic : IGameMechanic
     {
@@ -14,12 +16,15 @@ namespace GlobalMapScripts.GlobalMapPointsOfInterest
 
         public void UpdateMechanic(GameSystemsHandler gameSystemsHandler, float deltaTime)
         {
-            throw new System.NotImplementedException();
+            var inputComponent = ((GameInputSystem.GameInputSystem)gameSystemsHandler.GetGameSystem(typeof(GameInputSystem.GameInputSystem))).Component;
+            if (!inputComponent.MouseWasPressedThisFrame) return;
+            StaticSupportMethods.GetAllCollidersFromMouseCast(
+                ((GameCameraSystem)gameSystemsHandler.GetGameSystem(typeof(GameCameraSystem))).Component.CurrentCamera.CameraObject,
+                inputComponent.MousePressedPosition);
         }
 
         public void DisposeMechanic()
         {
-            throw new System.NotImplementedException();
         }
     }
 }

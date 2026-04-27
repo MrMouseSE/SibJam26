@@ -1,3 +1,4 @@
+using GameSystemsScripts.CameraSystem;
 using ScenesOperatingScripts;
 using SupportScripts;
 using UnityEngine.InputSystem;
@@ -19,7 +20,7 @@ namespace GameSystemsScripts.GameInputSystem
             if (Component.MouseWasPressedThisFrame)
             {
                 Component.MousePressedPosition = Mouse.current.position.ReadValue();
-                var camera = gameSystemsHandler.GetCameraSystem().Component.CurrentCamera.CameraObject;
+                var camera = ((GameCameraSystem)gameSystemsHandler.GetGameSystem(typeof(GameCameraSystem))).Component.CurrentCamera.CameraObject;
                 Component.MousePressedHitColliders = StaticSupportMethods.GetAllCollidersFromMouseCast(camera, 
                         Component.MousePressedPosition);
             }
@@ -28,7 +29,7 @@ namespace GameSystemsScripts.GameInputSystem
             if (Component.MouseWasReleasedThisFrame)
             {
                 Component.MouseReleasedPosition = Mouse.current.position.ReadValue();
-                var camera = gameSystemsHandler.GetCameraSystem().Component.CurrentCamera.CameraObject;
+                var camera = ((GameCameraSystem)gameSystemsHandler.GetGameSystem(typeof(GameCameraSystem))).Component.CurrentCamera.CameraObject;
                 Component.MousePressedHitColliders = StaticSupportMethods.GetAllCollidersFromMouseCast(camera, 
                         Component.MousePressedPosition);
             }

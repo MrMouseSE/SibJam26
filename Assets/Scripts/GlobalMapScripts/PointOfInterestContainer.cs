@@ -1,5 +1,6 @@
 using SoundsComponentsScripts;
 using UnityEngine;
+using UnityEngine.Splines;
 
 namespace GlobalMapScripts
 {
@@ -10,5 +11,6 @@ namespace GlobalMapScripts
         public ParticleSystem EnvironmentParticleSystem;
         public Collider EnvironmentCollider;
         public AudioContainer AudioContainer; 
+        public SplineContainer TravelPath;
     }
 }

@@ -3,7 +3,7 @@ using System;
 namespace GameCharactersScripts
 {
     [Serializable]
-    public class CharacterGenerationPercentHolder
+    public class CharacterGenerationDifficultyDescription
     {
         public string CharactersDifficulty;
         public float GetPercentage;

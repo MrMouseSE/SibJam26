@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 
 namespace GameCharactersScripts
@@ -6,6 +7,8 @@ namespace GameCharactersScripts
     {
         public Transform CharacterTransform;
         public Sprite CharacterSprite;
+        
+        public TMP_Text CharacterName;
         
         public CharacterItemSlot[] CharacterItemSlots;
     }

@@ -6,15 +6,16 @@ namespace GameCharactersScripts
         fileName = "CharactersGenerationDescriptionsHolder", order = 0)]
     public class CharactersGenerationDescriptionsHolder : ScriptableObject
     {
-        public CharacterGenerationPercentHolder[] Characters;
+        
+        public CharacterGenerationDifficultyDescription[] Characters;
 
         public CharacterGenerationDescription GetRandomCharacter()
         {
-            var group = GetRandomGroup();
+            var group = GetRandomDifficultyGroup();
             return group.CharactersDescriptions[Random.Range(0, group.CharactersDescriptions.Length)];
         }
 
-        private CharacterGenerationPercentHolder GetRandomGroup()
+        private CharacterGenerationDifficultyDescription GetRandomDifficultyGroup()
         {
             return Characters[Random.Range(0, Characters.Length)];
         }

@@ -1,7 +1,13 @@
+using GameCharactersScripts;
+
 namespace GameSystemsScripts.GameCharactersSystems.CharacterSystem
 {
     public class CharacterComponent
     {
+        public GameCharacterContainer Container;
+        
+        public CharacterHistoryDescription CharacterHistoryDescription;
+        
         public float MaxHits;
         public float MaxMorale;
         public float MaxDamage;

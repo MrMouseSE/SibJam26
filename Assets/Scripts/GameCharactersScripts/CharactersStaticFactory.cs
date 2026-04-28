@@ -1,13 +1,25 @@
 using GameSystemsScripts.GameCharactersSystems.CharactersGroupSystem;
 using GameSystemsScripts.GameCharactersSystems.CharacterSystem;
+using UnityEngine;
 
 namespace GameCharactersScripts
 {
-    public class CharactersStaticFactory
+    public static class CharactersStaticFactory
     {
+        private static CharactersGenerationDescriptionsHolder _characters;
+
+        public static void SetDescription(CharactersGenerationDescriptionsHolder characters)
+        {
+            _characters = characters;
+        }
+        
         public static CharacterComponent GenerateCharacterFromDescription(CharacterGenerationDescription description)
         {
             CharacterComponent component = new CharacterComponent();
+            component.Container = Object.Instantiate(description.CharacterContainer);
+            component.CharacterHistoryDescription = description.GetRandomCharacterHistoryDescription();
+            component.Container.CharacterSprite = component.CharacterHistoryDescription.CharacterSprite;
+            component.Container.CharacterName.text = component.CharacterHistoryDescription.CharacterName;
             component.MaxHits = description.GetCurrentValue(description.MinMaxHits);
             component.MaxMorale = description.GetCurrentValue(description.MinMaxMorale);
             component.MaxDamage = description.GetCurrentValue(description.MinMaxDamage);
@@ -19,15 +31,16 @@ namespace GameCharactersScripts
             return component;
         }
 
-        public static CharacterGroupComponent GenerateCharacterRandomGroup(CharactersGenerationDescriptionsHolder description, int groupSize)
+        public static CharacterGroupComponent GenerateRandomGroup()
         {
-            CharacterGroupComponent component = new CharacterGroupComponent();
-            component.Characters = new CharacterComponent[groupSize];
+            int groupSize = Random.Range(_characters.)
+            CharacterGroupComponent groupComponent = new CharacterGroupComponent();
+            groupComponent.Characters = new CharacterComponent[groupSize];
             for (int i = 0; i < groupSize; i++)
             {
-                component.Characters[i] = GenerateCharacterFromDescription(description.GetRandomCharacter());
+                groupComponent.Characters[i] = GenerateCharacterFromDescription(_characters.GetRandomCharacter());
             }
-            return component;
+            return groupComponent;
         }
     }
 }

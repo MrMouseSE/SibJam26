@@ -1,3 +1,4 @@
+using GameSystemsScripts.GlobalMapSystems.GlobalMapCharactersGroupSystem;
 using UnityEngine;
 
 namespace GameCharactersScripts
@@ -6,16 +7,16 @@ namespace GameCharactersScripts
         fileName = "CharactersGenerationDescriptionsHolder", order = 0)]
     public class CharactersGenerationDescriptionsHolder : ScriptableObject
     {
-        
+        public CharactersGroupContainer GlobalMapToken;
         public CharacterGenerationDifficultyDescription[] Characters;
 
         public CharacterGenerationDescription GetRandomCharacter()
         {
-            var group = GetRandomDifficultyGroup();
+            var group = GetRandomGroup();
             return group.CharactersDescriptions[Random.Range(0, group.CharactersDescriptions.Length)];
         }
 
-        private CharacterGenerationDifficultyDescription GetRandomDifficultyGroup()
+        private CharacterGenerationDifficultyDescription GetRandomGroup()
         {
             return Characters[Random.Range(0, Characters.Length)];
         }

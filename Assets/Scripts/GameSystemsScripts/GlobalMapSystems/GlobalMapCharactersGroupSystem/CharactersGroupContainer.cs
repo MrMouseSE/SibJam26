@@ -4,16 +4,18 @@ using UnityEngine;
 
 namespace GameSystemsScripts.GlobalMapSystems.GlobalMapCharactersGroupSystem
 {
-    public class CharactersGroupsContainer : MonoBehaviour
+    public class CharactersGroupContainer : MonoBehaviour
     {
         public Transform GroupTransform;
         public GameObject GroupObject;
         
         public CharacterGroupComponent CharacterGroup;
-        public PointOfInterestComponent PointOfInterest;
+        public PointOfInterestComponent CurrentPointOfInterest;
+        public PointOfInterestComponent PreviousPointOfInterest;
         
         public bool IsGroupInAdventureProcess;
         public float AdventureProgressValue;
         public bool AdventureForward;
+        public float SpeedBackwardMultiplier = 1f;
     }
 }

@@ -1,5 +1,4 @@
 using GameSystemsScripts.CameraSystem;
-using GlobalMapScripts.GlobalMapPointsOfInterest;
 using ScenesOperatingScripts;
 using SupportScripts;
 
@@ -18,9 +17,11 @@ namespace GameSystemsScripts.GlobalMapSystems.PointsOfInterest
         {
             var inputComponent = ((GameInputSystem.GameInputSystem)gameSystemsHandler.GetGameSystem(typeof(GameInputSystem.GameInputSystem))).Component;
             if (!inputComponent.MouseWasPressedThisFrame) return;
-            StaticSupportMethods.GetAllCollidersFromMouseCast(
+            var collides = StaticSupportMethods.GetAllCollidersFromMouseCast(
                 ((GameCameraSystem)gameSystemsHandler.GetGameSystem(typeof(GameCameraSystem))).Component.CurrentCamera.CameraObject,
                 inputComponent.MousePressedPosition);
+            if (collides.Count == 0) return;
+            Component.IsPointInProcess = true;
         }
 
         public void DisposeMechanic()

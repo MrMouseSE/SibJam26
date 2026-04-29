@@ -11,7 +11,6 @@ namespace GameCharactersScripts
         public Vector2 MinMaxHits;
         public Vector2 MinMaxMorale;
         public Vector2 MinMaxDamage;
-        public Vector2Int CharacterMinMaxItemSlotsAvailable;
 
         [Space]
         public CharacterHistoryDescription[] CharacterHistoryes;

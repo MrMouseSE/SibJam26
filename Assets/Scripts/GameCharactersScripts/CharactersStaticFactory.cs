@@ -1,25 +1,15 @@
 using GameSystemsScripts.GameCharactersSystems.CharactersGroupSystem;
 using GameSystemsScripts.GameCharactersSystems.CharacterSystem;
+using GameSystemsScripts.GlobalMapSystems.GlobalMapCharactersGroupSystem;
 using UnityEngine;
 
 namespace GameCharactersScripts
 {
-    public static class CharactersStaticFactory
+    public class CharactersStaticFactory
     {
-        private static CharactersGenerationDescriptionsHolder _characters;
-
-        public static void SetDescription(CharactersGenerationDescriptionsHolder characters)
-        {
-            _characters = characters;
-        }
-        
         public static CharacterComponent GenerateCharacterFromDescription(CharacterGenerationDescription description)
         {
             CharacterComponent component = new CharacterComponent();
-            component.Container = Object.Instantiate(description.CharacterContainer);
-            component.CharacterHistoryDescription = description.GetRandomCharacterHistoryDescription();
-            component.Container.CharacterSprite = component.CharacterHistoryDescription.CharacterSprite;
-            component.Container.CharacterName.text = component.CharacterHistoryDescription.CharacterName;
             component.MaxHits = description.GetCurrentValue(description.MinMaxHits);
             component.MaxMorale = description.GetCurrentValue(description.MinMaxMorale);
             component.MaxDamage = description.GetCurrentValue(description.MinMaxDamage);
@@ -31,16 +21,20 @@ namespace GameCharactersScripts
             return component;
         }
 
-        public static CharacterGroupComponent GenerateRandomGroup()
+        public static CharacterGroupComponent GenerateCharacterRandomGroup(CharactersGenerationDescriptionsHolder description, int groupSize)
         {
-            int groupSize = Random.Range(_characters.)
-            CharacterGroupComponent groupComponent = new CharacterGroupComponent();
-            groupComponent.Characters = new CharacterComponent[groupSize];
+            CharacterGroupComponent component = new CharacterGroupComponent();
+            component.Characters = new CharacterComponent[groupSize];
             for (int i = 0; i < groupSize; i++)
             {
-                groupComponent.Characters[i] = GenerateCharacterFromDescription(_characters.GetRandomCharacter());
+                component.Characters[i] = GenerateCharacterFromDescription(description.GetRandomCharacter());
             }
-            return groupComponent;
+            return component;
+        }
+
+        public static CharactersGroupContainer CreateGlobalMapGroupContainer(CharactersGenerationDescriptionsHolder description)
+        {
+            return Object.Instantiate(description.GlobalMapToken);
         }
     }
 }

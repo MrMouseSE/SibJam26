@@ -12,5 +12,6 @@ namespace GlobalMapScripts
         public Collider EnvironmentCollider;
         public AudioContainer AudioContainer; 
         public SplineContainer TravelPath;
+        public float TravelSpeed;
     }
 }

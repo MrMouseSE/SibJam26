@@ -1,7 +1,9 @@
+using System.Collections.Generic;
+
 namespace GameSystemsScripts.GlobalMapSystems.GlobalMapCharactersGroupSystem
 {
     public class GlobalMapCharactersGroupComponent
     {
-        public CharactersGroupsContainer[] CharactersGroups;
+        public List<CharactersGroupContainer> CharactersGroups;
     }
 }

@@ -7,6 +7,7 @@ namespace GameSystemsScripts.CoffeeSystemsScripts.ElementSystemScripts.ElementsH
     {
         public int CurrentElementsHandCapacity;
         public int CurrentElementsSwapCount;
+        public int UnusedSwaps;
         public ElementsHandDescription ElementsHandDescription;
 
         public ElementsHandComponent(ElementsHandDescription elementsHandDescription)

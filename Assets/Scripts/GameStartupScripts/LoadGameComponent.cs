@@ -8,6 +8,9 @@ using GameSystemsScripts.CoffeeSystemsScripts.CalculateResultSystemScripts;
 using GameSystemsScripts.CoffeeSystemsScripts.ElementSystemScripts.CompleteSelectionSystemScripts;
 using GameSystemsScripts.CoffeeSystemsScripts.ElementSystemScripts.ElementsDrawScripts;
 using GameSystemsScripts.CoffeeSystemsScripts.ElementSystemScripts.ElementSelectionScripts;
+using GameSystemsScripts.CoffeeSystemsScripts.ElementSystemScripts.ElementsHandSystemScripts;
+using GameSystemsScripts.CoffeeSystemsScripts.ElementSystemScripts.ElementsRedrawScripts;
+using GameSystemsScripts.CoffeeSystemsScripts.ElementSystemScripts.SelectionButtonsScripts;
 using GameSystemsScripts.CoffeeSystemsScripts.RecipeSystemScripts.AproveRecipeScripts;
 using GameSystemsScripts.CoffeeSystemsScripts.RecipeSystemScripts.CompareRecipeScripts;
 using GameSystemsScripts.CoffeeSystemsScripts.RecipeSystemScripts.FillRecipeScripts;
@@ -39,7 +42,8 @@ namespace GameStartupScripts
         public AnimationsDescription AnimationsDescription;
         public CoffeeDescription CoffeeDescription;
         public DaysAchievementsDescription DaysAchievementsDescription;
-        public CompleteSelectionButtonContainer CompleteSelectionButtonContainer;
+        public ElementDrawStateButtonContainer CompleteSelectionButtonContainer;
+        public ElementDrawStateButtonContainer RedrawButtonContainer;
         
         private GameSystemsHandler _gameSystemsHandler;
         private AudioMixerHandler _audioMixerHandler;
@@ -55,9 +59,12 @@ namespace GameStartupScripts
             _gameSystemsHandler.AddGameSystem(new GameSpeedSystem(AnimationsDescription));
             _gameSystemsHandler.AddGameSystem(new RecipeHandlerSystem(CoffeeDescription));
             
-            _gameSystemsHandler.AddGameSystem(new ElementsDrawSystem());
+            _gameSystemsHandler.AddGameSystem(new ElementsHandSystem(CoffeeDescription.ElementsHand));
+            _gameSystemsHandler.AddGameSystem(new ElementsDrawSystem(_gameSystemsHandler));
+            _gameSystemsHandler.AddGameSystem(new SelectionButtonsSystem(CompleteSelectionButtonContainer, RedrawButtonContainer));
+            _gameSystemsHandler.AddGameSystem(new ElementsRedrawSystem(RedrawButtonContainer));
             _gameSystemsHandler.AddGameSystem(new ElementSelectionSystem());
-            _gameSystemsHandler.AddGameSystem(new CompleteSelectionSystem(CompleteSelectionButtonContainer));
+            _gameSystemsHandler.AddGameSystem(new CompleteSelectionSystem(CompleteSelectionButtonContainer, _gameSystemsHandler));
                 
             _gameSystemsHandler.AddGameSystem(new FillRecipeSystem());
             _gameSystemsHandler.AddGameSystem(new CompareRecipeSystem());

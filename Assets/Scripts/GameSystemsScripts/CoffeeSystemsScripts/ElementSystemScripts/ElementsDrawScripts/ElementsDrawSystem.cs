@@ -8,10 +8,10 @@ namespace GameSystemsScripts.CoffeeSystemsScripts.ElementSystemScripts.ElementsD
         public ElementsDrawComponent Component;
         public ElementsDrawMechanic Mechanic;
 
-        public ElementsDrawSystem()
+        public ElementsDrawSystem(GameSystemsHandler gameSystemsHandler)
         {
             Component = new ElementsDrawComponent();
-            Mechanic = new ElementsDrawMechanic(Component);
+            Mechanic = new ElementsDrawMechanic(Component, gameSystemsHandler);
         }
         
         public void UpdateSystem(GameSystemsHandler gameSystemsHandler, float deltaTime)

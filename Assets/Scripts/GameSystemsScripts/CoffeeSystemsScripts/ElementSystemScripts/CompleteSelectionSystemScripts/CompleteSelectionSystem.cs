@@ -8,10 +8,10 @@ namespace GameSystemsScripts.CoffeeSystemsScripts.ElementSystemScripts.CompleteS
         public CompleteSelectionComponent Component;
         public CompleteSelectionMechanic Mechanic;
 
-        public CompleteSelectionSystem(CompleteSelectionButtonContainer container)
+        public CompleteSelectionSystem(ElementDrawStateButtonContainer container, GameSystemsHandler gameSystemsHandler)
         {
             Component = new CompleteSelectionComponent(container);
-            Mechanic = new CompleteSelectionMechanic(Component);
+            Mechanic = new CompleteSelectionMechanic(Component, gameSystemsHandler);
         }
         
         public void UpdateSystem(GameSystemsHandler gameSystemsHandler, float deltaTime)

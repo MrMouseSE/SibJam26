@@ -1,7 +1,28 @@
+using GameScripts;
+using GameSystemsScripts.CoffeeSystemsScripts.ElementSystemScripts.CompleteSelectionSystemScripts;
+using ScenesOperatingScripts;
+
 namespace GameSystemsScripts.CoffeeSystemsScripts.ElementSystemScripts.ElementsRedrawScripts
 {
-    public class ElementsRedwarSystem :
+    public class ElementsRedrawSystem : IGameSystem
     {
+        public ElementsRedrawComponent Component;
+        public ElementsRedrawMechanic Mechanic;
+
+        public ElementsRedrawSystem(ElementDrawStateButtonContainer redrawButtonContainer)
+        {
+            Component = new ElementsRedrawComponent(redrawButtonContainer);
+            Mechanic = new ElementsRedrawMechanic(Component);
+        }
         
+        public void UpdateSystem(GameSystemsHandler gameSystemsHandler, float deltaTime)
+        {
+            if (gameSystemsHandler.StateSystem.Component.CurrentGameState != GameStates.SelectElements) return;
+            Mechanic.UpdateMechanic(gameSystemsHandler, deltaTime);
+        }
+
+        public void DisposeSystem()
+        {
+        }
     }
 }

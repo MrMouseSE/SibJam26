@@ -13,8 +13,9 @@ namespace GameSystemsScripts.CoffeeSystemsScripts.ElementSystemScripts.CompleteS
         
         private GameSystemsHandler _gameSystemsHandler;
 
-        public CompleteSelectionMechanic(CompleteSelectionComponent component)
+        public CompleteSelectionMechanic(CompleteSelectionComponent component, GameSystemsHandler gameSystemsHandler)
         {
+            _gameSystemsHandler = gameSystemsHandler;
             Component = component;
             Component.Container.OnButtonPressed += OnSelectionComplete;
         }
@@ -34,7 +35,6 @@ namespace GameSystemsScripts.CoffeeSystemsScripts.ElementSystemScripts.CompleteS
             animationObject.StartAnimation(Component.Container.ButtonAnimations, 
                 cancellationTokenSource.Token, speedSystem.Component.AnimationsDescription.CompleteSelectionButtonAnimationDuration, false).Forget();
             Component.IsButtonPressedThisFrame = false;
-            _gameSystemsHandler = gameSystemsHandler;
             animationObject.AnimationCompleted += OnCompleteButtonAnimationFinished;
             _gameSystemsHandler.StateSystem.Mechanic.ChangeState(GameStates.AwaitAnimation);
             

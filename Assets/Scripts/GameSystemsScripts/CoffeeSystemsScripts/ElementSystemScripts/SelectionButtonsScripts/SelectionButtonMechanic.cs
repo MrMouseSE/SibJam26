@@ -1,6 +1,6 @@
 using ScenesOperatingScripts;
 
-namespace GameSystemsScripts.CoffeeSystemsScripts.ElementSystemScripts.SelectElementsButtonsControllerScripts
+namespace GameSystemsScripts.CoffeeSystemsScripts.ElementSystemScripts.SelectionButtonsScripts
 {
     public class SelectionButtonMechanic : IGameMechanic
     {

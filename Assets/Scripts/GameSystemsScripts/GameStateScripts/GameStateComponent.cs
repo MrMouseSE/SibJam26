@@ -1,3 +1,5 @@
+using GameScripts;
+
 namespace GameSystemsScripts.GameStateScripts
 {
     public class GameStateComponent

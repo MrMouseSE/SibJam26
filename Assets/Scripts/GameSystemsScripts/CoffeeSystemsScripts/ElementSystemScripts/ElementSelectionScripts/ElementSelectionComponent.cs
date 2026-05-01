@@ -1,4 +1,6 @@
-namespace GameSystemsScripts.CoffeeSystemsScripts.ElementSystemScripts
+using CoffeeScripts;
+
+namespace GameSystemsScripts.CoffeeSystemsScripts.ElementSystemScripts.ElementSelectionScripts
 {
     public class ElementSelectionComponent
     {

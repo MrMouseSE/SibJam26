@@ -7,5 +7,6 @@ namespace AnimationDescriptionsScripts
     {
         public float ElementDrawAnimationDuration;
         public float ElementSelectionAnimationDuration;
+        public float ElementHoverAnimationDuration;
     }
 }

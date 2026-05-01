@@ -1,7 +1,7 @@
 using System;
 using System.Threading;
+using CoffeeScripts;
 using Cysharp.Threading.Tasks;
-using GameSystemsScripts.CoffeeSystemsScripts.ElementSystemScripts;
 using UnityEngine;
 
 namespace TweenScripts
@@ -58,7 +58,7 @@ namespace TweenScripts
                 animationTime -= Time.deltaTime;
                 float evaluateTime = baseValue + mult * animationTime / time;
 
-                container.ElementAnimation.Evaluate(evaluateTime);
+                container.ElementSelectAnimation.Evaluate(evaluateTime);
                 await UniTask.Yield(cancellationToken: container.AnimationCancellationToken.Token, true);
             }
 

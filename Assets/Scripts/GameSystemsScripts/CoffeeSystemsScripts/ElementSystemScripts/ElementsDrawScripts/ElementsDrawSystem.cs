@@ -1,7 +1,27 @@
+using GameScripts;
+using ScenesOperatingScripts;
+
 namespace GameSystemsScripts.CoffeeSystemsScripts.ElementSystemScripts.ElementsDrawScripts
 {
-    public class ElementsDrawSystem
+    public class ElementsDrawSystem : IGameSystem
     {
+        public ElementsDrawComponent Component;
+        public ElementsDrawMechanic Mechanic;
+
+        public ElementsDrawSystem()
+        {
+            Component = new ElementsDrawComponent();
+            Mechanic = new ElementsDrawMechanic(Component);
+        }
         
+        public void UpdateSystem(GameSystemsHandler gameSystemsHandler, float deltaTime)
+        {
+            if (gameSystemsHandler.StateSystem.Component.CurrentGameState != GameStates.DrawElements) return;
+            Mechanic.UpdateMechanic(gameSystemsHandler, deltaTime);
+        }
+
+        public void DisposeSystem()
+        {
+        }
     }
 }

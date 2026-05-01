@@ -6,5 +6,7 @@ namespace AnimationDescriptionsScripts
     public class AnimationsDescription : ScriptableObject
     {
         public ElementsAnimationDescription ElementsAnimationDescription;
+        
+        public float CompleteSelectionButtonAnimationDuration;
     }
 }

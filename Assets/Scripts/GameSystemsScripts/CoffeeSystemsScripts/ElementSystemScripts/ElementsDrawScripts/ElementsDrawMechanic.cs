@@ -1,3 +1,4 @@
+using GameScripts;
 using ScenesOperatingScripts;
 
 namespace GameSystemsScripts.CoffeeSystemsScripts.ElementSystemScripts.ElementsDrawScripts
@@ -13,7 +14,8 @@ namespace GameSystemsScripts.CoffeeSystemsScripts.ElementSystemScripts.ElementsD
 
         public void UpdateMechanic(GameSystemsHandler gameSystemsHandler, float deltaTime)
         {
-            
+            //TODO: Draw action
+            gameSystemsHandler.StateSystem.Mechanic.ChangeState(GameStates.SelectElements);
         }
 
         public void DisposeMechanic()

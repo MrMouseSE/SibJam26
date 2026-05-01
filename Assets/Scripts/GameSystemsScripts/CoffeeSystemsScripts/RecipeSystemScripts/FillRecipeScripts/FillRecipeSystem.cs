@@ -1,8 +1,8 @@
+using GameScripts;
 using GameSystemsScripts.GameInputScripts;
-using GameSystemsScripts.GameStateScripts;
 using ScenesOperatingScripts;
 
-namespace GameSystemsScripts.CoffeeSystemsScripts.RecipeSystemScripts
+namespace GameSystemsScripts.CoffeeSystemsScripts.RecipeSystemScripts.FillRecipeScripts
 {
     public class FillRecipeSystem : IGameSystem
     {

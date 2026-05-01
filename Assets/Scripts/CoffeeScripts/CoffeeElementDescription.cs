@@ -9,8 +9,13 @@ namespace CoffeeScripts
         public Sprite Sprite;
 
         [Space]
-        public ElementRarity rarity;
-        public float ElementCoast;
-        public float ElementMultiplier;
+        public ElementRarity Rarity;
+        public float ElementVigorValue;
+        public float ElementVigorMultiplier;
+        public float ElementTesteValue;
+        public float ElementTesteMultiplier;
+
+        [Space]
+        public float DropChanceValue;
     }
 }

@@ -1,8 +1,9 @@
+using CoffeeScripts;
+using GameScripts;
 using GameSystemsScripts.GameInputScripts;
-using GameSystemsScripts.GameStateScripts;
 using ScenesOperatingScripts;
 
-namespace GameSystemsScripts.CoffeeSystemsScripts.ElementSystemScripts
+namespace GameSystemsScripts.CoffeeSystemsScripts.ElementSystemScripts.ElementSelectionScripts
 {
     public class ElementSelectionSystem : IGameSystem
     {
@@ -20,7 +21,7 @@ namespace GameSystemsScripts.CoffeeSystemsScripts.ElementSystemScripts
             if (gameSystemsHandler.StateSystem.Component.CurrentGameState != GameStates.SelectElements) return;
             var inputSystem = (GameInputSystem)gameSystemsHandler.GetGameSystem(typeof(GameInputSystem));
             if (!inputSystem.Component.MouseWasPressedThisFrame) return;
-            SelectionMechanic.SelectionComponent.CurrentTouchedContainer =
+            SelectionMechanic.Component.CurrentTouchedContainer =
                 inputSystem.Component.MousePressedHitColliders[0].GetComponent<ElementContainer>();
             SelectionMechanic.UpdateMechanic(gameSystemsHandler, deltaTime);
         }

@@ -1,7 +1,7 @@
 using System.Collections.Generic;
-using GameSystemsScripts.CoffeeSystemsScripts.ElementSystemScripts;
+using CoffeeScripts;
 
-namespace GameSystemsScripts.CoffeeSystemsScripts.RecipeSystemScripts
+namespace GameSystemsScripts.CoffeeSystemsScripts.RecipeSystemScripts.FillRecipeScripts
 {
     public class FillRecipeComponent
     {

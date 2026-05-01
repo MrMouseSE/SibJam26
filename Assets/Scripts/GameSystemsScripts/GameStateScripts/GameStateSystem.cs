@@ -20,7 +20,6 @@ namespace GameSystemsScripts.GameStateScripts
 
         public void DisposeSystem()
         {
-            throw new System.NotImplementedException();
         }
     }
 }

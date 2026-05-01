@@ -1,11 +1,17 @@
-namespace GameSystemsScripts.GameStateScripts
+namespace GameScripts
 {
     public enum GameStates
     {
+        AwaitAnimation,
         DrawElements,
         SelectElements,
+        CompareRecipe,
         BoilCoffee,
         CalculateValue,
-        RewardElements
+        ApproveRecipe,
+        CompareLevelComplete,
+        RewardElements,
+        ChangeLevel,
+        GameOver,
     }
 }

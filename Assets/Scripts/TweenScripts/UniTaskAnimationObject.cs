@@ -1,6 +1,7 @@
 using System;
 using System.Threading;
 using Cysharp.Threading.Tasks;
+using GameSystemsScripts.CoffeeSystemsScripts.ElementSystemScripts;
 using UnityEngine;
 
 namespace TweenScripts
@@ -43,6 +44,24 @@ namespace TweenScripts
                 tweenAnimation.Evaluate(evaluateTime);
                 await UniTask.Yield(cancellationToken: token, true);
             }
+            AnimationCompleted?.Invoke(this);
+        }
+
+        public async UniTaskVoid StartAnimation(ElementContainer container, float time)
+        {
+            float animationTime = time;
+            float baseValue = container.IsSelected ? 1f : 0;
+            float mult = container.IsSelected ? -1f : 1f;
+
+            while (animationTime > 0f)
+            {
+                animationTime -= Time.deltaTime;
+                float evaluateTime = baseValue + mult * animationTime / time;
+
+                container.ElementAnimation.Evaluate(evaluateTime);
+                await UniTask.Yield(cancellationToken: container.AnimationCancellationToken.Token, true);
+            }
+
             AnimationCompleted?.Invoke(this);
         }
     }

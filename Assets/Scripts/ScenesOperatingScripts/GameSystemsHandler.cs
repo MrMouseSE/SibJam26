@@ -2,12 +2,15 @@ using System;
 using System.Collections.Generic;
 using System.Threading;
 using Cysharp.Threading.Tasks;
+using GameSystemsScripts.GameStateScripts;
 using UnityEngine;
 
 namespace ScenesOperatingScripts
 {
     public class GameSystemsHandler
     {
+        public GameStateSystem StateSystem;
+        
         public Dictionary<Type, IGameSystem> GameSystems = new Dictionary<Type, IGameSystem>();
 
         private CancellationTokenSource _updateCancellationTokenSource = new CancellationTokenSource();
@@ -17,6 +20,12 @@ namespace ScenesOperatingScripts
         {
             _isProcess = true;
             UpdateSystems(_updateCancellationTokenSource.Token).Forget();
+        }
+
+        public void AddStateSystem(GameStateSystem stateSystem)
+        {
+            StateSystem = stateSystem;
+            AddGameSystem(stateSystem);
         }
 
         public void AddGameSystem(IGameSystem gameSystem)

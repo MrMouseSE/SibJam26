@@ -1,6 +1,8 @@
+using AnimationDescriptionsScripts;
 using CameraScripts;
 using GameSystemsScripts.CameraSystem;
-using GameSystemsScripts.GameInputSystem;
+using GameSystemsScripts.GameInputScripts;
+using GameSystemsScripts.GameSpeedScripts;
 using MainMenuScripts.SettingsHanlderScripts;
 using ScenesOperatingScripts;
 using SoundsComponentsScripts;
@@ -17,6 +19,7 @@ namespace GameStartupScripts
         public AudioMixer GameAudioMixer;
         public SettingsHandlerContainer SettingsHandler;
         public CameraContainer CameraContainer;
+        public AnimationsDescription AnimationsDescription;
         
         private GameSystemsHandler _gameSystemsHandler;
         private AudioMixerHandler _audioMixerHandler;
@@ -27,6 +30,7 @@ namespace GameStartupScripts
             _gameSystemsHandler = new GameSystemsHandler();
             _gameSystemsHandler.AddGameSystem(new GameCameraSystem(CameraContainer));
             _gameSystemsHandler.AddGameSystem(new GameInputSystem());
+            _gameSystemsHandler.AddGameSystem(new GameSpeedSystem(AnimationsDescription));
             _audioMixerHandler = new AudioMixerHandler(GameAudioMixer);
             SettingsHandler.Mixer = _audioMixerHandler;
             SceneLoadingHandler.LoadScenes(ScenesLoadAtStart);

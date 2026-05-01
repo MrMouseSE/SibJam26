@@ -38,12 +38,15 @@ namespace GameSystemsScripts.CoffeeSystemsScripts.ElementSystemScripts.CompleteS
             animationObject.AnimationCompleted += OnCompleteButtonAnimationFinished;
             _gameSystemsHandler.StateSystem.Mechanic.ChangeState(GameStates.AwaitAnimation);
             
-            var fillRecipeSystem = (FillRecipeSystem)gameSystemsHandler.GetGameSystem(typeof(FillRecipeSystem));
+            //TODO: FillRecipeComponent to animate Selected containers
+            /*var fillRecipeSystem = (FillRecipeSystem)gameSystemsHandler.GetGameSystem(typeof(FillRecipeSystem));
             foreach (var recipeContainer in fillRecipeSystem.Component.RecipeContainers)
             {
-                recipeContainer.ElementSelectAnimation
-            }
+                recipeContainer.ElementAppearAnimation
+            }*/
             //TODO: FillRecipeComponent to animate Selected containers
+            
+            
             //TODO: ElementsDrawComponent to animate Unselected containers;
         }
 

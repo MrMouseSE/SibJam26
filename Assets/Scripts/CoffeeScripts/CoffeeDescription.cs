@@ -1,3 +1,4 @@
+using CoffeeScripts.ElementsInventoryScripts;
 using UnityEngine;
 
 namespace CoffeeScripts
@@ -7,6 +8,7 @@ namespace CoffeeScripts
     {
         public CoffeeRecipeDescription[] Recipes;
         public CoffeeElementDescription[] Elements;
+        public ElementsHandDescription ElementsHand;
 
         public CoffeeElementDescription GetRandomElementDescription()
         {

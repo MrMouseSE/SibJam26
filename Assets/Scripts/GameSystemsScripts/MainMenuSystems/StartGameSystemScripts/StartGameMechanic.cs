@@ -1,7 +1,7 @@
 using GameStartupScripts;
 using ScenesOperatingScripts;
 
-namespace MainMenuScripts.StartGameSystemScripts
+namespace GameSystemsScripts.MainMenuSystems.StartGameSystemScripts
 {
     public class StartGameMechanic : IGameMechanic
     {
@@ -17,9 +17,12 @@ namespace MainMenuScripts.StartGameSystemScripts
             Component.IsStartGameButtonPushed = true;
         }
 
-        public void StartGame()
+        public void UpdateMechanic(GameSystemsHandler gameSystemsHandler, float deltaTime)
         {
-            SceneLoadingHandler.SetSceneActive(SceneNamesConst.GameScene);
+            var root = SceneLoadingHandler.SetSceneActive(SceneNamesConst.GameScene);
+            var cameraSystem = gameSystemsHandler.GetGameSystem((typeof(CameraSystem.GameCameraSystem))) as CameraSystem.GameCameraSystem;
+            cameraSystem.Component.CurrentCameraHolder = root.GetCameraHolder();
+            cameraSystem.Component.IsCameraUpdating = true;
         }
 
         public void DisposeMechanic()

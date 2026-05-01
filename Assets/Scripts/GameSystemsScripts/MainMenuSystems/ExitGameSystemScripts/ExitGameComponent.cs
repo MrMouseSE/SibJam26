@@ -1,4 +1,6 @@
-namespace MainMenuScripts.ExitGameSystemScripts
+using MainMenuScripts;
+
+namespace GameSystemsScripts.MainMenuSystems.ExitGameSystemScripts
 {
     public class ExitGameComponent
     {

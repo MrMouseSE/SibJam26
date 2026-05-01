@@ -1,9 +1,8 @@
 using Cysharp.Threading.Tasks;
-using MainMenuScripts.StartGameSystemScripts;
+using MainMenuScripts.ExitGameSystemScripts;
 using ScenesOperatingScripts;
-using UnityEngine;
 
-namespace MainMenuScripts.ExitGameSystemScripts
+namespace GameSystemsScripts.MainMenuSystems.ExitGameSystemScripts
 {
     public class ExitGameMechanic : IGameMechanic
     {
@@ -17,6 +16,10 @@ namespace MainMenuScripts.ExitGameSystemScripts
         private void ExitGameMethod()
         {
             Component.IsGameExitProcess = true;
+        }
+
+        public void UpdateMechanic(GameSystemsHandler gameSystemsHandler, float deltaTime)
+        {
         }
 
         public void DisposeMechanic()

@@ -1,4 +1,6 @@
-namespace MainMenuScripts.StartGameSystemScripts
+using MainMenuScripts;
+
+namespace GameSystemsScripts.MainMenuSystems.StartGameSystemScripts
 {
     public class StartGameComponent
     {

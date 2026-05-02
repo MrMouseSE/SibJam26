@@ -1,3 +1,4 @@
+using GameScripts;
 using GameStartupScripts;
 using ScenesOperatingScripts;
 
@@ -23,6 +24,7 @@ namespace GameSystemsScripts.MainMenuSystems.StartGameSystemScripts
             var cameraSystem = gameSystemsHandler.GetGameSystem((typeof(CameraSystem.GameCameraSystem))) as CameraSystem.GameCameraSystem;
             cameraSystem.Component.CurrentCameraHolder = root.GetCameraHolder();
             cameraSystem.Component.IsCameraUpdating = true;
+            gameSystemsHandler.StateSystem.Mechanic.ChangeState(GameStates.DrawElements);
         }
 
         public void DisposeMechanic()

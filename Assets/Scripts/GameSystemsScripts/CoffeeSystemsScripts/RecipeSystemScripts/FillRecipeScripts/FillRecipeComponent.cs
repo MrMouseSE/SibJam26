@@ -5,6 +5,6 @@ namespace GameSystemsScripts.CoffeeSystemsScripts.RecipeSystemScripts.FillRecipe
 {
     public class FillRecipeComponent
     {
-        public List<ElementContainer> RecipeContainers;
+        public List<ElementContainer> RecipeContainers = new List<ElementContainer>();
     }
 }

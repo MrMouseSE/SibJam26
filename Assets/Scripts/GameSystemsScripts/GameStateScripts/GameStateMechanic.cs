@@ -11,6 +11,11 @@ namespace GameSystemsScripts.GameStateScripts
         {
             Component = component;
         }
+        
+        public void SetStartState()
+        {
+            ChangeState(GameStates.StartGame);
+        }
 
         public void ChangeState(GameStates newState)
         {

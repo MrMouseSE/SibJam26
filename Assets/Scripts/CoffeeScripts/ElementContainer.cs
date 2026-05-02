@@ -3,11 +3,10 @@ using AnimationDescriptionsScripts;
 using SoundsComponentsScripts;
 using TweenScripts;
 using UnityEngine;
-using UnityEngine.EventSystems;
 
 namespace CoffeeScripts
 {
-    public class ElementContainer : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+    public class ElementContainer : MonoBehaviour
     {
         public GameObject ElementPrefab;
         public Transform ElementContainerTransform;
@@ -20,7 +19,7 @@ namespace CoffeeScripts
         public BoxCollider ElementCollider;
         public SpriteRenderer SpriteRenderer;
         
-        public CancellationTokenSource CancelToken;
+        public CancellationTokenSource CancelToken = new();
 
         [HideInInspector]
         public bool IsSelected;
@@ -40,9 +39,9 @@ namespace CoffeeScripts
         public float ElementTesteMultiplier {get;set;}
         
         public AnimationsDescription AnimationsDescription { get; set; }
-        private CancellationTokenSource _animCancelToken = new CancellationTokenSource();
+        private CancellationTokenSource _animCancelToken = new();
         
-        public void OnPointerEnter(PointerEventData eventData)
+        public void OnMouseEnter()
         {
             UniTaskAnimationLazyObject animObj = new UniTaskAnimationLazyObject(ElementHoverAnimation, ref _animCancelToken,
                 AnimationsDescription.ElementsAnimationDescription.ElementHoverAnimationDuration, true);
@@ -50,7 +49,7 @@ namespace CoffeeScripts
             SoundContainer.Play(SoundType.AppearSound);
         }
 
-        public void OnPointerExit(PointerEventData eventData)
+        public void OnMouseExit()
         {
             _animCancelToken.Cancel();
             SoundContainer.Play(SoundType.AppearSound);

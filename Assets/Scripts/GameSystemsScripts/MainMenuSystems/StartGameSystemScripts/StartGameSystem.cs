@@ -1,3 +1,4 @@
+using GameScripts;
 using MainMenuScripts;
 using ScenesOperatingScripts;
 
@@ -21,6 +22,7 @@ namespace GameSystemsScripts.MainMenuSystems.StartGameSystemScripts
         public void UpdateSystem(GameSystemsHandler gameSystemsHandler, float deltaTime)
         {
             if (Component.IsActionLock) return;
+            if (gameSystemsHandler.StateSystem.Component.CurrentGameState != GameStates.StartGame) return;
             if (Component.IsStartGameButtonPushed) Mechanic.UpdateMechanic(gameSystemsHandler, deltaTime);
         }
 

@@ -17,7 +17,6 @@ namespace SupportScripts
             container.ElementVigorMultiplier = elementDescription.ElementVigorMultiplier;
             container.ElementTesteValue = elementDescription.ElementTesteValue;
             container.ElementTesteMultiplier = elementDescription.ElementTesteMultiplier;
-            container.IsUsedInGame = true;
         }
     }
 }

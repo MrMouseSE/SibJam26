@@ -1,3 +1,4 @@
+using GameScripts;
 using GameSystemsScripts.CameraSystem;
 using GameSystemsScripts.CoffeeSystemsScripts.ElementSystemScripts.CompleteSelectionSystemScripts;
 using GameSystemsScripts.GameSpeedScripts;
@@ -14,7 +15,7 @@ namespace GameSystemsScripts.CoffeeSystemsScripts.BoilingSystemScripts.CompleteB
             Component = component;
         }
         
-        public void SetButton(GameButtonContainer buttonContainer)
+        public void SetButtonContainer(BoilButtonContainer buttonContainer)
         {
             Component.CompleteBoilingButtonContainer = buttonContainer;
             Component.CompleteBoilingButtonContainer.OnButtonPressed += OnButtonClicked;
@@ -23,9 +24,11 @@ namespace GameSystemsScripts.CoffeeSystemsScripts.BoilingSystemScripts.CompleteB
         public void UpdateMechanic(GameSystemsHandler gameSystemsHandler, float deltaTime)
         {
             if (!Component.IsBoilingComplete) return;
+            Component.IsBoilingComplete = false;
             GameSpeedSystem speedSystem = (GameSpeedSystem)gameSystemsHandler.GetGameSystem(typeof(GameSpeedSystem));
             float duration = speedSystem.Component.AnimationsDescription.ClickAnimationsDuration;
             Component.CompleteBoilingButtonContainer.SetActive(false, duration);
+            gameSystemsHandler.StateSystem.Mechanic.ChangeState(GameStates.CalculateValue);
         }
 
         private void OnButtonClicked()

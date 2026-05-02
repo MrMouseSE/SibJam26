@@ -6,6 +6,8 @@ namespace CoffeeScripts
     [CreateAssetMenu(menuName = "Coffee/CoffeeDescription", fileName = "CoffeeDescription", order = 0)]
     public class CoffeeDescription : ScriptableObject
     {
+        public CoffeeRecipeDescription DefaultRecipe;
+        
         public CoffeeRecipeDescription[] Recipes;
         public CoffeeElementDescription[] Elements;
         public ElementsHandDescription ElementsHand;

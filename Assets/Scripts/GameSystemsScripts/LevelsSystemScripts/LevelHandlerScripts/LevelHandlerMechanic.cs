@@ -1,3 +1,4 @@
+using GameScripts;
 using GameSystemsScripts.LevelsSystemScripts.GameCompleteSystemScripts;
 using GameSystemsScripts.LevelsSystemScripts.LevelCompleteScripts;
 using ScenesOperatingScripts;
@@ -41,6 +42,8 @@ namespace GameSystemsScripts.LevelsSystemScripts.LevelHandlerScripts
                 Component.Level = 0;
                 Component.Day = 0;
             }
+            
+            gameSystemsHandler.StateSystem.Mechanic.ChangeState(GameStates.DrawElements);
         }
 
         public void DisposeMechanic()

@@ -1,3 +1,4 @@
+using GameScripts;
 using GameSystemsScripts.CoffeeSystemsScripts.CalculateResultSystemScripts;
 using GameSystemsScripts.LevelsSystemScripts.LevelHandlerScripts;
 using ScenesOperatingScripts;
@@ -24,8 +25,9 @@ namespace GameSystemsScripts.LevelsSystemScripts.LevelCompleteScripts
             {
                 Component.IsLevelCompleted = true;
             }
-
             
+            gameSystemsHandler.StateSystem.Mechanic.ChangeState(GameStates.ChangeLevel);
+            //TODO: not complete restart levels
         }
 
         public void DisposeMechanic()

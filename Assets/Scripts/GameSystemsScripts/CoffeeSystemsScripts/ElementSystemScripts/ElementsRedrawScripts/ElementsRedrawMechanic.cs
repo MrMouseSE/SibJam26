@@ -17,14 +17,10 @@ namespace GameSystemsScripts.CoffeeSystemsScripts.ElementSystemScripts.ElementsR
             Component = component;
         }
 
-        public void SetButtonContainer(GameButtonContainer buttonContainer)
+        public void SetButtonContainer(GameButtonContainer buttonContainer, GameSystemsHandler gameSystemsHandler)
         {
             Component.RedrawButtonContainer = buttonContainer;
             Component.RedrawButtonContainer.OnButtonPressed += RedrawButtonPushed;
-        }
-        
-        public void InitializeButtonsValues(GameSystemsHandler gameSystemsHandler)
-        {
             GameSpeedSystem speedSystem = (GameSpeedSystem)gameSystemsHandler.GetGameSystem(typeof(GameSpeedSystem));
             Component.RedrawButtonContainer.HoverAnimationDuration = speedSystem.Component.AnimationsDescription.HoverAnimationDuration;
             Component.RedrawButtonContainer.ClickAnimationDuration = speedSystem.Component.AnimationsDescription.ClickAnimationsDuration;
@@ -58,7 +54,7 @@ namespace GameSystemsScripts.CoffeeSystemsScripts.ElementSystemScripts.ElementsR
                     speedSystem.Component.AnimationsDescription.ElementsAnimationDescription.ElementSelectionAnimationDuration;
                 
                 UniTaskAnimationLazyObject animObj = new(recipeContainer.ElementSelectAnimation, ref recipeContainer.CancelToken,
-                    duration, recipeContainer.IsSelected);
+                    duration, !recipeContainer.IsSelected);
                 
                 animObj.Play().Forget();
                 recipeContainer.IsSelected = false;

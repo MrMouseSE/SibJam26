@@ -28,27 +28,35 @@ namespace GameSystemsScripts.CoffeeSystemsScripts.ElementSystemScripts.ElementsD
         public void UpdateMechanic(GameSystemsHandler gameSystemsHandler, float deltaTime)
         {
             var handSystem = (ElementsHandSystem)gameSystemsHandler.GetGameSystem(typeof(ElementsHandSystem));
+            var speedSystem = (GameSpeedSystem)gameSystemsHandler.GetGameSystem(typeof(GameSpeedSystem));
+            var selectionButtonSystem = (SelectionButtonsSystem)gameSystemsHandler.GetGameSystem(typeof(SelectionButtonsSystem));
+            
             int currentElementToDrawCount = handSystem.Component.CurrentElementsToDrawCapacity;
             
             Component.DrawedElements.Clear();
-            for (int i = 0; i < currentElementToDrawCount; i++)
+            for (var index = 0; index < Component.Container.ElementContainers.Count; index++)
             {
-                var elementContainer = Component.Container.ElementContainers[i];
-                elementContainer.ElementDisappearAnimation.SetForceState(true);
-                StaticElementFactory.SetValuesToContainer(elementContainer);
-                Component.DrawedElements.Add(elementContainer);
+                var container = Component.Container.ElementContainers[index];
+                bool isUsed = index < currentElementToDrawCount;
+                container.ElementSelectAnimation.SetForceState(true);
+                container.ElementDisappearAnimation.SetForceState(isUsed);
+                container.IsSelected = false;
+                container.IsUsedInGame = isUsed;
+                container.ElementCollider.enabled = isUsed;
+                container.AnimationsDescription = speedSystem.Component.AnimationsDescription;
+                StaticElementFactory.SetValuesToContainer(container);
+                if (isUsed)
+                    Component.DrawedElements.Add(container);
             }
             
             Component.Container.AppearAnimation.SetForceState(true);
             
-            GameSpeedSystem speedSystem = (GameSpeedSystem)gameSystemsHandler.GetGameSystem(typeof(GameSpeedSystem));
             CancellationTokenSource cts = new CancellationTokenSource();
-            UniTaskAnimationLazyObject animObj = new UniTaskAnimationLazyObject(Component.Container.AppearAnimation, ref cts,
+            UniTaskAnimationLazyObject animObj = new (Component.Container.AppearAnimation, ref cts,
                 speedSystem.Component.AnimationsDescription.ElementsAnimationDescription.ElementDrawAnimationDuration, true);
             animObj.Play().Forget();
             animObj.AnimationCompleted += OnDrawAnimationFinished;
             
-            var selectionButtonSystem = (SelectionButtonsSystem)gameSystemsHandler.GetGameSystem(typeof(SelectionButtonsSystem));
             selectionButtonSystem.Component.IsSelectionStateStartedThisFrame = true;
             
             gameSystemsHandler.StateSystem.Mechanic.ChangeState(GameStates.AwaitAnimation);

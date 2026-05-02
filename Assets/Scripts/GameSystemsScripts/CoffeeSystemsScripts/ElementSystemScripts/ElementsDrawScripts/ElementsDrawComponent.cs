@@ -7,6 +7,6 @@ namespace GameSystemsScripts.CoffeeSystemsScripts.ElementSystemScripts.ElementsD
     public class ElementsDrawComponent
     {
         public ElementsDrawHandlerContainer Container;
-        public List<ElementContainer> DrawedElements;
+        public readonly List<ElementContainer> DrawedElements = new List<ElementContainer>();
     }
 }

@@ -17,7 +17,6 @@ namespace GameSystemsScripts.CoffeeSystemsScripts.BoilingSystemScripts.BoilingPr
 
         public void Initialize(GameSystemsHandler gameSystemsHandler)
         {
-            Mechanic.InitializeBoilAnimationValues(gameSystemsHandler);
         }
 
         public void UpdateSystem(GameSystemsHandler gameSystemsHandler, float deltaTime)

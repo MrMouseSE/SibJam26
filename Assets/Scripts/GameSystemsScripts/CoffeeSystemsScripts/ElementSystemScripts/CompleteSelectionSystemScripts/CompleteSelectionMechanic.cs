@@ -33,7 +33,7 @@ namespace GameSystemsScripts.CoffeeSystemsScripts.ElementSystemScripts.CompleteS
 
         private void OnSelectionComplete()
         {
-            Component.IsButtonPressedThisFrame = false;
+            Component.IsButtonPressedThisFrame = true;
         }
 
         public void UpdateMechanic(GameSystemsHandler gameSystemsHandler, float deltaTime)
@@ -50,7 +50,6 @@ namespace GameSystemsScripts.CoffeeSystemsScripts.ElementSystemScripts.CompleteS
             animationObject.AnimationCompleted += OnCompleteButtonAnimationFinished;
             
             Component.IsButtonPressedThisFrame = false;
-            _gameSystemsHandler.StateSystem.Mechanic.ChangeState(GameStates.AwaitAnimation);
             
             //TODO: FillRecipeComponent to animate Selected containers ?????? mb same animation like disappear
             /*var fillRecipeSystem = (FillRecipeSystem)gameSystemsHandler.GetGameSystem(typeof(FillRecipeSystem));
@@ -64,15 +63,20 @@ namespace GameSystemsScripts.CoffeeSystemsScripts.ElementSystemScripts.CompleteS
             var drawSystem = (ElementsDrawSystem)gameSystemsHandler.GetGameSystem(typeof(ElementsDrawSystem));
             foreach (var container in drawSystem.Component.Container.ElementContainers)
             {
-                container.IsUsedInGame = false;
                 float duration = container.IsSelected
                     ? speedSystem.Component.AnimationsDescription.ElementsAnimationDescription.ElementSelectedDisappearDuration :
                     speedSystem.Component.AnimationsDescription.ElementsAnimationDescription.ElementUnselectedDisappearDuration;
-                CancellationTokenSource cts = new CancellationTokenSource();
-                UniTaskAnimationLazyObject animObj = new UniTaskAnimationLazyObject(container.ElementDisappearAnimation, ref cts, duration, false);
-                animObj.Play().Forget();
-                container.SoundContainer.Play(SoundType.DeathSound);
+                
+                if (container.IsUsedInGame)
+                {
+                    CancellationTokenSource cts = new CancellationTokenSource();
+                    UniTaskAnimationLazyObject animObj = new UniTaskAnimationLazyObject(container.ElementDisappearAnimation, ref cts, duration, true);
+                    animObj.Play().Forget();
+                    container.SoundContainer.Play(SoundType.DeathSound);
+                }
+                container.IsUsedInGame = false;
             }
+            _gameSystemsHandler.StateSystem.Mechanic.ChangeState(GameStates.AwaitAnimation);
         }
 
         public void DisposeMechanic()

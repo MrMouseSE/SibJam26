@@ -15,6 +15,7 @@ namespace GameSystemsScripts.GameStateScripts
 
         public void Initialize(GameSystemsHandler gameSystemsHandler)
         {
+            Mechanic.SetStartState();
         }
 
         public void UpdateSystem(GameSystemsHandler gameSystemsHandler, float deltaTime)

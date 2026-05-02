@@ -3,6 +3,7 @@ namespace GameScripts
     public enum GameStates
     {
         AwaitAnimation,
+        StartGame,
         DrawElements,
         SelectElements,
         CompareRecipe,
@@ -10,8 +11,8 @@ namespace GameScripts
         BoilingCoffee,
         CalculateValue,
         ApproveRecipe,
-        CompareLevelComplete,
         RewardElements,
+        CompareLevelComplete,
         ChangeLevel,
         GameOver,
     }

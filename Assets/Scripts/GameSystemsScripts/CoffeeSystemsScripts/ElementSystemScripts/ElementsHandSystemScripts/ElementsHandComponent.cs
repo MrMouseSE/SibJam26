@@ -5,7 +5,7 @@ namespace GameSystemsScripts.CoffeeSystemsScripts.ElementSystemScripts.ElementsH
 {
     public class ElementsHandComponent
     {
-        public bool IsValuesUpdatNeed;
+        public bool IsValuesUpdateNeed;
         public int AddDrawCapacityValue;
         public int AddElementSwapCountValue;
         

@@ -25,6 +25,7 @@ namespace GameSystemsScripts.CoffeeSystemsScripts.ElementSystemScripts.ElementSe
             if (gameSystemsHandler.StateSystem.Component.CurrentGameState != GameStates.SelectElements) return;
             var inputSystem = (GameInputSystem)gameSystemsHandler.GetGameSystem(typeof(GameInputSystem));
             if (!inputSystem.Component.MouseWasPressedThisFrame) return;
+            if (inputSystem.Component.MousePressedHitColliders.Count == 0) return;
             SelectionMechanic.Component.CurrentTouchedContainer =
                 inputSystem.Component.MousePressedHitColliders[0].GetComponent<ElementContainer>();
             SelectionMechanic.UpdateMechanic(gameSystemsHandler, deltaTime);

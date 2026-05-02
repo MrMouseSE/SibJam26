@@ -12,7 +12,9 @@ namespace AnimationDescriptionsScripts
         public Color ExtreemeColor;
         
         public Vector2 BoilAddRangeMultiplier;
+        
         public AnimationCurve BoilMultiplyerCurve;
+        public float MultValue;
         
         public float BoilProcessAnimationDuration;
     }

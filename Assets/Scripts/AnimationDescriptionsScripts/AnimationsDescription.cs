@@ -1,4 +1,3 @@
-using CoffeeScripts;
 using UnityEngine;
 
 namespace AnimationDescriptionsScripts
@@ -12,7 +11,9 @@ namespace AnimationDescriptionsScripts
 
         public CameraAnimationDescription Camera;
         
-        [TextArea]
+        [Space]
+        [Header("Button Settings")]
+        [Space]
         public float ActivateAnimationDuration;
         public float HoverAnimationDuration;
         public float ClickAnimationsDuration;

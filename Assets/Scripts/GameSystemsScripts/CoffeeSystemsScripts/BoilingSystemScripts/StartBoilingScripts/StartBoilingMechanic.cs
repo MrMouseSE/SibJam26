@@ -1,3 +1,4 @@
+using GameScripts;
 using GameSystemsScripts.CameraSystem;
 using GameSystemsScripts.CoffeeSystemsScripts.BoilingSystemScripts.BoilingProcessScripts;
 using GameSystemsScripts.CoffeeSystemsScripts.BoilingSystemScripts.CompleteBoilingScripts;
@@ -29,6 +30,7 @@ namespace GameSystemsScripts.CoffeeSystemsScripts.BoilingSystemScripts.StartBoil
             GameCameraSystem cameraSystem = (GameCameraSystem)gameSystemsHandler.GetGameSystem(typeof(GameCameraSystem));
             cameraSystem.Mechanic.AnimateCameraMovement(boilCoffeeContainer.NormalCameraPoint, boilCoffeeContainer.BoildFocusCameraPoint,
                 speedSystem.Component.AnimationsDescription.Camera);
+            gameSystemsHandler.StateSystem.Mechanic.ChangeState(GameStates.BoilingCoffee);
         }
 
         public void DisposeMechanic()

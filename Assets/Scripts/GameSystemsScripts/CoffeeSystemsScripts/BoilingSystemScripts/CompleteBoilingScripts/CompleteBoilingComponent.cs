@@ -5,6 +5,6 @@ namespace GameSystemsScripts.CoffeeSystemsScripts.BoilingSystemScripts.CompleteB
     public class CompleteBoilingComponent
     {
         public bool IsBoilingComplete;
-        public GameButtonContainer CompleteBoilingButtonContainer;
+        public BoilButtonContainer CompleteBoilingButtonContainer;
     }
 }

@@ -3,7 +3,6 @@ using CameraScripts;
 using CoffeeScripts;
 using CoffeeScripts.ElementsInventoryScripts;
 using GameSystemsScripts.CameraSystem;
-using GameSystemsScripts.CoffeeSystemsScripts.BoilingSystemScripts;
 using GameSystemsScripts.CoffeeSystemsScripts.BoilingSystemScripts.BoilingProcessScripts;
 using GameSystemsScripts.CoffeeSystemsScripts.BoilingSystemScripts.CompleteBoilingScripts;
 using GameSystemsScripts.CoffeeSystemsScripts.BoilingSystemScripts.StartBoilingScripts;
@@ -46,8 +45,6 @@ namespace GameStartupScripts
         public AnimationsDescription AnimationsDescription;
         public CoffeeDescription CoffeeDescription;
         public DaysAchievementsDescription DaysAchievementsDescription;
-        public GameButtonContainer CompleteSelectionButtonContainer;
-        public GameButtonContainer RedrawButtonContainer;
         
         private GameSystemsHandler _gameSystemsHandler;
         private AudioMixerHandler _audioMixerHandler;
@@ -82,8 +79,8 @@ namespace GameStartupScripts
             _gameSystemsHandler.AddGameSystem(new ApproveRecipeSystem());
             _gameSystemsHandler.AddGameSystem(new RewardElementsSystem(DaysAchievementsDescription));
             
-            _gameSystemsHandler.AddGameSystem(new LevelHandlerSystem(DaysAchievementsDescription));
             _gameSystemsHandler.AddGameSystem(new LevelCompleteSystem(DaysAchievementsDescription));
+            _gameSystemsHandler.AddGameSystem(new LevelHandlerSystem(DaysAchievementsDescription));
             _gameSystemsHandler.AddGameSystem(new GameCompleteSystem());
             
             _audioMixerHandler = new AudioMixerHandler(GameAudioMixer);
@@ -91,11 +88,8 @@ namespace GameStartupScripts
             SceneLoadingHandler.LoadScenes(ScenesLoadAtStart);
             SceneLoadingHandler.OnSceneLoaded += SetMenuSceneActive;
             ElementsStaticInventory.LoadCurrentAvailableElements(CoffeeDescription);
-        }
-
-        private void Start()
-        {
             _gameSystemsHandler.InitializeSystems();
+            
         }
 
         private void SetMenuSceneActive()

@@ -17,7 +17,6 @@ namespace GameSystemsScripts.CoffeeSystemsScripts.ElementSystemScripts.ElementsR
 
         public void Initialize(GameSystemsHandler gameSystemsHandler)
         {
-            Mechanic.InitializeButtonsValues(gameSystemsHandler);
         }
 
         public void UpdateSystem(GameSystemsHandler gameSystemsHandler, float deltaTime)

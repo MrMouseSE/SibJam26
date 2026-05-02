@@ -13,21 +13,17 @@ namespace GameSystemsScripts.CoffeeSystemsScripts.ElementSystemScripts.Selection
             Component = component;
         }
 
-        public void SetButtonsContainers(GameButtonContainer complete, GameButtonContainer redraw)
+        public void SetButtonsContainers(GameButtonContainer complete, GameButtonContainer redraw, GameSystemsHandler gameSystemsHandler)
         {
             Component.CompleteButton = complete;
             Component.RedrawButton = redraw;
-        }
-
-        public void InitializeButtonsValues(GameSystemsHandler gameSystemsHandler)
-        {
             GameSpeedSystem speedSystem = (GameSpeedSystem)gameSystemsHandler.GetGameSystem(typeof(GameSpeedSystem));
             Component.CompleteButton.HoverAnimationDuration = speedSystem.Component.AnimationsDescription.HoverAnimationDuration;
             Component.CompleteButton.ClickAnimationDuration = speedSystem.Component.AnimationsDescription.ClickAnimationsDuration;
             Component.RedrawButton.HoverAnimationDuration = speedSystem.Component.AnimationsDescription.HoverAnimationDuration;
             Component.RedrawButton.ClickAnimationDuration = speedSystem.Component.AnimationsDescription.ClickAnimationsDuration;
         }
-
+        
         public void UpdateMechanic(GameSystemsHandler gameSystemsHandler, float deltaTime)
         {
             if (!Component.IsSelectionStateStartedThisFrame) return;

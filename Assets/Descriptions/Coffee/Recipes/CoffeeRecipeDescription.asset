@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CoffeeScripts.CoffeeRecipeDescription
   RecipeName: Americano
   ElementDescriptions:
-  - {fileID: 11400000, guid: c99519b94204a8f4ca96ec33d05a1137, type: 2}
+  - {fileID: 11400000, guid: a5089ffd402b30846904e1921b2139d0, type: 2}
   - {fileID: 11400000, guid: c99519b94204a8f4ca96ec33d05a1137, type: 2}
   RecipeMultiplier: 1

@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: AnimationsDescription
   m_EditorClassIdentifier: Assembly-CSharp::AnimationDescriptionsScripts.AnimationsDescription
   ElementsAnimationDescription: {fileID: 11400000, guid: 959f1585252415a4ea3781e9c165fd5e, type: 2}
-  ActivateAnimationDuration: 0
-  HoverAnimationDuration: 0
+  Boil: {fileID: 11400000, guid: 1911c30f45d35704d920784787a2f777, type: 2}
+  Camera: {fileID: 11400000, guid: d6da5e7bda0232845b9b313326f83e80, type: 2}
+  ActivateAnimationDuration: 0.2
+  HoverAnimationDuration: 0.1
   ClickAnimationsDuration: 0.25

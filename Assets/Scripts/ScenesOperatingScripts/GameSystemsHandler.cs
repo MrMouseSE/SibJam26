@@ -60,7 +60,7 @@ namespace ScenesOperatingScripts
                 {
                     gameSystem.Value.UpdateSystem(this, Time.deltaTime);
                 }
-                await UniTask.DelayFrame(1, cancellationToken: token);
+                await UniTask.Yield();
             }
         }
 

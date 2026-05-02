@@ -5,7 +5,7 @@ namespace SupportScripts
 {
     public static class StaticSupportMethods
     {
-        private static readonly List<Collider> _colliders;
+        private static readonly List<Collider> _colliders = new List<Collider>();
         
         public static List<Collider> GetAllCollidersFromMouseCast(Camera camera, Vector2 mousePosition)
         {

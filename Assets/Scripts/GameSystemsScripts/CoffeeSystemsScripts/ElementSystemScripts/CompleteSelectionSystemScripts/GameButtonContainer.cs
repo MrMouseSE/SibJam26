@@ -3,11 +3,10 @@ using System.Threading;
 using SoundsComponentsScripts;
 using TweenScripts;
 using UnityEngine;
-using UnityEngine.EventSystems;
 
 namespace GameSystemsScripts.CoffeeSystemsScripts.ElementSystemScripts.CompleteSelectionSystemScripts
 {
-    public class GameButtonContainer : MonoBehaviour , IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
+    public class GameButtonContainer : MonoBehaviour
     {
         public GameObject ButtonGameObject;
         public Transform ButtonTrasform;
@@ -32,20 +31,19 @@ namespace GameSystemsScripts.CoffeeSystemsScripts.ElementSystemScripts.CompleteS
             ButtonCollider.enabled = active;
             new UniTaskAnimationLazyObject(ButtonActivateAnimations, ref _ctsActivation, duration, active).Play().Forget();
         }
-        
-        public void OnPointerClick(PointerEventData eventData)
+        public void OnMouseUp()
         {
             AudioContainer.Play(SoundType.ActionSound);
             new UniTaskAnimationLazyObject(ClickAnimations, ref _ctsActivation, ClickAnimationDuration, true).Play().Forget();
             OnButtonPressed?.Invoke();
         }
 
-        public void OnPointerEnter(PointerEventData eventData)
+        public void OnMouseEnter()
         {
             new UniTaskAnimationLazyObject(HoverAnimations, ref _ctsHover, HoverAnimationDuration, true).Play().Forget();
         }
 
-        public void OnPointerExit(PointerEventData eventData)
+        public void OnMouseExit()
         {
             new UniTaskAnimationLazyObject(HoverAnimations, ref _ctsHover, HoverAnimationDuration, false).Play().Forget();
         }

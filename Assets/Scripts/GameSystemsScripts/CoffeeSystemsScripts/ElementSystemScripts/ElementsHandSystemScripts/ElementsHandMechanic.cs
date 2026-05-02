@@ -29,8 +29,8 @@ namespace GameSystemsScripts.CoffeeSystemsScripts.ElementSystemScripts.ElementsH
 
         public void UpdateMechanic(GameSystemsHandler gameSystemsHandler, float deltaTime)
         {
-            if (!Component.IsValuesUpdatNeed) return;
-            Component.IsValuesUpdatNeed = false;
+            if (!Component.IsValuesUpdateNeed) return;
+            Component.IsValuesUpdateNeed = false;
             Component.CurrentElementsToDrawCapacity += Component.AddDrawCapacityValue;
             Component.AddDrawCapacityValue = 0;
             Component.CurrentElementsSwapCount += Component.AddElementSwapCountValue;

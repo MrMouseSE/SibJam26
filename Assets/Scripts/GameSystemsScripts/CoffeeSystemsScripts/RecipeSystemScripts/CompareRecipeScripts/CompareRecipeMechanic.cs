@@ -23,7 +23,8 @@ namespace GameSystemsScripts.CoffeeSystemsScripts.RecipeSystemScripts.CompareRec
             var fillRecipeSystem = (FillRecipeSystem)gameSystemsHandler.GetGameSystem(typeof(FillRecipeSystem));
             List<CoffeeRecipeDescription> matchedRecipes = 
                 recipeHandlerSystem.Component.CurrentCoffeeDescription.Recipes.Where(recipe => recipe.CompareWithRecipe(fillRecipeSystem.Component.RecipeContainers)).ToList();
-            Component.CurrentRecipe = matchedRecipes.OrderBy(x=>x.RecipeMultiplier).ToList()[0];
+            Component.CurrentRecipe = matchedRecipes.Count > 0 ? 
+                matchedRecipes.OrderBy(x=>x.RecipeMultiplier).ToList()[0] : recipeHandlerSystem.Component.CurrentCoffeeDescription.DefaultRecipe;
             
             gameSystemsHandler.StateSystem.Mechanic.ChangeState(GameStates.StartBoil);
         }

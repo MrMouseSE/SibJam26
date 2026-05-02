@@ -24,7 +24,7 @@ namespace GameSystemsScripts.CoffeeSystemsScripts.ElementSystemScripts.ElementSe
             var gameSpeedSystem = (GameSpeedSystem)gameSystemsHandler.GetGameSystem(typeof(GameSpeedSystem));
             float duration = gameSpeedSystem.Component.AnimationsDescription.ElementsAnimationDescription.ElementSelectionAnimationDuration;
             UniTaskAnimationLazyObject animObj = new(container.ElementSelectAnimation,
-                ref container.CancelToken, duration, container.IsSelected);
+                ref container.CancelToken, duration, !container.IsSelected);
             
             animObj.Play().Forget();
             container.IsSelected = !container.IsSelected;

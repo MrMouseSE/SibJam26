@@ -6,8 +6,8 @@ namespace TweenScripts
     public class ColorTweenAnimation : TweenAnimation
     {
         public Image Image;
-        public Color FromColor;
-        public Color ToColor;
+        public Color FromColor = Color.white;
+        public Color ToColor = Color.white;
 
         public override void SetForceState(bool isForceStart)
         {
@@ -21,3 +21,4 @@ namespace TweenScripts
         }
     }
 }
+

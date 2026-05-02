@@ -1,3 +1,4 @@
+using GameSystemsScripts.CoffeeSystemsScripts.ElementSystemScripts.CompleteSelectionSystemScripts;
 using GameSystemsScripts.GameSpeedScripts;
 using ScenesOperatingScripts;
 
@@ -12,12 +13,18 @@ namespace GameSystemsScripts.CoffeeSystemsScripts.ElementSystemScripts.Selection
             Component = component;
         }
 
+        public void SetButtonsContainers(GameButtonContainer complete, GameButtonContainer redraw)
+        {
+            Component.CompleteButton = complete;
+            Component.RedrawButton = redraw;
+        }
+
         public void InitializeButtonsValues(GameSystemsHandler gameSystemsHandler)
         {
             GameSpeedSystem speedSystem = (GameSpeedSystem)gameSystemsHandler.GetGameSystem(typeof(GameSpeedSystem));
-            Component.CompleteButton.HoverAnimationDuration = speedSystem.Component.AnimationsDescription.ButtonHoverAnimationDuration;
+            Component.CompleteButton.HoverAnimationDuration = speedSystem.Component.AnimationsDescription.HoverAnimationDuration;
             Component.CompleteButton.ClickAnimationDuration = speedSystem.Component.AnimationsDescription.ClickAnimationsDuration;
-            Component.RedrawButton.HoverAnimationDuration = speedSystem.Component.AnimationsDescription.ButtonHoverAnimationDuration;
+            Component.RedrawButton.HoverAnimationDuration = speedSystem.Component.AnimationsDescription.HoverAnimationDuration;
             Component.RedrawButton.ClickAnimationDuration = speedSystem.Component.AnimationsDescription.ClickAnimationsDuration;
         }
 
@@ -26,8 +33,8 @@ namespace GameSystemsScripts.CoffeeSystemsScripts.ElementSystemScripts.Selection
             if (!Component.IsSelectionStateStartedThisFrame) return;
             Component.IsSelectionStateStartedThisFrame = false;
             GameSpeedSystem gameSpeed = (GameSpeedSystem)gameSystemsHandler.GetGameSystem(typeof(GameSpeedSystem));
-            Component.CompleteButton.SetActive(true, gameSpeed.Component.AnimationsDescription.ButtonAnimationDuration);
-            Component.RedrawButton.SetActive(true, gameSpeed.Component.AnimationsDescription.ButtonAnimationDuration);
+            Component.CompleteButton.SetActive(true, gameSpeed.Component.AnimationsDescription.ActivateAnimationDuration);
+            Component.RedrawButton.SetActive(true, gameSpeed.Component.AnimationsDescription.ActivateAnimationDuration);
         }
 
         public void DisposeMechanic()

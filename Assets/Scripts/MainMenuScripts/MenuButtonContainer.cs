@@ -58,9 +58,9 @@ namespace MainMenuScripts
         
         private UniTaskAnimationLazyObject StartUniTaskAnimationProcess(TweenGroupAnimation animations, float time, bool isForward)
         {
-            UniTaskAnimationLazyObject uniTaskAnimationObject = new (animations, ref _animationCancellationToken, time, isForward);
-            uniTaskAnimationObject.Play().Forget();
-            return uniTaskAnimationObject;
+            UniTaskAnimationLazyObject animObj = new (animations, ref _animationCancellationToken, time, isForward);
+            animObj.Play().Forget();
+            return animObj;
         }
 
         private void LoopIdleAnimation(UniTaskAnimationLazyObject obj)

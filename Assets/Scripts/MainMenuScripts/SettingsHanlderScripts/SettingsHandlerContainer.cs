@@ -46,9 +46,9 @@ namespace MainMenuScripts.SettingsHanlderScripts
 
         private void StartUniTaskAnimationProcess(float time, bool isForward)
         {
-            UniTaskAnimationLazyObject uniTaskAnimationObject = new (Animations, ref _animationCancellationToken, time, isForward);
-            uniTaskAnimationObject.Play().Forget();
-            uniTaskAnimationObject.AnimationCompleted += ResetState;
+            UniTaskAnimationLazyObject animObj = new (Animations, ref _animationCancellationToken, time, isForward);
+            animObj.Play().Forget();
+            animObj.AnimationCompleted += ResetState;
         }
 
         private void ResetState(UniTaskAnimationLazyObject uniTaskAnimationObject)

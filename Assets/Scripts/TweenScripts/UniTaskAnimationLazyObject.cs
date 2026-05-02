@@ -14,7 +14,6 @@ namespace TweenScripts
         private readonly float _time;
         private readonly bool _isForward;
         
-        
         public UniTaskAnimationLazyObject(TweenAnimation tweenAnimation, ref CancellationTokenSource tokenSource, float time, bool isForward)
         {
             _tweenAnimation = tweenAnimation;

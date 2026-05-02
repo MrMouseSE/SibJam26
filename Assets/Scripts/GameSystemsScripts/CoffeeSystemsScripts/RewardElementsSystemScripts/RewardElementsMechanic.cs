@@ -13,7 +13,7 @@ namespace GameSystemsScripts.CoffeeSystemsScripts.RewardElementsSystemScripts
 
         public void UpdateMechanic(GameSystemsHandler gameSystemsHandler, float deltaTime)
         {
-            
+            //TODO: reward element to player
         }
 
         public void DisposeMechanic()

@@ -43,10 +43,10 @@ namespace GameSystemsScripts.CoffeeSystemsScripts.ElementSystemScripts.ElementsD
             
             GameSpeedSystem speedSystem = (GameSpeedSystem)gameSystemsHandler.GetGameSystem(typeof(GameSpeedSystem));
             CancellationTokenSource cts = new CancellationTokenSource();
-            UniTaskAnimationLazyObject uniTaskAnimationObject = new UniTaskAnimationLazyObject(Component.Container.AppearAnimation, ref cts,
+            UniTaskAnimationLazyObject animObj = new UniTaskAnimationLazyObject(Component.Container.AppearAnimation, ref cts,
                 speedSystem.Component.AnimationsDescription.ElementsAnimationDescription.ElementDrawAnimationDuration, true);
-            uniTaskAnimationObject.Play().Forget();
-            uniTaskAnimationObject.AnimationCompleted += OnDrawAnimationFinished;
+            animObj.Play().Forget();
+            animObj.AnimationCompleted += OnDrawAnimationFinished;
             
             var selectionButtonSystem = (SelectionButtonsSystem)gameSystemsHandler.GetGameSystem(typeof(SelectionButtonsSystem));
             selectionButtonSystem.Component.IsSelectionStateStartedThisFrame = true;

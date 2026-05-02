@@ -4,11 +4,6 @@ namespace GameSystemsScripts.CoffeeSystemsScripts.ElementSystemScripts.CompleteS
     {
         public bool IsButtonPressedThisFrame;
         
-        public ElementDrawStateButtonContainer Container;
-
-        public CompleteSelectionComponent(ElementDrawStateButtonContainer container)
-        {
-            Container = container;
-        }
+        public GameButtonContainer CompleteButtonContainer;
     }
 }

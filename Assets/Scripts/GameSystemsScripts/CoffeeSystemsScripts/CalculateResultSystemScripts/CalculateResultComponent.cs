@@ -7,6 +7,7 @@ namespace GameSystemsScripts.CoffeeSystemsScripts.CalculateResultSystemScripts
         public float TasteSumm;
         public float TasteMultiplierSumm;
         public float RecipeMultiplier;
+        public float BoilMultiplier;
         public float ResultValue;
     }
 }

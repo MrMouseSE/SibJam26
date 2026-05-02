@@ -8,14 +8,15 @@ namespace GameSystemsScripts.CoffeeSystemsScripts.ElementSystemScripts.CompleteS
         public CompleteSelectionComponent Component;
         public CompleteSelectionMechanic Mechanic;
 
-        public CompleteSelectionSystem(ElementDrawStateButtonContainer container, GameSystemsHandler gameSystemsHandler)
+        public CompleteSelectionSystem()
         {
-            Component = new CompleteSelectionComponent(container);
-            Mechanic = new CompleteSelectionMechanic(Component, gameSystemsHandler);
+            Component = new CompleteSelectionComponent();
+            Mechanic = new CompleteSelectionMechanic(Component);
         }
 
         public void Initialize(GameSystemsHandler gameSystemsHandler)
         {
+            Mechanic.SetSystemHandler(gameSystemsHandler);
         }
 
         public void UpdateSystem(GameSystemsHandler gameSystemsHandler, float deltaTime)

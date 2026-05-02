@@ -5,11 +5,6 @@ namespace GameSystemsScripts.CoffeeSystemsScripts.ElementSystemScripts.ElementsR
     public class ElementsRedrawComponent
     {
         public bool IsRedrawButtonPressed;
-        public ElementDrawStateButtonContainer RedrawButtonContainer;
-
-        public ElementsRedrawComponent(ElementDrawStateButtonContainer redrawButtonContainer)
-        {
-            RedrawButtonContainer = redrawButtonContainer;
-        }
+        public GameButtonContainer RedrawButtonContainer;
     }
 }

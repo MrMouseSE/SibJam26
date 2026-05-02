@@ -6,13 +6,7 @@ namespace GameSystemsScripts.CoffeeSystemsScripts.ElementSystemScripts.Selection
     {
         public bool IsSelectionStateStartedThisFrame;
         
-        public ElementDrawStateButtonContainer CompleteButton;
-        public ElementDrawStateButtonContainer RedrawButton;
-
-        public SelectionButtonComponent(ElementDrawStateButtonContainer completeButton, ElementDrawStateButtonContainer redrawButton)
-        {
-            CompleteButton = completeButton;
-            RedrawButton = redrawButton;
-        }
+        public GameButtonContainer CompleteButton;
+        public GameButtonContainer RedrawButton;
     }
 }

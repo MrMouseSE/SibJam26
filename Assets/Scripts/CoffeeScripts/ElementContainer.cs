@@ -44,9 +44,9 @@ namespace CoffeeScripts
         
         public void OnPointerEnter(PointerEventData eventData)
         {
-            UniTaskAnimationLazyObject newAnimObj = new UniTaskAnimationLazyObject(ElementHoverAnimation, ref _animCancelToken,
+            UniTaskAnimationLazyObject animObj = new UniTaskAnimationLazyObject(ElementHoverAnimation, ref _animCancelToken,
                 AnimationsDescription.ElementsAnimationDescription.ElementHoverAnimationDuration, true);
-            newAnimObj.Play().Forget();
+            animObj.Play().Forget();
             SoundContainer.Play(SoundType.AppearSound);
         }
 

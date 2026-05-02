@@ -25,7 +25,7 @@ namespace GameSystemsScripts.CoffeeSystemsScripts.RecipeSystemScripts.CompareRec
                 recipeHandlerSystem.Component.CurrentCoffeeDescription.Recipes.Where(recipe => recipe.CompareWithRecipe(fillRecipeSystem.Component.RecipeContainers)).ToList();
             Component.CurrentRecipe = matchedRecipes.OrderBy(x=>x.RecipeMultiplier).ToList()[0];
             
-            gameSystemsHandler.StateSystem.Mechanic.ChangeState(GameStates.BoilCoffee);
+            gameSystemsHandler.StateSystem.Mechanic.ChangeState(GameStates.StartBoil);
         }
 
         public void DisposeMechanic()

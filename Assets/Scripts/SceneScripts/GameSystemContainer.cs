@@ -1,11 +1,21 @@
 using CoffeeScripts.ElementsInventoryScripts;
+using GameSystemsScripts.CoffeeSystemsScripts.BoilingSystemScripts.BoilingProcessScripts;
+using GameSystemsScripts.CoffeeSystemsScripts.BoilingSystemScripts.CompleteBoilingScripts;
+using GameSystemsScripts.CoffeeSystemsScripts.ElementSystemScripts.CompleteSelectionSystemScripts;
 using GameSystemsScripts.CoffeeSystemsScripts.ElementSystemScripts.ElementsDrawScripts;
+using GameSystemsScripts.CoffeeSystemsScripts.ElementSystemScripts.ElementsRedrawScripts;
+using GameSystemsScripts.CoffeeSystemsScripts.ElementSystemScripts.SelectionButtonsScripts;
 using ScenesOperatingScripts;
 
 namespace SceneScripts
 {
     public class GameSystemContainer : SceneSystemsContainer
     {
+        public BoilCoffeeContainer BoilCoffeeContainer;
+        
+        public GameButtonContainer RedrawButtonContainer;
+        public GameButtonContainer CompleteButtonContainer;
+        public GameButtonContainer BoilCompleteButtonContainer;
         public ElementsDrawHandlerContainer ElementsDrawHandlerContainer;
 
         public override void InitializeSceneSystems(GameSystemsHandler systemsHandler)
@@ -13,6 +23,21 @@ namespace SceneScripts
             var drawSystem = (ElementsDrawSystem)systemsHandler.GetGameSystem(typeof(ElementsDrawSystem));
             ElementsDrawHandlerContainer.AppearAnimation.SetForceState(true);
             drawSystem.Component.Container = ElementsDrawHandlerContainer;
+            
+            var selectionButtonsSystem = (SelectionButtonsSystem)systemsHandler.GetGameSystem(typeof(SelectionButtonsSystem));
+            selectionButtonsSystem.Mechanic.SetButtonsContainers(CompleteButtonContainer, RedrawButtonContainer);
+            
+            var elementsRedrawSystem = (ElementsRedrawSystem)systemsHandler.GetGameSystem(typeof(ElementsRedrawSystem));
+            elementsRedrawSystem.Mechanic.SetButtonContainer(RedrawButtonContainer);
+            
+            var completeSelectionSystem = (CompleteSelectionSystem)systemsHandler.GetGameSystem(typeof(CompleteSelectionSystem));
+            completeSelectionSystem.Mechanic.SetButtonContainer(CompleteButtonContainer);
+            
+            var boilingProcessSystem = (BoilingProcessSystem)systemsHandler.GetGameSystem(typeof(BoilingProcessSystem));
+            boilingProcessSystem.Component.Container = BoilCoffeeContainer;
+            
+            var completeBoilingSystem = (CompleteBoilingSystem)systemsHandler.GetGameSystem(typeof(CompleteBoilingSystem));
+            completeBoilingSystem.Mechanic.SetButton(BoilCompleteButtonContainer);
         }
     }
 }

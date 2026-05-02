@@ -9,9 +9,9 @@ namespace GameSystemsScripts.CoffeeSystemsScripts.ElementSystemScripts.ElementsR
         public ElementsRedrawComponent Component;
         public ElementsRedrawMechanic Mechanic;
 
-        public ElementsRedrawSystem(ElementDrawStateButtonContainer redrawButtonContainer)
+        public ElementsRedrawSystem()
         {
-            Component = new ElementsRedrawComponent(redrawButtonContainer);
+            Component = new ElementsRedrawComponent();
             Mechanic = new ElementsRedrawMechanic(Component);
         }
 

@@ -1,4 +1,5 @@
 using CameraScripts;
+using TweenScripts;
 
 namespace GameSystemsScripts.CameraSystem
 {

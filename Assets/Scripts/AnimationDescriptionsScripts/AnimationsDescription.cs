@@ -1,4 +1,4 @@
-using TweenScripts;
+using CoffeeScripts;
 using UnityEngine;
 
 namespace AnimationDescriptionsScripts
@@ -8,8 +8,13 @@ namespace AnimationDescriptionsScripts
     {
         public ElementsAnimationDescription ElementsAnimationDescription;
         
-        public float ButtonAnimationDuration;
-        public float ButtonHoverAnimationDuration;
+        public BoilDescription Boil;
+
+        public CameraAnimationDescription Camera;
+        
+        [TextArea]
+        public float ActivateAnimationDuration;
+        public float HoverAnimationDuration;
         public float ClickAnimationsDuration;
     }
 }

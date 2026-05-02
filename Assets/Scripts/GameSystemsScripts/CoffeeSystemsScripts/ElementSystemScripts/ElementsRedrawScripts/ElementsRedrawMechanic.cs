@@ -1,3 +1,4 @@
+using GameSystemsScripts.CoffeeSystemsScripts.ElementSystemScripts.CompleteSelectionSystemScripts;
 using GameSystemsScripts.CoffeeSystemsScripts.ElementSystemScripts.ElementsHandSystemScripts;
 using GameSystemsScripts.CoffeeSystemsScripts.RecipeSystemScripts.FillRecipeScripts;
 using GameSystemsScripts.GameSpeedScripts;
@@ -14,13 +15,18 @@ namespace GameSystemsScripts.CoffeeSystemsScripts.ElementSystemScripts.ElementsR
         public ElementsRedrawMechanic(ElementsRedrawComponent component)
         {
             Component = component;
+        }
+
+        public void SetButtonContainer(GameButtonContainer buttonContainer)
+        {
+            Component.RedrawButtonContainer = buttonContainer;
             Component.RedrawButtonContainer.OnButtonPressed += RedrawButtonPushed;
         }
         
         public void InitializeButtonsValues(GameSystemsHandler gameSystemsHandler)
         {
             GameSpeedSystem speedSystem = (GameSpeedSystem)gameSystemsHandler.GetGameSystem(typeof(GameSpeedSystem));
-            Component.RedrawButtonContainer.HoverAnimationDuration = speedSystem.Component.AnimationsDescription.ButtonHoverAnimationDuration;
+            Component.RedrawButtonContainer.HoverAnimationDuration = speedSystem.Component.AnimationsDescription.HoverAnimationDuration;
             Component.RedrawButtonContainer.ClickAnimationDuration = speedSystem.Component.AnimationsDescription.ClickAnimationsDuration;
         }
 
@@ -42,7 +48,7 @@ namespace GameSystemsScripts.CoffeeSystemsScripts.ElementSystemScripts.ElementsR
             if (handSystem.Component.UnusedSwaps == 0)
             {
                 Component.RedrawButtonContainer.SetActive(false,
-                    speedSystem.Component.AnimationsDescription.ButtonAnimationDuration);
+                    speedSystem.Component.AnimationsDescription.ActivateAnimationDuration);
             }
             
             foreach (var recipeContainer in selectionSystem.Component.RecipeContainers)

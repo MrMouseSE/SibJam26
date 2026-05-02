@@ -1,15 +1,18 @@
 using System;
 using System.Threading;
+using SoundsComponentsScripts;
 using TweenScripts;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
 namespace GameSystemsScripts.CoffeeSystemsScripts.ElementSystemScripts.CompleteSelectionSystemScripts
 {
-    public class ElementDrawStateButtonContainer : MonoBehaviour , IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
+    public class GameButtonContainer : MonoBehaviour , IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
     {
         public GameObject ButtonGameObject;
         public Transform ButtonTrasform;
+        public Collider ButtonCollider;
+        public AudioContainer AudioContainer;
         
         public TweenGroupAnimation ButtonActivateAnimations;
         public TweenGroupAnimation ClickAnimations;
@@ -25,11 +28,14 @@ namespace GameSystemsScripts.CoffeeSystemsScripts.ElementSystemScripts.CompleteS
 
         public void SetActive(bool active, float duration)
         {
+            AudioContainer.Play(active ? SoundType.AppearSound : SoundType.DeathSound);
+            ButtonCollider.enabled = active;
             new UniTaskAnimationLazyObject(ButtonActivateAnimations, ref _ctsActivation, duration, active).Play().Forget();
         }
         
         public void OnPointerClick(PointerEventData eventData)
         {
+            AudioContainer.Play(SoundType.ActionSound);
             new UniTaskAnimationLazyObject(ClickAnimations, ref _ctsActivation, ClickAnimationDuration, true).Play().Forget();
             OnButtonPressed?.Invoke();
         }

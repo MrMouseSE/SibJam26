@@ -9,9 +9,9 @@ namespace GameSystemsScripts.CoffeeSystemsScripts.ElementSystemScripts.Selection
         public SelectionButtonComponent Component;
         public SelectionButtonMechanic Mechanic;
 
-        public SelectionButtonsSystem(ElementDrawStateButtonContainer completeButton, ElementDrawStateButtonContainer redrawButton)
+        public SelectionButtonsSystem()
         {
-            Component = new SelectionButtonComponent(completeButton, redrawButton);
+            Component = new SelectionButtonComponent();
             Mechanic = new SelectionButtonMechanic(Component);
         }
 

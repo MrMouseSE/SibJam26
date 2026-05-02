@@ -13,4 +13,6 @@ MonoBehaviour:
   m_Name: AnimationsDescription
   m_EditorClassIdentifier: Assembly-CSharp::AnimationDescriptionsScripts.AnimationsDescription
   ElementsAnimationDescription: {fileID: 11400000, guid: 959f1585252415a4ea3781e9c165fd5e, type: 2}
-  CompleteSelectionButtonAnimationDuration: 0.35
+  ActivateAnimationDuration: 0
+  HoverAnimationDuration: 0
+  ClickAnimationsDuration: 0.25

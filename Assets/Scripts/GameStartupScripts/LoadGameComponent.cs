@@ -4,6 +4,9 @@ using CoffeeScripts;
 using CoffeeScripts.ElementsInventoryScripts;
 using GameSystemsScripts.CameraSystem;
 using GameSystemsScripts.CoffeeSystemsScripts.BoilingSystemScripts;
+using GameSystemsScripts.CoffeeSystemsScripts.BoilingSystemScripts.BoilingProcessScripts;
+using GameSystemsScripts.CoffeeSystemsScripts.BoilingSystemScripts.CompleteBoilingScripts;
+using GameSystemsScripts.CoffeeSystemsScripts.BoilingSystemScripts.StartBoilingScripts;
 using GameSystemsScripts.CoffeeSystemsScripts.CalculateResultSystemScripts;
 using GameSystemsScripts.CoffeeSystemsScripts.ElementSystemScripts.CompleteSelectionSystemScripts;
 using GameSystemsScripts.CoffeeSystemsScripts.ElementSystemScripts.ElementsDrawScripts;
@@ -43,8 +46,8 @@ namespace GameStartupScripts
         public AnimationsDescription AnimationsDescription;
         public CoffeeDescription CoffeeDescription;
         public DaysAchievementsDescription DaysAchievementsDescription;
-        public ElementDrawStateButtonContainer CompleteSelectionButtonContainer;
-        public ElementDrawStateButtonContainer RedrawButtonContainer;
+        public GameButtonContainer CompleteSelectionButtonContainer;
+        public GameButtonContainer RedrawButtonContainer;
         
         private GameSystemsHandler _gameSystemsHandler;
         private AudioMixerHandler _audioMixerHandler;
@@ -63,14 +66,18 @@ namespace GameStartupScripts
             
             _gameSystemsHandler.AddGameSystem(new ElementsHandSystem(CoffeeDescription.ElementsHand));
             _gameSystemsHandler.AddGameSystem(new ElementsDrawSystem());
-            _gameSystemsHandler.AddGameSystem(new SelectionButtonsSystem(CompleteSelectionButtonContainer, RedrawButtonContainer));
-            _gameSystemsHandler.AddGameSystem(new ElementsRedrawSystem(RedrawButtonContainer));
+            _gameSystemsHandler.AddGameSystem(new SelectionButtonsSystem());
+            _gameSystemsHandler.AddGameSystem(new ElementsRedrawSystem());
             _gameSystemsHandler.AddGameSystem(new ElementSelectionSystem());
-            _gameSystemsHandler.AddGameSystem(new CompleteSelectionSystem(CompleteSelectionButtonContainer, _gameSystemsHandler));
+            _gameSystemsHandler.AddGameSystem(new CompleteSelectionSystem());
                 
             _gameSystemsHandler.AddGameSystem(new FillRecipeSystem());
             _gameSystemsHandler.AddGameSystem(new CompareRecipeSystem());
-            _gameSystemsHandler.AddGameSystem(new BoilingSystem());
+            
+            _gameSystemsHandler.AddGameSystem(new StartBoilingSystem());
+            _gameSystemsHandler.AddGameSystem(new BoilingProcessSystem(AnimationsDescription.Boil));
+            _gameSystemsHandler.AddGameSystem(new CompleteBoilingSystem());
+            
             _gameSystemsHandler.AddGameSystem(new CalculateResultSystem());
             _gameSystemsHandler.AddGameSystem(new ApproveRecipeSystem());
             _gameSystemsHandler.AddGameSystem(new RewardElementsSystem(DaysAchievementsDescription));

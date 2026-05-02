@@ -15,11 +15,20 @@ namespace GameSystemsScripts.CoffeeSystemsScripts.ElementSystemScripts.CompleteS
         
         private GameSystemsHandler _gameSystemsHandler;
 
-        public CompleteSelectionMechanic(CompleteSelectionComponent component, GameSystemsHandler gameSystemsHandler)
+        public CompleteSelectionMechanic(CompleteSelectionComponent component)
         {
-            _gameSystemsHandler = gameSystemsHandler;
             Component = component;
-            Component.Container.OnButtonPressed += OnSelectionComplete;
+        }
+
+        public void SetButtonContainer(GameButtonContainer buttonContainer)
+        {
+            Component.CompleteButtonContainer = buttonContainer;
+            Component.CompleteButtonContainer.OnButtonPressed += OnSelectionComplete;
+        }
+
+        public void SetSystemHandler(GameSystemsHandler handler)
+        {
+            _gameSystemsHandler = handler;
         }
 
         private void OnSelectionComplete()
@@ -35,8 +44,8 @@ namespace GameSystemsScripts.CoffeeSystemsScripts.ElementSystemScripts.CompleteS
             
             var speedSystem = (GameSpeedSystem)gameSystemsHandler.GetGameSystem(typeof(GameSpeedSystem));
             var cancelToken = new CancellationTokenSource();
-            var animationObject = new UniTaskAnimationLazyObject(Component.Container.ButtonActivateAnimations, 
-                ref cancelToken, speedSystem.Component.AnimationsDescription.ButtonAnimationDuration, false);
+            var animationObject = new UniTaskAnimationLazyObject(Component.CompleteButtonContainer.ButtonActivateAnimations, 
+                ref cancelToken, speedSystem.Component.AnimationsDescription.ActivateAnimationDuration, false);
             animationObject.Play().Forget();
             animationObject.AnimationCompleted += OnCompleteButtonAnimationFinished;
             
@@ -60,15 +69,15 @@ namespace GameSystemsScripts.CoffeeSystemsScripts.ElementSystemScripts.CompleteS
                     ? speedSystem.Component.AnimationsDescription.ElementsAnimationDescription.ElementSelectedDisappearDuration :
                     speedSystem.Component.AnimationsDescription.ElementsAnimationDescription.ElementUnselectedDisappearDuration;
                 CancellationTokenSource cts = new CancellationTokenSource();
-                UniTaskAnimationLazyObject containerAnimation = new UniTaskAnimationLazyObject(container.ElementDisappearAnimation, ref cts, duration, false);
-                containerAnimation.Play().Forget();
+                UniTaskAnimationLazyObject animObj = new UniTaskAnimationLazyObject(container.ElementDisappearAnimation, ref cts, duration, false);
+                animObj.Play().Forget();
                 container.SoundContainer.Play(SoundType.DeathSound);
             }
         }
 
         public void DisposeMechanic()
         {
-            Component.Container.OnButtonPressed -= OnSelectionComplete;
+            Component.CompleteButtonContainer.OnButtonPressed -= OnSelectionComplete;
         }
 
         private void OnCompleteButtonAnimationFinished(UniTaskAnimationLazyObject uniTaskAnimationObject)

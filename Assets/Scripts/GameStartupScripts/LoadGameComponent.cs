@@ -26,6 +26,7 @@ using LevelAchievementsScripts;
 using MainMenuScripts.SettingsHanlderScripts;
 using ScenesOperatingScripts;
 using SoundsComponentsScripts;
+using SupportScripts;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.Audio;
@@ -51,6 +52,7 @@ namespace GameStartupScripts
         public async void Awake()
         {
             await SoundInstancerController.SetRefObjects(SoundObjectReference, GameAudioMixer);
+            StaticElementFactory.CoffeeDescription = CoffeeDescription;
             _gameSystemsHandler = new GameSystemsHandler();
             
             _gameSystemsHandler.AddStateSystem(new GameStateSystem());
@@ -60,7 +62,7 @@ namespace GameStartupScripts
             _gameSystemsHandler.AddGameSystem(new RecipeHandlerSystem(CoffeeDescription));
             
             _gameSystemsHandler.AddGameSystem(new ElementsHandSystem(CoffeeDescription.ElementsHand));
-            _gameSystemsHandler.AddGameSystem(new ElementsDrawSystem(_gameSystemsHandler));
+            _gameSystemsHandler.AddGameSystem(new ElementsDrawSystem());
             _gameSystemsHandler.AddGameSystem(new SelectionButtonsSystem(CompleteSelectionButtonContainer, RedrawButtonContainer));
             _gameSystemsHandler.AddGameSystem(new ElementsRedrawSystem(RedrawButtonContainer));
             _gameSystemsHandler.AddGameSystem(new ElementSelectionSystem());
@@ -82,6 +84,11 @@ namespace GameStartupScripts
             SceneLoadingHandler.LoadScenes(ScenesLoadAtStart);
             SceneLoadingHandler.OnSceneLoaded += SetMenuSceneActive;
             ElementsStaticInventory.LoadCurrentAvailableElements(CoffeeDescription);
+        }
+
+        private void Start()
+        {
+            _gameSystemsHandler.InitializeSystems();
         }
 
         private void SetMenuSceneActive()

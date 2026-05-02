@@ -11,8 +11,8 @@ namespace SceneScripts
         public override void InitializeSceneSystems(GameSystemsHandler systemsHandler)
         {
             var drawSystem = (ElementsDrawSystem)systemsHandler.GetGameSystem(typeof(ElementsDrawSystem));
+            ElementsDrawHandlerContainer.AppearAnimation.SetForceState(true);
             drawSystem.Component.Container = ElementsDrawHandlerContainer;
-
         }
     }
 }

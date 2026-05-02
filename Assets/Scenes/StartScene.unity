@@ -168,6 +168,11 @@ MonoBehaviour:
   GameAudioMixer: {fileID: 24100000, guid: 877a0be7d3c07c24192605b5a8ad4f4b, type: 2}
   SettingsHandler: {fileID: 1195930455}
   CameraContainer: {fileID: 1619718633}
+  AnimationsDescription: {fileID: 11400000, guid: 3db4f108911951740a9e3a9fc7634121, type: 2}
+  CoffeeDescription: {fileID: 11400000, guid: 1bebdc17d0a252c4baf02c058ab8eee8, type: 2}
+  DaysAchievementsDescription: {fileID: 11400000, guid: 2a616bfb8c0ab3d40915bd86fdedab6a, type: 2}
+  CompleteSelectionButtonContainer: {fileID: 0}
+  RedrawButtonContainer: {fileID: 0}
 --- !u!4 &727603418
 Transform:
   m_ObjectHideFlags: 0

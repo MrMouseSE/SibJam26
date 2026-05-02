@@ -6,21 +6,36 @@ namespace TweenScripts
     {
         public bool AnimateByUpdate;
         public float Duration;
+        public bool IsRandomDelay;
+        public Vector2 RandomDelayRange;
         
         [Space]
         public AnimationCurve AnimationRule;
         
         private float _currentTime;
+        private float _delayTime;
 
         public void Update()
         {
             if (!AnimateByUpdate) return;
+            if (IsRandomDelay)
+            {
+                _delayTime -= Time.deltaTime;
+                if (_delayTime > 0f) return;
+            }
             _currentTime -= Time.deltaTime;
             if (_currentTime < 0)
             {
                 _currentTime = Duration;
+                if (IsRandomDelay)
+                    SetRandomDelay();
             }
             Evaluate(_currentTime/Duration);
+        }
+
+        private void SetRandomDelay()
+        {
+            _delayTime = Random.Range(RandomDelayRange.x, RandomDelayRange.y);
         }
         
         public virtual void SetForceState(bool isForceStart)

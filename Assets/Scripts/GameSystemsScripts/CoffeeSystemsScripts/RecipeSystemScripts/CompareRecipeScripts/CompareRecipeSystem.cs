@@ -13,7 +13,11 @@ namespace GameSystemsScripts.CoffeeSystemsScripts.RecipeSystemScripts.CompareRec
             Component = new CompareRecipeComponent();
             Mechanic = new CompareRecipeMechanic(Component);
         }
-        
+
+        public void Initialize(GameSystemsHandler gameSystemsHandler)
+        {
+        }
+
         public void UpdateSystem(GameSystemsHandler gameSystemsHandler, float deltaTime)
         {
             if (gameSystemsHandler.StateSystem.Component.CurrentGameState != GameStates.CompareRecipe) return;

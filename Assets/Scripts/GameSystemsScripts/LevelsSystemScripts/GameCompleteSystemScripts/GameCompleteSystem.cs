@@ -12,7 +12,11 @@ namespace GameSystemsScripts.LevelsSystemScripts.GameCompleteSystemScripts
             Component = new GameCompleteComponent();
             Mechanic = new GameCompleteMechanic(Component);
         }
-        
+
+        public void Initialize(GameSystemsHandler gameSystemsHandler)
+        {
+        }
+
         public void UpdateSystem(GameSystemsHandler gameSystemsHandler, float deltaTime)
         {
             Mechanic.UpdateMechanic(gameSystemsHandler, deltaTime);

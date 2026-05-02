@@ -14,7 +14,12 @@ namespace GameSystemsScripts.CoffeeSystemsScripts.ElementSystemScripts.Selection
             Component = new SelectionButtonComponent(completeButton, redrawButton);
             Mechanic = new SelectionButtonMechanic(Component);
         }
-        
+
+        public void Initialize(GameSystemsHandler gameSystemsHandler)
+        {
+            Mechanic.InitializeButtonsValues(gameSystemsHandler);
+        }
+
         public void UpdateSystem(GameSystemsHandler gameSystemsHandler, float deltaTime)
         {
             if (gameSystemsHandler.StateSystem.Component.CurrentGameState != GameStates.SelectElements) return;

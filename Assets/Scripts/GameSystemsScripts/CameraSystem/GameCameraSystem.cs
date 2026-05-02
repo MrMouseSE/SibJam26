@@ -14,6 +14,10 @@ namespace GameSystemsScripts.CameraSystem
             Mechanic = new GameCameraMechanic(Component);
         }
 
+        public void Initialize(GameSystemsHandler gameSystemsHandler)
+        {
+        }
+
         public void UpdateSystem(GameSystemsHandler gameSystemsHandler, float deltaTime)
         {
             if (!Component.IsCameraUpdating) return;

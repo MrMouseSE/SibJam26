@@ -13,7 +13,11 @@ namespace GameSystemsScripts.CoffeeSystemsScripts.RecipeSystemScripts.AproveReci
             Component = new ApproveRecipeComponent();
             Mechanic = new ApproveRecipeMechanic(Component);
         }
-        
+
+        public void Initialize(GameSystemsHandler gameSystemsHandler)
+        {
+        }
+
         public void UpdateSystem(GameSystemsHandler gameSystemsHandler, float deltaTime)
         {
             if (gameSystemsHandler.StateSystem.Component.CurrentGameState != GameStates.ApproveRecipe) return;

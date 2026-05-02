@@ -16,6 +16,13 @@ namespace GameSystemsScripts.CoffeeSystemsScripts.ElementSystemScripts.ElementsR
             Component = component;
             Component.RedrawButtonContainer.OnButtonPressed += RedrawButtonPushed;
         }
+        
+        public void InitializeButtonsValues(GameSystemsHandler gameSystemsHandler)
+        {
+            GameSpeedSystem speedSystem = (GameSpeedSystem)gameSystemsHandler.GetGameSystem(typeof(GameSpeedSystem));
+            Component.RedrawButtonContainer.HoverAnimationDuration = speedSystem.Component.AnimationsDescription.ButtonHoverAnimationDuration;
+            Component.RedrawButtonContainer.ClickAnimationDuration = speedSystem.Component.AnimationsDescription.ClickAnimationsDuration;
+        }
 
         private void RedrawButtonPushed()
         {
@@ -25,23 +32,29 @@ namespace GameSystemsScripts.CoffeeSystemsScripts.ElementSystemScripts.ElementsR
         public void UpdateMechanic(GameSystemsHandler gameSystemsHandler, float deltaTime)
         {
             if (!Component.IsRedrawButtonPressed) return;
+            ElementsHandSystem handSystem = (ElementsHandSystem)gameSystemsHandler.GetGameSystem(typeof(ElementsHandSystem));
+            FillRecipeSystem selectionSystem = (FillRecipeSystem)gameSystemsHandler.GetGameSystem(typeof(FillRecipeSystem));
+            GameSpeedSystem speedSystem = (GameSpeedSystem)gameSystemsHandler.GetGameSystem(typeof(GameSpeedSystem));
             
             Component.IsRedrawButtonPressed = false;
-            var handSystem = (ElementsHandSystem)gameSystemsHandler.GetGameSystem(typeof(ElementsHandSystem));
+            
             handSystem.Component.UnusedSwaps --;
             if (handSystem.Component.UnusedSwaps == 0)
             {
-                Component.RedrawButtonContainer.SetActive(false);
+                Component.RedrawButtonContainer.SetActive(false,
+                    speedSystem.Component.AnimationsDescription.ButtonAnimationDuration);
             }
-            //TODO: redraw selected elements
-            FillRecipeSystem selectionSystem = (FillRecipeSystem)gameSystemsHandler.GetGameSystem(typeof(FillRecipeSystem));
-            GameSpeedSystem speedSystem = (GameSpeedSystem)gameSystemsHandler.GetGameSystem(typeof(GameSpeedSystem));
+            
             foreach (var recipeContainer in selectionSystem.Component.RecipeContainers)
             {
                 StaticElementFactory.SetValuesToContainer(recipeContainer);
-                UniTaskAnimationObject uniTaskAnimationObject = new UniTaskAnimationObject();
-                uniTaskAnimationObject.StartContainerSelectionAnimation(recipeContainer,
-                    speedSystem.Component.AnimationsDescription.ElementsAnimationDescription.ElementSelectionAnimationDuration).Forget();
+                float duration =
+                    speedSystem.Component.AnimationsDescription.ElementsAnimationDescription.ElementSelectionAnimationDuration;
+                
+                UniTaskAnimationLazyObject animObj = new(recipeContainer.ElementSelectAnimation, ref recipeContainer.CancelToken,
+                    duration, recipeContainer.IsSelected);
+                
+                animObj.Play().Forget();
                 recipeContainer.IsSelected = false;
             }
             selectionSystem.Component.RecipeContainers.Clear();

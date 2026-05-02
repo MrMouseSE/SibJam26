@@ -14,7 +14,11 @@ namespace GameSystemsScripts.LevelsSystemScripts.LevelHandlerScripts
             Component = new LevelHandlerComponent(description);
             Mechanic = new LevelHandlerMechanic(Component);
         }
-        
+
+        public void Initialize(GameSystemsHandler gameSystemsHandler)
+        {
+        }
+
         public void UpdateSystem(GameSystemsHandler gameSystemsHandler, float deltaTime)
         {
             if (gameSystemsHandler.StateSystem.Component.CurrentGameState != GameStates.ChangeLevel) return;

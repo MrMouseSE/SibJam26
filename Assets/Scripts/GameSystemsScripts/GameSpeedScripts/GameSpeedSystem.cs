@@ -13,7 +13,11 @@ namespace GameSystemsScripts.GameSpeedScripts
             Component = new GameSpeedComponent(animationsDescription);
             Mechanic = new GameSpeedMechanic(Component);
         }
-        
+
+        public void Initialize(GameSystemsHandler gameSystemsHandler)
+        {
+        }
+
         public void UpdateSystem(GameSystemsHandler gameSystemsHandler, float deltaTime)
         {
         }

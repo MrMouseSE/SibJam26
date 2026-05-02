@@ -14,7 +14,11 @@ namespace GameSystemsScripts.CoffeeSystemsScripts.RewardElementsSystemScripts
             Component = new RewardElementsComponent(dayAchievementsDescription);
             Mechanic = new RewardElementsMechanic(Component);
         }
-        
+
+        public void Initialize(GameSystemsHandler gameSystemsHandler)
+        {
+        }
+
         public void UpdateSystem(GameSystemsHandler gameSystemsHandler, float deltaTime)
         {
             if (gameSystemsHandler.StateSystem.Component.CurrentGameState != GameStates.RewardElements) return;

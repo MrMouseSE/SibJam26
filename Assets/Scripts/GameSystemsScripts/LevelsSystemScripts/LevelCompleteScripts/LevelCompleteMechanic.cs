@@ -20,7 +20,7 @@ namespace GameSystemsScripts.LevelsSystemScripts.LevelCompleteScripts
             
             if (resultSystem.Component.ResultValue > 
                 Component.DaysDescription.DaysAchievementsDescriptions[levelHandlerComponent.Day].
-                    LevelsAchievements[levelHandlerComponent.Level].LevelValue)
+                    LevelsAchievements[levelHandlerComponent.Level].LevelScoreToAchieve)
             {
                 Component.IsLevelCompleted = true;
             }

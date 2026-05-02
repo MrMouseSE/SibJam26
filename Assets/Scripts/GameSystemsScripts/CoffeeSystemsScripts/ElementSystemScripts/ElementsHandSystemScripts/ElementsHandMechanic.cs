@@ -1,5 +1,6 @@
 using System;
 using ScenesOperatingScripts;
+using UnityEngine;
 
 namespace GameSystemsScripts.CoffeeSystemsScripts.ElementSystemScripts.ElementsHandSystemScripts
 {
@@ -10,6 +11,12 @@ namespace GameSystemsScripts.CoffeeSystemsScripts.ElementSystemScripts.ElementsH
         public ElementsHandMechanic(ElementsHandComponent component)
         {
             Component = component;
+        }
+
+        public void InitializeHandValues()
+        {
+            Component.CurrentElementsToDrawCapacity = PlayerPrefs.GetInt("ElementsHandCapacity", 0);
+            Component.CurrentElementsSwapCount = PlayerPrefs.GetInt("ElementsHandSwapCount", 0);
         }
 
         public void FixHandCounts()

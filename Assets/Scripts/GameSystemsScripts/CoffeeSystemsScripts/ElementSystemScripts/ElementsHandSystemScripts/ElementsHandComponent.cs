@@ -17,8 +17,6 @@ namespace GameSystemsScripts.CoffeeSystemsScripts.ElementSystemScripts.ElementsH
         public ElementsHandComponent(ElementsHandDescription elementsHandDescription)
         {
             ElementsHandDescription = elementsHandDescription;
-            CurrentElementsToDrawCapacity = PlayerPrefs.GetInt("ElementsHandCapacity", 0);
-            CurrentElementsSwapCount = PlayerPrefs.GetInt("ElementsHandSwapCount", 0);
         }
     }
 }

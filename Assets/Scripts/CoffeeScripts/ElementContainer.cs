@@ -14,46 +14,46 @@ namespace CoffeeScripts
         public TweenAnimation ElementSelectAnimation;
         public TweenAnimation ElementIdleAnimation;
         public TweenAnimation ElementHoverAnimation;
-        public TweenAnimation ElementAppearAnimation;
+        public TweenAnimation ElementDisappearAnimation;
         public SoundContainer SoundContainer;
         
         public BoxCollider ElementCollider;
         public SpriteRenderer SpriteRenderer;
         
-        public CancellationTokenSource AnimationCancellationToken;
+        public CancellationTokenSource CancelToken;
 
         [HideInInspector]
         public bool IsSelected;
+
+        [HideInInspector]
+        public bool IsUsedInGame;
         
         [HideInInspector]
         public string ElementName;
         [HideInInspector]
         public Sprite Sprite;
-
-        [Space]
-        public ElementRarity Rarity;
-        public float ElementVigorValue;
-        public float ElementVigorMultiplier;
-        public float ElementTesteValue;
-        public float ElementTesteMultiplier;
+        
+        public ElementRarity Rarity {get;set;}
+        public float ElementVigorValue {get;set;}
+        public float ElementVigorMultiplier {get;set;}
+        public float ElementTesteValue {get;set;}
+        public float ElementTesteMultiplier {get;set;}
         
         public AnimationsDescription AnimationsDescription { get; set; }
-        private CancellationTokenSource _animationHoverCancellationToken = new CancellationTokenSource();
+        private CancellationTokenSource _animCancelToken = new CancellationTokenSource();
         
         public void OnPointerEnter(PointerEventData eventData)
         {
-            UniTaskAnimationObject newAnimationObject = new UniTaskAnimationObject();
-            _animationHoverCancellationToken.Cancel();
-            _animationHoverCancellationToken = new CancellationTokenSource();
-            newAnimationObject.StartAnimation(ElementHoverAnimation, _animationHoverCancellationToken.Token,
-                AnimationsDescription.ElementsAnimationDescription.ElementHoverAnimationDuration, true).Forget();
+            UniTaskAnimationLazyObject newAnimObj = new UniTaskAnimationLazyObject(ElementHoverAnimation, ref _animCancelToken,
+                AnimationsDescription.ElementsAnimationDescription.ElementHoverAnimationDuration, true);
+            newAnimObj.Play().Forget();
             SoundContainer.Play(SoundType.AppearSound);
         }
 
         public void OnPointerExit(PointerEventData eventData)
         {
-            _animationHoverCancellationToken.Cancel();
-            SoundContainer.Play(SoundType.DeathSound);
+            _animCancelToken.Cancel();
+            SoundContainer.Play(SoundType.AppearSound);
         }
     }
 }

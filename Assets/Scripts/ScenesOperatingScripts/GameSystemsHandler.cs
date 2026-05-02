@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Threading;
 using Cysharp.Threading.Tasks;
+using GameSystemsScripts;
 using GameSystemsScripts.GameStateScripts;
 using UnityEngine;
 
@@ -41,6 +42,14 @@ namespace ScenesOperatingScripts
         public IGameSystem GetGameSystem(Type type)
         {
             return GameSystems[type];
+        }
+
+        public void InitializeSystems()
+        {
+            foreach (var gameSystem in GameSystems)
+            {
+                gameSystem.Value.Initialize(this);
+            }
         }
 
         private async UniTask UpdateSystems(CancellationToken token)

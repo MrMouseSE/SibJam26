@@ -13,7 +13,11 @@ namespace GameSystemsScripts.CoffeeSystemsScripts.ElementSystemScripts.CompleteS
             Component = new CompleteSelectionComponent(container);
             Mechanic = new CompleteSelectionMechanic(Component, gameSystemsHandler);
         }
-        
+
+        public void Initialize(GameSystemsHandler gameSystemsHandler)
+        {
+        }
+
         public void UpdateSystem(GameSystemsHandler gameSystemsHandler, float deltaTime)
         {
             if (gameSystemsHandler.StateSystem.Component.CurrentGameState != GameStates.SelectElements) return;

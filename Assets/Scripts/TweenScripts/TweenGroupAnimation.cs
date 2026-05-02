@@ -2,6 +2,8 @@ namespace TweenScripts
 {
     public class TweenGroupAnimation : TweenAnimation
     {
+        public string TweenGroupName;
+        
         public TweenAnimation[] Animations;
 
         public override void SetForceState(bool isForceStart)

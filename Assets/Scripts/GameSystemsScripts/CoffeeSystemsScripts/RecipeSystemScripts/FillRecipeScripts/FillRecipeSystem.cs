@@ -14,7 +14,11 @@ namespace GameSystemsScripts.CoffeeSystemsScripts.RecipeSystemScripts.FillRecipe
             Component = new FillRecipeComponent();
             Mechanic = new FillRecipeMechanic(Component);
         }
-        
+
+        public void Initialize(GameSystemsHandler gameSystemsHandler)
+        {
+        }
+
         public void UpdateSystem(GameSystemsHandler gameSystemsHandler, float deltaTime)
         {
             if (gameSystemsHandler.StateSystem.Component.CurrentGameState != GameStates.SelectElements) return;

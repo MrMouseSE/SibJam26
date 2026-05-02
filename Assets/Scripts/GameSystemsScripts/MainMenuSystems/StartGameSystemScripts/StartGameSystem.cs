@@ -13,7 +13,11 @@ namespace GameSystemsScripts.MainMenuSystems.StartGameSystemScripts
             Component = new StartGameComponent(container);
             Mechanic = new StartGameMechanic(Component);
         }
-    
+
+        public void Initialize(GameSystemsHandler gameSystemsHandler)
+        {
+        }
+
         public void UpdateSystem(GameSystemsHandler gameSystemsHandler, float deltaTime)
         {
             if (Component.IsActionLock) return;

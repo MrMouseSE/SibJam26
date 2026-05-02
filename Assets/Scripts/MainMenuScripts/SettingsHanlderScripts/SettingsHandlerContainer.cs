@@ -46,14 +46,12 @@ namespace MainMenuScripts.SettingsHanlderScripts
 
         private void StartUniTaskAnimationProcess(float time, bool isForward)
         {
-            _animationCancellationToken.Cancel();
-            _animationCancellationToken = new CancellationTokenSource();
-            UniTaskAnimationObject uniTaskAnimationObject = new();
-            uniTaskAnimationObject.StartAnimation(Animations, _animationCancellationToken.Token, time, isForward).Forget();
+            UniTaskAnimationLazyObject uniTaskAnimationObject = new (Animations, ref _animationCancellationToken, time, isForward);
+            uniTaskAnimationObject.Play().Forget();
             uniTaskAnimationObject.AnimationCompleted += ResetState;
         }
 
-        private void ResetState(UniTaskAnimationObject uniTaskAnimationObject)
+        private void ResetState(UniTaskAnimationLazyObject uniTaskAnimationObject)
         {
             uniTaskAnimationObject.AnimationCompleted -= ResetState;
             _animatingProcessState = 0;

@@ -4,11 +4,11 @@ using UnityEngine;
 
 namespace LevelAchievementsScripts
 {
-    [CreateAssetMenu(menuName = "Create LevelAchievementDescription", fileName = "Levels/LevelAchievementDescription", order = 0)]
+    [CreateAssetMenu(menuName = "Levels/LevelAchievementDescription", fileName = "LevelAchievementDescription", order = 0)]
     public class LevelAchievementDescription :ScriptableObject
     {
         public int Level;
-        public float LevelValue;
+        public float LevelScoreToAchieve;
 
         public List<CoffeeElementDescription> BonusElementsForAchieved;
     }

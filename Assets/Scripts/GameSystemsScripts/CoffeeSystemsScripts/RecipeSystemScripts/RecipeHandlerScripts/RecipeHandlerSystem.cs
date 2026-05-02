@@ -13,7 +13,11 @@ namespace GameSystemsScripts.CoffeeSystemsScripts.RecipeSystemScripts.RecipeHand
             Component = new RecipeHandlerComponent(description);
             Mechanic = new RecipeHandlerMechanic(Component);
         }
-        
+
+        public void Initialize(GameSystemsHandler gameSystemsHandler)
+        {
+        }
+
         public void UpdateSystem(GameSystemsHandler gameSystemsHandler, float deltaTime)
         {
         }

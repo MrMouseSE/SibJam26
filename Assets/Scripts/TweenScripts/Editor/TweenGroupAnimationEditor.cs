@@ -7,6 +7,8 @@ namespace TweenScripts.Editor
     {
         public override void OnInspectorGUI()
         {
+            var nameProperty = serializedObject.FindProperty("TweenGroupName");
+            EditorGUILayout.PropertyField(nameProperty);
             var arrayProperty = serializedObject.FindProperty("Animations");
             EditorGUILayout.PropertyField(arrayProperty);
             serializedObject.ApplyModifiedProperties();

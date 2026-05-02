@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace CoffeeScripts
 {
-    [CreateAssetMenu(fileName = "CoffeeElementDescription", menuName = "Scriptable Objects/CoffeeElementDescription")]
+    [CreateAssetMenu(fileName = "Coffee/CoffeeElementDescription", menuName = "CoffeeElementDescription")]
     public class CoffeeElementDescription : ScriptableObject
     {
         public string ElementName;

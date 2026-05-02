@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace CoffeeScripts
 {
-    [CreateAssetMenu(menuName = "Create CoffeeRecipeDescription", fileName = "CoffeeRecipeDescription", order = 0)]
+    [CreateAssetMenu(menuName = "Coffee/CoffeeRecipeDescription", fileName = "CoffeeRecipeDescription", order = 0)]
     public class CoffeeRecipeDescription : ScriptableObject
     {
         public string RecipeName;

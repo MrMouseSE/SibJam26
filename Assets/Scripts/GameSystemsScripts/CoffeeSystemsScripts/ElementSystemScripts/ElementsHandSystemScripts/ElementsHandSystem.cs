@@ -12,9 +12,15 @@ namespace GameSystemsScripts.CoffeeSystemsScripts.ElementSystemScripts.ElementsH
         {
             Component = new ElementsHandComponent(elementsHandDescription);
             Mechanic = new ElementsHandMechanic(Component);
+            
+        }
+
+        public void Initialize(GameSystemsHandler gameSystemsHandler)
+        {
+            Mechanic.InitializeHandValues();
             Mechanic.FixHandCounts();
         }
-        
+
         public void UpdateSystem(GameSystemsHandler gameSystemsHandler, float deltaTime)
         {
             Mechanic.UpdateMechanic(gameSystemsHandler, deltaTime);

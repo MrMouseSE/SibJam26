@@ -1,5 +1,4 @@
 using Cysharp.Threading.Tasks;
-using MainMenuScripts.ExitGameSystemScripts;
 using ScenesOperatingScripts;
 
 namespace GameSystemsScripts.MainMenuSystems.ExitGameSystemScripts

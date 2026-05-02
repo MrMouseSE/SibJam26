@@ -4,6 +4,7 @@ using GameSystemsScripts.CoffeeSystemsScripts.ElementSystemScripts.ElementsDrawS
 using GameSystemsScripts.CoffeeSystemsScripts.RecipeSystemScripts.FillRecipeScripts;
 using GameSystemsScripts.GameSpeedScripts;
 using ScenesOperatingScripts;
+using SoundsComponentsScripts;
 using TweenScripts;
 
 namespace GameSystemsScripts.CoffeeSystemsScripts.ElementSystemScripts.CompleteSelectionSystemScripts
@@ -32,13 +33,14 @@ namespace GameSystemsScripts.CoffeeSystemsScripts.ElementSystemScripts.CompleteS
             if (fillSystem.Component.RecipeContainers.Count < 1) return;
             if (!Component.IsButtonPressedThisFrame) return;
             
-            var animationObject = new UniTaskAnimationObject();
-            var cancellationTokenSource = new CancellationTokenSource();
             var speedSystem = (GameSpeedSystem)gameSystemsHandler.GetGameSystem(typeof(GameSpeedSystem));
-            animationObject.StartAnimation(Component.Container.ButtonAnimations, 
-                cancellationTokenSource.Token, speedSystem.Component.AnimationsDescription.CompleteSelectionButtonAnimationDuration, false).Forget();
-            Component.IsButtonPressedThisFrame = false;
+            var cancelToken = new CancellationTokenSource();
+            var animationObject = new UniTaskAnimationLazyObject(Component.Container.ButtonActivateAnimations, 
+                ref cancelToken, speedSystem.Component.AnimationsDescription.ButtonAnimationDuration, false);
+            animationObject.Play().Forget();
             animationObject.AnimationCompleted += OnCompleteButtonAnimationFinished;
+            
+            Component.IsButtonPressedThisFrame = false;
             _gameSystemsHandler.StateSystem.Mechanic.ChangeState(GameStates.AwaitAnimation);
             
             //TODO: FillRecipeComponent to animate Selected containers ?????? mb same animation like disappear
@@ -57,10 +59,10 @@ namespace GameSystemsScripts.CoffeeSystemsScripts.ElementSystemScripts.CompleteS
                 float duration = container.IsSelected
                     ? speedSystem.Component.AnimationsDescription.ElementsAnimationDescription.ElementSelectedDisappearDuration :
                     speedSystem.Component.AnimationsDescription.ElementsAnimationDescription.ElementUnselectedDisappearDuration;
-                UniTaskAnimationObject containerAnimation = new UniTaskAnimationObject();
                 CancellationTokenSource cts = new CancellationTokenSource();
-                
-                containerAnimation.StartAnimation(container.ElementDisappearAnimation, cts.Token, duration, false).Forget();
+                UniTaskAnimationLazyObject containerAnimation = new UniTaskAnimationLazyObject(container.ElementDisappearAnimation, ref cts, duration, false);
+                containerAnimation.Play().Forget();
+                container.SoundContainer.Play(SoundType.DeathSound);
             }
         }
 
@@ -69,7 +71,7 @@ namespace GameSystemsScripts.CoffeeSystemsScripts.ElementSystemScripts.CompleteS
             Component.Container.OnButtonPressed -= OnSelectionComplete;
         }
 
-        private void OnCompleteButtonAnimationFinished(UniTaskAnimationObject uniTaskAnimationObject)
+        private void OnCompleteButtonAnimationFinished(UniTaskAnimationLazyObject uniTaskAnimationObject)
         {
             uniTaskAnimationObject.AnimationCompleted -= OnCompleteButtonAnimationFinished;
             _gameSystemsHandler.StateSystem.Mechanic.ChangeState(GameStates.CompareRecipe);

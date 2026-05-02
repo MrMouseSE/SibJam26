@@ -14,7 +14,11 @@ namespace GameSystemsScripts.LevelsSystemScripts.LevelCompleteScripts
             Component = new LevelCompleteComponent(description);
             Mechanic = new LevelCompleteMechanic(Component);
         }
-        
+
+        public void Initialize(GameSystemsHandler gameSystemsHandler)
+        {
+        }
+
         public void UpdateSystem(GameSystemsHandler gameSystemsHandler, float deltaTime)
         {
             if (gameSystemsHandler.StateSystem.Component.CurrentGameState != GameStates.CompareLevelComplete) return;

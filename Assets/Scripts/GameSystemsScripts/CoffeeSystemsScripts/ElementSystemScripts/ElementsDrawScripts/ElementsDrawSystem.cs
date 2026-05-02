@@ -8,12 +8,17 @@ namespace GameSystemsScripts.CoffeeSystemsScripts.ElementSystemScripts.ElementsD
         public ElementsDrawComponent Component;
         public ElementsDrawMechanic Mechanic;
 
-        public ElementsDrawSystem(GameSystemsHandler gameSystemsHandler)
+        public ElementsDrawSystem()
         {
             Component = new ElementsDrawComponent();
-            Mechanic = new ElementsDrawMechanic(Component, gameSystemsHandler);
+            Mechanic = new ElementsDrawMechanic(Component);
         }
-        
+
+        public void Initialize(GameSystemsHandler gameSystemsHandler)
+        {
+            Mechanic.SetHandler(gameSystemsHandler);
+        }
+
         public void UpdateSystem(GameSystemsHandler gameSystemsHandler, float deltaTime)
         {
             if (gameSystemsHandler.StateSystem.Component.CurrentGameState != GameStates.DrawElements) return;

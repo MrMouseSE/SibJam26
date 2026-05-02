@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace CoffeeScripts
 {
-    [CreateAssetMenu(menuName = "Create CoffeeRecipesDescription", fileName = "CoffeeRecipesDescription", order = 0)]
+    [CreateAssetMenu(menuName = "Coffee/CoffeeDescription", fileName = "CoffeeDescription", order = 0)]
     public class CoffeeDescription : ScriptableObject
     {
         public CoffeeRecipeDescription[] Recipes;

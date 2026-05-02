@@ -1,7 +1,7 @@
-using GameSystemsScripts.MainMenuSystems.ExitGameSystemScripts;
+using MainMenuScripts;
 using ScenesOperatingScripts;
 
-namespace MainMenuScripts.ExitGameSystemScripts
+namespace GameSystemsScripts.MainMenuSystems.ExitGameSystemScripts
 {
     public class ExitGameSystem : IGameSystem
     {
@@ -12,6 +12,10 @@ namespace MainMenuScripts.ExitGameSystemScripts
         {
             Component = new ExitGameComponent(container);
             Mechanic = new ExitGameMechanic(Component);
+        }
+
+        public void Initialize(GameSystemsHandler gameSystemsHandler)
+        {
         }
 
         public void UpdateSystem(GameSystemsHandler gameSystemsHandler, float deltaTime)

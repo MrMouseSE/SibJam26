@@ -15,7 +15,11 @@ namespace GameSystemsScripts.CoffeeSystemsScripts.ElementSystemScripts.ElementSe
             SelectionComponent = new ElementSelectionComponent();
             SelectionMechanic = new ElementSelectionMechanic(SelectionComponent);
         }
-        
+
+        public void Initialize(GameSystemsHandler gameSystemsHandler)
+        {
+        }
+
         public void UpdateSystem(GameSystemsHandler gameSystemsHandler, float deltaTime)
         {
             if (gameSystemsHandler.StateSystem.Component.CurrentGameState != GameStates.SelectElements) return;

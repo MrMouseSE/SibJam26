@@ -14,6 +14,10 @@ namespace GameSystemsScripts.GameInputScripts
             
         }
 
+        public void Initialize(GameSystemsHandler gameSystemsHandler)
+        {
+        }
+
         public void UpdateSystem(GameSystemsHandler gameSystemsHandler, float deltaTime)
         {
             if (Component.IsInputLocked) return;

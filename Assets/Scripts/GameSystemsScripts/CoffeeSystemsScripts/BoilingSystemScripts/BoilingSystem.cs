@@ -13,6 +13,11 @@ namespace GameSystemsScripts.CoffeeSystemsScripts.BoilingSystemScripts
             Component = new BoilingComponent();
             Mechanic = new BoilingMechanic(Component);
         }
+
+        public void Initialize(GameSystemsHandler gameSystemsHandler)
+        {
+        }
+
         public void UpdateSystem(GameSystemsHandler gameSystemsHandler, float deltaTime)
         {
             if (gameSystemsHandler.StateSystem.Component.CurrentGameState != GameStates.BoilCoffee) return;

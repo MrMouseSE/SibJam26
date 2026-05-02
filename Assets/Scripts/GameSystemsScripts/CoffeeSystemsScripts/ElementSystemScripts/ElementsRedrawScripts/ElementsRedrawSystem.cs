@@ -14,7 +14,12 @@ namespace GameSystemsScripts.CoffeeSystemsScripts.ElementSystemScripts.ElementsR
             Component = new ElementsRedrawComponent(redrawButtonContainer);
             Mechanic = new ElementsRedrawMechanic(Component);
         }
-        
+
+        public void Initialize(GameSystemsHandler gameSystemsHandler)
+        {
+            Mechanic.InitializeButtonsValues(gameSystemsHandler);
+        }
+
         public void UpdateSystem(GameSystemsHandler gameSystemsHandler, float deltaTime)
         {
             if (gameSystemsHandler.StateSystem.Component.CurrentGameState != GameStates.SelectElements) return;

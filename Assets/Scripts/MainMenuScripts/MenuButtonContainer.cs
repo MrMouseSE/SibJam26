@@ -50,25 +50,22 @@ namespace MainMenuScripts
             animationObject.AnimationCompleted += OnPushAnimationCompleted;
         }
 
-        private void OnPushAnimationCompleted(UniTaskAnimationObject obj)
+        private void OnPushAnimationCompleted(UniTaskAnimationLazyObject obj)
         {
             obj.AnimationCompleted -= OnPushAnimationCompleted;
             OnButtonPushed?.Invoke();
         }
         
-        private UniTaskAnimationObject StartUniTaskAnimationProcess(TweenGroupAnimation animations, float time, bool isForward)
+        private UniTaskAnimationLazyObject StartUniTaskAnimationProcess(TweenGroupAnimation animations, float time, bool isForward)
         {
-            _animationCancellationToken.Cancel();
-            _animationCancellationToken = new CancellationTokenSource();
-            UniTaskAnimationObject uniTaskAnimationObject = new();
-            uniTaskAnimationObject.StartAnimation(animations, _animationCancellationToken.Token, time, isForward)
-                .Forget();
+            UniTaskAnimationLazyObject uniTaskAnimationObject = new (animations, ref _animationCancellationToken, time, isForward);
+            uniTaskAnimationObject.Play().Forget();
             return uniTaskAnimationObject;
         }
 
-        private void LoopIdleAnimation(UniTaskAnimationObject obj)
+        private void LoopIdleAnimation(UniTaskAnimationLazyObject obj)
         {
-            _ = obj.StartAnimation(AnimationIdleGroup, _animationCancellationToken.Token, IdleAnimationTime, true);
+            _ = obj.Play();
         }
     }
 }

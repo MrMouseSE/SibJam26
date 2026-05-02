@@ -1,5 +1,9 @@
 using GameSystemsScripts.CoffeeSystemsScripts.ElementSystemScripts.ElementsHandSystemScripts;
+using GameSystemsScripts.CoffeeSystemsScripts.RecipeSystemScripts.FillRecipeScripts;
+using GameSystemsScripts.GameSpeedScripts;
 using ScenesOperatingScripts;
+using SupportScripts;
+using TweenScripts;
 
 namespace GameSystemsScripts.CoffeeSystemsScripts.ElementSystemScripts.ElementsRedrawScripts
 {
@@ -30,6 +34,17 @@ namespace GameSystemsScripts.CoffeeSystemsScripts.ElementSystemScripts.ElementsR
                 Component.RedrawButtonContainer.SetActive(false);
             }
             //TODO: redraw selected elements
+            FillRecipeSystem selectionSystem = (FillRecipeSystem)gameSystemsHandler.GetGameSystem(typeof(FillRecipeSystem));
+            GameSpeedSystem speedSystem = (GameSpeedSystem)gameSystemsHandler.GetGameSystem(typeof(GameSpeedSystem));
+            foreach (var recipeContainer in selectionSystem.Component.RecipeContainers)
+            {
+                StaticElementFactory.SetValuesToContainer(recipeContainer);
+                UniTaskAnimationObject uniTaskAnimationObject = new UniTaskAnimationObject();
+                uniTaskAnimationObject.StartContainerSelectionAnimation(recipeContainer,
+                    speedSystem.Component.AnimationsDescription.ElementsAnimationDescription.ElementSelectionAnimationDuration).Forget();
+                recipeContainer.IsSelected = false;
+            }
+            selectionSystem.Component.RecipeContainers.Clear();
         }
 
         public void DisposeMechanic()

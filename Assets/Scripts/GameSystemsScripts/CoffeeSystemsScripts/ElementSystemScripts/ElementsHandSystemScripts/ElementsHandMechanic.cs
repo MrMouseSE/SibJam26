@@ -12,21 +12,9 @@ namespace GameSystemsScripts.CoffeeSystemsScripts.ElementSystemScripts.ElementsH
             Component = component;
         }
 
-        public void AddHandElementsCapacity(int capacity)
-        {
-            Component.CurrentElementsHandCapacity = capacity;
-            FixHandCounts();
-        }
-
-        public void AddSwapCount(int count)
-        {
-            Component.CurrentElementsSwapCount += count;
-            FixHandCounts();
-        }
-
         public void FixHandCounts()
         {
-            Component.CurrentElementsHandCapacity = Math.Clamp(Component.CurrentElementsHandCapacity, Component.ElementsHandDescription.MinMaxElementsHandCapacity.x, 
+            Component.CurrentElementsToDrawCapacity = Math.Clamp(Component.CurrentElementsToDrawCapacity, Component.ElementsHandDescription.MinMaxElementsHandCapacity.x, 
                 Component.ElementsHandDescription.MinMaxElementsHandCapacity.y);
             Component.CurrentElementsSwapCount = Math.Clamp(Component.CurrentElementsSwapCount, Component.ElementsHandDescription.MinMaxElementSwapCount.x, 
                 Component.ElementsHandDescription.MinMaxElementSwapCount.y);
@@ -34,6 +22,13 @@ namespace GameSystemsScripts.CoffeeSystemsScripts.ElementSystemScripts.ElementsH
 
         public void UpdateMechanic(GameSystemsHandler gameSystemsHandler, float deltaTime)
         {
+            if (!Component.IsValuesUpdatNeed) return;
+            Component.IsValuesUpdatNeed = false;
+            Component.CurrentElementsToDrawCapacity += Component.AddDrawCapacityValue;
+            Component.AddDrawCapacityValue = 0;
+            Component.CurrentElementsSwapCount += Component.AddElementSwapCountValue;
+            Component.AddElementSwapCountValue = 0;
+            FixHandCounts();
         }
 
         public void DisposeMechanic()

@@ -1,16 +1,14 @@
 using CoffeeScripts;
-using UnityEngine;
 
 namespace SupportScripts
 {
     public static class StaticElementFactory
     {
-        public static ElementContainer ElementPrefab;
-        
-        public static ElementContainer GetElementContainer(CoffeeDescription description)
+        public static CoffeeDescription CoffeeDescription;
+
+        public static void SetValuesToContainer(ElementContainer container)
         {
-            var container = Object.Instantiate(ElementPrefab);
-            var elementDescription = description.GetRandomElementDescription();
+            var elementDescription = CoffeeDescription.GetRandomElementDescription();
             container.ElementName = elementDescription.ElementName;
             container.Rarity = elementDescription.Rarity;
             container.Sprite = elementDescription.Sprite;
@@ -19,7 +17,7 @@ namespace SupportScripts
             container.ElementVigorMultiplier = elementDescription.ElementVigorMultiplier;
             container.ElementTesteValue = elementDescription.ElementTesteValue;
             container.ElementTesteMultiplier = elementDescription.ElementTesteMultiplier;
-            return container;
+            container.IsUsedInGame = true;
         }
     }
 }

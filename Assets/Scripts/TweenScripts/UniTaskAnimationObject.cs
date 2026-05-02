@@ -47,7 +47,7 @@ namespace TweenScripts
             AnimationCompleted?.Invoke(this);
         }
 
-        public async UniTaskVoid StartAnimation(ElementContainer container, float time)
+        public async UniTaskVoid StartContainerSelectionAnimation(ElementContainer container, float time)
         {
             float animationTime = time;
             float baseValue = container.IsSelected ? 1f : 0;

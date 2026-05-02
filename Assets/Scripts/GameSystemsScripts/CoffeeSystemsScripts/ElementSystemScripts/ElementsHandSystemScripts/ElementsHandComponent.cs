@@ -5,7 +5,11 @@ namespace GameSystemsScripts.CoffeeSystemsScripts.ElementSystemScripts.ElementsH
 {
     public class ElementsHandComponent
     {
-        public int CurrentElementsHandCapacity;
+        public bool IsValuesUpdatNeed;
+        public int AddDrawCapacityValue;
+        public int AddElementSwapCountValue;
+        
+        public int CurrentElementsToDrawCapacity;
         public int CurrentElementsSwapCount;
         public int UnusedSwaps;
         public ElementsHandDescription ElementsHandDescription;
@@ -13,7 +17,7 @@ namespace GameSystemsScripts.CoffeeSystemsScripts.ElementSystemScripts.ElementsH
         public ElementsHandComponent(ElementsHandDescription elementsHandDescription)
         {
             ElementsHandDescription = elementsHandDescription;
-            CurrentElementsHandCapacity = PlayerPrefs.GetInt("ElementsHandCapacity", 0);
+            CurrentElementsToDrawCapacity = PlayerPrefs.GetInt("ElementsHandCapacity", 0);
             CurrentElementsSwapCount = PlayerPrefs.GetInt("ElementsHandSwapCount", 0);
         }
     }

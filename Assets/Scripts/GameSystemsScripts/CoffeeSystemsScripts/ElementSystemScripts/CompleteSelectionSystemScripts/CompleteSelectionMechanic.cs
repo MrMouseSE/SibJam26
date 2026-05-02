@@ -1,5 +1,6 @@
 using System.Threading;
 using GameScripts;
+using GameSystemsScripts.CoffeeSystemsScripts.ElementSystemScripts.ElementsDrawScripts;
 using GameSystemsScripts.CoffeeSystemsScripts.RecipeSystemScripts.FillRecipeScripts;
 using GameSystemsScripts.GameSpeedScripts;
 using ScenesOperatingScripts;
@@ -27,6 +28,8 @@ namespace GameSystemsScripts.CoffeeSystemsScripts.ElementSystemScripts.CompleteS
 
         public void UpdateMechanic(GameSystemsHandler gameSystemsHandler, float deltaTime)
         {
+            FillRecipeSystem fillSystem = (FillRecipeSystem)gameSystemsHandler.GetGameSystem(typeof(FillRecipeSystem));
+            if (fillSystem.Component.RecipeContainers.Count < 1) return;
             if (!Component.IsButtonPressedThisFrame) return;
             
             var animationObject = new UniTaskAnimationObject();
@@ -38,7 +41,7 @@ namespace GameSystemsScripts.CoffeeSystemsScripts.ElementSystemScripts.CompleteS
             animationObject.AnimationCompleted += OnCompleteButtonAnimationFinished;
             _gameSystemsHandler.StateSystem.Mechanic.ChangeState(GameStates.AwaitAnimation);
             
-            //TODO: FillRecipeComponent to animate Selected containers
+            //TODO: FillRecipeComponent to animate Selected containers ?????? mb same animation like disappear
             /*var fillRecipeSystem = (FillRecipeSystem)gameSystemsHandler.GetGameSystem(typeof(FillRecipeSystem));
             foreach (var recipeContainer in fillRecipeSystem.Component.RecipeContainers)
             {
@@ -47,7 +50,18 @@ namespace GameSystemsScripts.CoffeeSystemsScripts.ElementSystemScripts.CompleteS
             //TODO: FillRecipeComponent to animate Selected containers
             
             
-            //TODO: ElementsDrawComponent to animate Unselected containers;
+            var drawSystem = (ElementsDrawSystem)gameSystemsHandler.GetGameSystem(typeof(ElementsDrawSystem));
+            foreach (var container in drawSystem.Component.Container.ElementContainers)
+            {
+                container.IsUsedInGame = false;
+                float duration = container.IsSelected
+                    ? speedSystem.Component.AnimationsDescription.ElementsAnimationDescription.ElementSelectedDisappearDuration :
+                    speedSystem.Component.AnimationsDescription.ElementsAnimationDescription.ElementUnselectedDisappearDuration;
+                UniTaskAnimationObject containerAnimation = new UniTaskAnimationObject();
+                CancellationTokenSource cts = new CancellationTokenSource();
+                
+                containerAnimation.StartAnimation(container.ElementDisappearAnimation, cts.Token, duration, false).Forget();
+            }
         }
 
         public void DisposeMechanic()

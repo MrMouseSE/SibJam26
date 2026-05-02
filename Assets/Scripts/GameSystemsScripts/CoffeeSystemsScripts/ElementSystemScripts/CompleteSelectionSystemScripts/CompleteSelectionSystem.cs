@@ -22,7 +22,6 @@ namespace GameSystemsScripts.CoffeeSystemsScripts.ElementSystemScripts.CompleteS
 
         public void DisposeSystem()
         {
-            throw new System.NotImplementedException();
         }
     }
 }

@@ -28,7 +28,7 @@ namespace GameSystemsScripts.CoffeeSystemsScripts.ElementSystemScripts.ElementSe
             var gameSpeedSystem = (GameSpeedSystem)gameSystemsHandler.GetGameSystem(typeof(GameSpeedSystem));
             float elementAnimationDuration = gameSpeedSystem.Component.AnimationsDescription
                 .ElementsAnimationDescription.ElementSelectionAnimationDuration;
-            animationObject.StartAnimation(Component.CurrentTouchedContainer, elementAnimationDuration).Forget();
+            animationObject.StartContainerSelectionAnimation(Component.CurrentTouchedContainer, elementAnimationDuration).Forget();
         }
 
         public void DisposeMechanic()

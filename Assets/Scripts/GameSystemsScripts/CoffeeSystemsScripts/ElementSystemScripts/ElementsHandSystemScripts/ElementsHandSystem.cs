@@ -17,6 +17,7 @@ namespace GameSystemsScripts.CoffeeSystemsScripts.ElementSystemScripts.ElementsH
         
         public void UpdateSystem(GameSystemsHandler gameSystemsHandler, float deltaTime)
         {
+            Mechanic.UpdateMechanic(gameSystemsHandler, deltaTime);
         }
 
         public void DisposeSystem()

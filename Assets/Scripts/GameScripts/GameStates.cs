@@ -11,10 +11,12 @@ namespace GameScripts
         BoilingCoffee,
         CalculateValue,
         ApproveRecipe,
-        RewardElements,
+        CoffeeShow,
         CompareLevelComplete,
+        RewardElements,
         ChangeLevel,
         UpdateLevelView,
         GameOver,
+        
     }
 }

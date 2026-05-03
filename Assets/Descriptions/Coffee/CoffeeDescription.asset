@@ -19,6 +19,14 @@ MonoBehaviour:
   DefaultRecipe: {fileID: 11400000, guid: 4a12da8f3b865824ab27384d24fcb286, type: 2}
   Recipes:
   - {fileID: 11400000, guid: 8edc5e0664da6fb4d976aedb6fa0a669, type: 2}
+  - {fileID: 11400000, guid: a615f3bc0fc06e148a7c7faf2b983dcc, type: 2}
+  - {fileID: 11400000, guid: 04447e7a08678b24589e7bcd9c772593, type: 2}
+  - {fileID: 11400000, guid: afbaf5b657098974e889c86b896c12ea, type: 2}
+  - {fileID: 11400000, guid: c91333be359328742918b1b6a5d0fcea, type: 2}
+  - {fileID: 11400000, guid: e84b1694416279a4fa6b58358ddfd354, type: 2}
+  - {fileID: 11400000, guid: 4add0771be5e21a4895dc65fb8c8f54b, type: 2}
+  - {fileID: 11400000, guid: 3d99e0e204857d243923617b9dc7323e, type: 2}
+  - {fileID: 11400000, guid: 544ba4c4aa028e644bf46e8525ce6af9, type: 2}
   Elements:
   - {fileID: 11400000, guid: 73718ee6c0851c14ab5132f8d3a9642b, type: 2}
   - {fileID: 11400000, guid: c4ab7b07ab68f59438b54b414dba0045, type: 2}

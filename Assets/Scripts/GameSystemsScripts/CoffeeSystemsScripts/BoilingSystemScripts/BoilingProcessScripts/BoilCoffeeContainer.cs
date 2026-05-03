@@ -1,4 +1,5 @@
 using System.Threading;
+using SoundsComponentsScripts;
 using TweenScripts;
 using UnityEngine;
 
@@ -23,6 +24,8 @@ namespace GameSystemsScripts.CoffeeSystemsScripts.BoilingSystemScripts.BoilingPr
         [Space]
         public Transform BoildFocusCameraPoint;
         public Transform NormalCameraPoint;
+
+        public SoundContainer SoundContainer;
         
         public CancellationTokenSource ProcessCancellationToken = new CancellationTokenSource();
     }

@@ -20,3 +20,4 @@ MonoBehaviour:
   ClickAnimationsDuration: 0.25
   ButtonTooltipAnimationDuration: 1.3
   ScoreAnimationDuration: 1
+  ShowCoffeeDuration: 3

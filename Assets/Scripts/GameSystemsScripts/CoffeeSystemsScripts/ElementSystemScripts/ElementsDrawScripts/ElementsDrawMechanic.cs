@@ -6,6 +6,7 @@ using GameSystemsScripts.GameSpeedScripts;
 using ScenesOperatingScripts;
 using SupportScripts;
 using TweenScripts;
+using UnityEngine;
 
 namespace GameSystemsScripts.CoffeeSystemsScripts.ElementSystemScripts.ElementsDrawScripts
 {
@@ -31,7 +32,7 @@ namespace GameSystemsScripts.CoffeeSystemsScripts.ElementSystemScripts.ElementsD
             var speedSystem = (GameSpeedSystem)gameSystemsHandler.GetGameSystem(typeof(GameSpeedSystem));
             var selectionButtonSystem = (SelectionButtonsSystem)gameSystemsHandler.GetGameSystem(typeof(SelectionButtonsSystem));
             
-            int currentElementToDrawCount = handSystem.Component.CurrentElementsToDrawCapacity;
+            int currentElementToDrawCount = handSystem.Component.CurrentHandSlotCapacity;
             
             Component.DrawedElements.Clear();
             for (var index = 0; index < Component.Container.ElementContainers.Count; index++)
@@ -40,6 +41,9 @@ namespace GameSystemsScripts.CoffeeSystemsScripts.ElementSystemScripts.ElementsD
                 bool isUsed = index < currentElementToDrawCount;
                 container.ElementSelectAnimation.SetForceState(true);
                 container.ElementDisappearAnimation.SetForceState(isUsed);
+                var color = container.BackSpriteRenderer.color;
+                color.a = isUsed ? 1f : 0f;
+                container.BackSpriteRenderer.color = color;
                 container.IsSelected = false;
                 container.IsUsedInGame = isUsed;
                 container.ElementCollider.enabled = isUsed;

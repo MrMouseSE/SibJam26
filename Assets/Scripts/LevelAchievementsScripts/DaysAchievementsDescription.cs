@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using SoundsComponentsScripts;
 using UnityEngine;
 
 namespace LevelAchievementsScripts
@@ -7,5 +8,8 @@ namespace LevelAchievementsScripts
     public class DaysAchievementsDescription : ScriptableObject
     {
         public List<DayAchievementsDescription> DaysAchievementsDescriptions;
+
+        public SoundPair WinClip;
+        public SoundPair LoseClip;
     }
 }

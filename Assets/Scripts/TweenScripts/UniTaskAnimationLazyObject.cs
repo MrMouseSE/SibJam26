@@ -24,11 +24,12 @@ namespace TweenScripts
             _isForward = isForward;
         }
         
-        public async UniTaskVoid Play()
+        public async UniTaskVoid Play(bool isForwardOverride = false)
         {
             float animationTime = _time;
-            float baseValue = _isForward ? 1f : 0;
-            float mult = _isForward ? -1f : 1f;
+            isForwardOverride = !isForwardOverride && _isForward;
+            float baseValue = isForwardOverride ? 1f : 0;
+            float mult = isForwardOverride ? -1f : 1f;
             
             while (animationTime > 0f)
             {

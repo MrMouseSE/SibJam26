@@ -4,6 +4,8 @@ using GameSystemsScripts.CoffeeSystemsScripts.BoilingSystemScripts.BoilingProces
 using GameSystemsScripts.CoffeeSystemsScripts.BoilingSystemScripts.CompleteBoilingScripts;
 using GameSystemsScripts.GameSpeedScripts;
 using ScenesOperatingScripts;
+using SoundsComponentsScripts;
+using TweenScripts;
 
 namespace GameSystemsScripts.CoffeeSystemsScripts.BoilingSystemScripts.StartBoilingScripts
 {
@@ -28,6 +30,7 @@ namespace GameSystemsScripts.CoffeeSystemsScripts.BoilingSystemScripts.StartBoil
             completeBoilingSystem.Mechanic.PlayTooltip(speedSystem);
             
             var boilCoffeeContainer = processSystem.Component.Container;
+            boilCoffeeContainer.SoundContainer.Play(SoundType.AppearSound);
             boilCoffeeContainer.IndicatorShakeTweenGroup.AnimateByUpdate = true;
             boilCoffeeContainer.ProcessBoilTweenGroup.AnimateByUpdate = true;
             

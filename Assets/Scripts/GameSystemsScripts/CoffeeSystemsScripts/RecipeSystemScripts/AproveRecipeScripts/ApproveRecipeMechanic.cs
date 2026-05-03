@@ -24,7 +24,7 @@ namespace GameSystemsScripts.CoffeeSystemsScripts.RecipeSystemScripts.AproveReci
             }
             
             fillRecipeSystem.Component.RecipeContainers.Clear();
-            gameSystemsHandler.StateSystem.Mechanic.ChangeState(GameStates.RewardElements);
+            gameSystemsHandler.StateSystem.Mechanic.ChangeState(GameStates.CoffeeShow);
         }
 
         public void DisposeMechanic()

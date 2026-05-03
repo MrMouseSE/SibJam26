@@ -486,7 +486,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2417264433075969242, guid: ca26a3ebbe954af40b82894b8b2338d7, type: 3}
       propertyPath: MusicClips.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2417264433075969242, guid: ca26a3ebbe954af40b82894b8b2338d7, type: 3}
       propertyPath: MusicClips.Array.data[1].Name
@@ -507,7 +507,7 @@ PrefabInstance:
     - target: {fileID: 2417264433075969242, guid: ca26a3ebbe954af40b82894b8b2338d7, type: 3}
       propertyPath: MusicClips.Array.data[0].Sound
       value: 
-      objectReference: {fileID: 8300000, guid: 4455b952899cc40429628246d2116529, type: 3}
+      objectReference: {fileID: 8300000, guid: 990c7ff7f2a2d4f479476f894f4333d0, type: 3}
     - target: {fileID: 2417264433075969242, guid: ca26a3ebbe954af40b82894b8b2338d7, type: 3}
       propertyPath: MusicClips.Array.data[1].Sound
       value: 
@@ -905,6 +905,18 @@ PrefabInstance:
       propertyPath: m_Size.x
       value: 2.81
       objectReference: {fileID: 0}
+    - target: {fileID: 4891625332759298482, guid: 8d19f744f9d5a954c8e87c1f482aa594, type: 3}
+      propertyPath: DeathClips.Array.data[0].Sound
+      value: 
+      objectReference: {fileID: 8300000, guid: e2ccdcd490844de43a80f2ae784935c0, type: 3}
+    - target: {fileID: 4891625332759298482, guid: 8d19f744f9d5a954c8e87c1f482aa594, type: 3}
+      propertyPath: ActionClips.Array.data[0].Sound
+      value: 
+      objectReference: {fileID: 8300000, guid: bebd8ffd406877d41a1ce904b35c4e08, type: 3}
+    - target: {fileID: 4891625332759298482, guid: 8d19f744f9d5a954c8e87c1f482aa594, type: 3}
+      propertyPath: AppearClips.Array.data[0].Sound
+      value: 
+      objectReference: {fileID: 8300000, guid: e2ccdcd490844de43a80f2ae784935c0, type: 3}
     - target: {fileID: 5090630036895213159, guid: 8d19f744f9d5a954c8e87c1f482aa594, type: 3}
       propertyPath: m_LocalPosition.x
       value: 8.84
@@ -1047,6 +1059,18 @@ PrefabInstance:
       propertyPath: FromScale.x
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1247817581673100018, guid: bb24d2d047e62e14b80d73b9f71df238, type: 3}
+      propertyPath: DeathClips.Array.data[0].Sound
+      value: 
+      objectReference: {fileID: 8300000, guid: e2ccdcd490844de43a80f2ae784935c0, type: 3}
+    - target: {fileID: 1247817581673100018, guid: bb24d2d047e62e14b80d73b9f71df238, type: 3}
+      propertyPath: ActionClips.Array.data[0].Sound
+      value: 
+      objectReference: {fileID: 8300000, guid: bebd8ffd406877d41a1ce904b35c4e08, type: 3}
+    - target: {fileID: 1247817581673100018, guid: bb24d2d047e62e14b80d73b9f71df238, type: 3}
+      propertyPath: AppearClips.Array.data[0].Sound
+      value: 
+      objectReference: {fileID: 8300000, guid: e2ccdcd490844de43a80f2ae784935c0, type: 3}
     - target: {fileID: 1447385167087113511, guid: bb24d2d047e62e14b80d73b9f71df238, type: 3}
       propertyPath: m_LocalPosition.x
       value: 8.84

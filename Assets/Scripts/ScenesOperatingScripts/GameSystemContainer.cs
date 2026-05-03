@@ -5,13 +5,20 @@ using GameSystemsScripts.CoffeeSystemsScripts.ElementSystemScripts.CompleteSelec
 using GameSystemsScripts.CoffeeSystemsScripts.ElementSystemScripts.ElementsDrawScripts;
 using GameSystemsScripts.CoffeeSystemsScripts.ElementSystemScripts.ElementsRedrawScripts;
 using GameSystemsScripts.CoffeeSystemsScripts.ElementSystemScripts.SelectionButtonsScripts;
+using GameSystemsScripts.CoffeeSystemsScripts.RecipeSystemScripts.ShowCoffeScripts;
+using GameSystemsScripts.LevelsSystemScripts.LevelHandlerScripts;
 using GameSystemsScripts.ScoreViewScripts.InterfaceScoreScripts;
 using GameSystemsScripts.ScoreViewScripts.LevelViewScripts;
+using SoundsComponentsScripts;
 
 namespace ScenesOperatingScripts
 {
     public class GameSystemContainer : SceneSystemsContainer
     {
+        public ShowCoffeeContainer ShowCoffeeContainer;
+        
+        public SoundContainer WinLoseSoundsContainer;
+        
         public LevelViewContainer DayLevelViewContainer;
         
         public BoilCoffeeContainer BoilCoffeeContainer;
@@ -48,6 +55,12 @@ namespace ScenesOperatingScripts
             
             var levelSystem = (LevelViewSystem)systemsHandler.GetGameSystem(typeof(LevelViewSystem));
             levelSystem.Mechanic.SetViewContainer(DayLevelViewContainer);
+            
+            var levelHandler = (LevelHandlerSystem)systemsHandler.GetGameSystem(typeof(LevelHandlerSystem));
+            levelHandler.Mechanic.SetSoundContainer(WinLoseSoundsContainer);
+            
+            var showCoffee = (ShowCoffeeSystem)systemsHandler.GetGameSystem(typeof(ShowCoffeeSystem));
+            showCoffee.Mechanic.SetContainer(ShowCoffeeContainer, systemsHandler);
         }
     }
 }

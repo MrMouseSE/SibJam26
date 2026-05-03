@@ -12,17 +12,16 @@ namespace AnimationDescriptionsScripts
 
         public CameraAnimationDescription Camera;
         
-        [Space]
-        [Header("Button Settings")]
-        [Space]
+        [Space] [Header("Button Settings")] [Space]
         public float ActivateAnimationDuration;
         public float HoverAnimationDuration;
         public float ClickAnimationsDuration;
         [FormerlySerializedAs("TooltipAnimationDuration")] public float ButtonTooltipAnimationDuration;
         
-        [Space]
-        [Header("Button Settings")]
-        [Space]
+        [Space] [Header("Button Settings")] [Space]
         public float ScoreAnimationDuration;
+
+        [Space] [Header("Coffee Show Settings")] [Space]
+        public float ShowCoffeeDuration;
     }
 }

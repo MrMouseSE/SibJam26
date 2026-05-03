@@ -504,6 +504,7 @@ GameObject:
   m_Component:
   - component: {fileID: 864720307463990198}
   - component: {fileID: 7360840484407765295}
+  - component: {fileID: 5630987437090601626}
   m_Layer: 0
   m_Name: BoilMachine
   m_TagString: Untagged
@@ -552,6 +553,29 @@ MonoBehaviour:
   IndicatorShakeTweenGroup: {fileID: 8749580976682243191}
   BoildFocusCameraPoint: {fileID: 6354658569798330693}
   NormalCameraPoint: {fileID: 4302429952491950901}
+  SoundContainer: {fileID: 5630987437090601626}
+--- !u!114 &5630987437090601626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6255103939585960289}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e09e0410810d7e24ca5886c043d54d1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SoundsComponentsScripts.SoundContainer
+  AudioTransform: {fileID: 864720307463990198}
+  AppearClips:
+  - Name: 
+    Sound: {fileID: 8300000, guid: 99dc892e682458c459131baf6374835d, type: 3}
+  ActionClips:
+  - Name: Stop
+    Sound: {fileID: 8300000, guid: a7cf17c51c2e75c4abc6a9b57af0d803, type: 3}
+  DeathClips:
+  - Name: 
+    Sound: {fileID: 8300000, guid: c48cca8d5f7670d4cb38f2d2663e3c2e, type: 3}
 --- !u!1 &6712885562059869522
 GameObject:
   m_ObjectHideFlags: 0

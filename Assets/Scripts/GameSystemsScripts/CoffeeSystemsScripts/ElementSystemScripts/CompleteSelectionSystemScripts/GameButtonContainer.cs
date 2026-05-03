@@ -43,6 +43,7 @@ namespace GameSystemsScripts.CoffeeSystemsScripts.ElementSystemScripts.CompleteS
         public void OnMouseEnter()
         {
             new UniTaskAnimationLazyObject(HoverAnimations, ref _ctsHover, HoverAnimationDuration, true).Play().Forget();
+            AudioContainer.Play(SoundType.AppearSound);
         }
 
         public void OnMouseExit()

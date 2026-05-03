@@ -2,6 +2,7 @@ using GameScripts;
 using GameSystemsScripts.LevelsSystemScripts.GameCompleteSystemScripts;
 using GameSystemsScripts.LevelsSystemScripts.LevelCompleteScripts;
 using ScenesOperatingScripts;
+using SoundsComponentsScripts;
 
 namespace GameSystemsScripts.LevelsSystemScripts.LevelHandlerScripts
 {
@@ -12,6 +13,13 @@ namespace GameSystemsScripts.LevelsSystemScripts.LevelHandlerScripts
         public LevelHandlerMechanic(LevelHandlerComponent component)
         {
             Component = component;
+        }
+
+        public void SetSoundContainer(SoundContainer soundContainer)
+        {
+            Component.AudioContainer = soundContainer;
+            Component.AudioContainer.AppearClips = new SoundPair[1] { Component.DaysDescription.WinClip };
+            Component.AudioContainer.DeathClips = new SoundPair[1] { Component.DaysDescription.LoseClip };
         }
 
         public void UpdateMechanic(GameSystemsHandler gameSystemsHandler, float deltaTime)
@@ -34,11 +42,13 @@ namespace GameSystemsScripts.LevelsSystemScripts.LevelHandlerScripts
                 }
                 else
                 {
+                    Component.AudioContainer.Play(SoundType.AppearSound);
                     Component.Level++;
                 }
             }
             else
             {
+                Component.AudioContainer.Play(SoundType.DeathSound);
                 Component.Level = 0;
                 Component.Day = 0;
             }

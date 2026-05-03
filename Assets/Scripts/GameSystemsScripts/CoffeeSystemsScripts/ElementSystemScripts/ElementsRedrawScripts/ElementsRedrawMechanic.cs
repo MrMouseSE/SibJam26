@@ -43,7 +43,7 @@ namespace GameSystemsScripts.CoffeeSystemsScripts.ElementSystemScripts.ElementsR
             Component.IsRedrawButtonPressed = false;
             
             handSystem.Component.UnusedSwaps ++;
-            if (handSystem.Component.UnusedSwaps == handSystem.Component.CurrentElementsSwapCount)
+            if (handSystem.Component.UnusedSwaps == handSystem.Component.CurrentSwapCount)
             {
                 var tooltipContainer = Component.RedrawButtonContainer.ButtonTooltipContainer;
                 UniTaskAnimationLazyObject animTooltipObj = new(tooltipContainer.AppearAnimation, ref tooltipContainer.CancelToken,

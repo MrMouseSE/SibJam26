@@ -42,7 +42,8 @@ namespace GameSystemsScripts.CoffeeSystemsScripts.CalculateResultSystemScripts
             Component.VigorMultiplierSumm = vigorMult;
             Component.TasteSumm = tasteSumm;
             Component.TasteMultiplierSumm = tasteMult;
-            
+
+            Component.RecipeCostSumm = compareSystem.Component.CurrentRecipe.RecipeCost;
             Component.RecipeMultiplier = compareSystem.Component.CurrentRecipe.RecipeMultiplier;
             Component.BoilMultiplier = boilSystem.Component.BoilMultiplier;
 
@@ -54,7 +55,7 @@ namespace GameSystemsScripts.CoffeeSystemsScripts.CalculateResultSystemScripts
 
         private float CalculateCoffeeValue()
         {
-            return (Component.VigorSumm * Component.VigorMultiplierSumm + Component.TasteSumm * Component.TasteMultiplierSumm)
+            return (Component.VigorSumm * Component.VigorMultiplierSumm + Component.TasteSumm * Component.TasteMultiplierSumm + Component.RecipeCostSumm)
                    * Component.RecipeMultiplier * Component.BoilMultiplier;
         }
 

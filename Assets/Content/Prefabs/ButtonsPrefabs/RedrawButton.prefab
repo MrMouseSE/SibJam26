@@ -512,13 +512,13 @@ MonoBehaviour:
   AudioTransform: {fileID: 2541703130904016103}
   AppearClips:
   - Name: Appear
-    Sound: {fileID: 8300000, guid: 933527978313c7748b47c35b6c60fe9d, type: 3}
+    Sound: {fileID: 8300000, guid: e2ccdcd490844de43a80f2ae784935c0, type: 3}
   ActionClips:
   - Name: Click
-    Sound: {fileID: 8300000, guid: 4775c48742358894d8d43eb1374479e5, type: 3}
+    Sound: {fileID: 8300000, guid: bebd8ffd406877d41a1ce904b35c4e08, type: 3}
   DeathClips:
   - Name: Disappear
-    Sound: {fileID: 8300000, guid: 3d4060549dfca4944ae46f4ec3fd06a6, type: 3}
+    Sound: {fileID: 8300000, guid: e2ccdcd490844de43a80f2ae784935c0, type: 3}
 --- !u!65 &4025359431184123935
 BoxCollider:
   m_ObjectHideFlags: 0

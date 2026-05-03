@@ -16,3 +16,6 @@ MonoBehaviour:
   LevelsAchievements:
   - {fileID: 11400000, guid: 6330cbb7570dadd478727730c5b485b5, type: 2}
   - {fileID: 11400000, guid: 94a0f7c790a881341bea052b87739ece, type: 2}
+  - {fileID: 11400000, guid: 5fb1436e24215a7408a9ddd0ef2d4371, type: 2}
+  - {fileID: 11400000, guid: 4a0ac3c6a628cc04caa82bb24bcd98ae, type: 2}
+  - {fileID: 11400000, guid: 4c2205c0275b1684caf805cf6d95ef22, type: 2}

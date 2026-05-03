@@ -36,7 +36,6 @@ namespace SoundsComponentsScripts
 
         private async UniTaskVoid StartMusicLoop(SoundObjectComponent musicClip, CancellationToken token)
         {
-            
             var length = musicClip.ObjectAudioSource.clip.length;
             await UniTask.WaitForSeconds(length, cancellationToken: token);
             Play(SoundType.AreaMusic);

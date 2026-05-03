@@ -15,9 +15,11 @@ MonoBehaviour:
   ElementName: MilkCow
   Sprite: {fileID: 21300000, guid: c79a8cf153b864445a5d0b898483daa1, type: 3}
   BackColor: {r: 0.3490566, g: 0.3181532, b: 0.24862051, a: 1}
+  HoverSound: {fileID: 8300000, guid: 96424a8dc80dd6f4aba0bd560959e595, type: 3}
+  ElementType: 1
   Rarity: 0
-  ElementVigorValue: 2
-  ElementVigorMultiplier: 2
-  ElementTesteValue: 2
+  ElementVigorValue: 0
+  ElementVigorMultiplier: 1
+  ElementTesteValue: 3
   ElementTesteMultiplier: 2
   DropChanceValue: 1

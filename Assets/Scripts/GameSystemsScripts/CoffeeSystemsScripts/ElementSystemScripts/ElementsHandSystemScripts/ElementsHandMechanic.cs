@@ -15,15 +15,15 @@ namespace GameSystemsScripts.CoffeeSystemsScripts.ElementSystemScripts.ElementsH
 
         public void InitializeHandValues()
         {
-            Component.CurrentElementsToDrawCapacity = PlayerPrefs.GetInt("ElementsHandCapacity", 0);
-            Component.CurrentElementsSwapCount = PlayerPrefs.GetInt("ElementsHandSwapCount", 2);
+            Component.CurrentHandSlotCapacity = PlayerPrefs.GetInt("ElementsHandCapacity", 0);
+            Component.CurrentSwapCount = PlayerPrefs.GetInt("ElementsHandSwapCount", 2);
         }
 
         public void FixHandCounts()
         {
-            Component.CurrentElementsToDrawCapacity = Math.Clamp(Component.CurrentElementsToDrawCapacity, Component.ElementsHandDescription.MinMaxElementsHandCapacity.x, 
+            Component.CurrentHandSlotCapacity = Math.Clamp(Component.CurrentHandSlotCapacity, Component.ElementsHandDescription.MinMaxElementsHandCapacity.x, 
                 Component.ElementsHandDescription.MinMaxElementsHandCapacity.y);
-            Component.CurrentElementsSwapCount = Math.Clamp(Component.CurrentElementsSwapCount, Component.ElementsHandDescription.MinMaxElementSwapCount.x, 
+            Component.CurrentSwapCount = Math.Clamp(Component.CurrentSwapCount, Component.ElementsHandDescription.MinMaxElementSwapCount.x, 
                 Component.ElementsHandDescription.MinMaxElementSwapCount.y);
         }
 
@@ -31,10 +31,10 @@ namespace GameSystemsScripts.CoffeeSystemsScripts.ElementSystemScripts.ElementsH
         {
             if (!Component.IsValuesUpdateNeed) return;
             Component.IsValuesUpdateNeed = false;
-            Component.CurrentElementsToDrawCapacity += Component.AddDrawCapacityValue;
-            Component.AddDrawCapacityValue = 0;
-            Component.CurrentElementsSwapCount += Component.AddElementSwapCountValue;
-            Component.AddElementSwapCountValue = 0;
+            Component.CurrentHandSlotCapacity += Component.AddHandSlotCapacityValue;
+            Component.AddHandSlotCapacityValue = 0;
+            Component.CurrentSwapCount += Component.AddSwapCountValue;
+            Component.AddSwapCountValue = 0;
             FixHandCounts();
         }
 

@@ -15,9 +15,11 @@ MonoBehaviour:
   ElementName: SyrupCaramel
   Sprite: {fileID: 21300000, guid: 207d80f2365e36a4c88f85b9e8803ac3, type: 3}
   BackColor: {r: 0.7169812, g: 0.627117, b: 0.4024564, a: 1}
+  HoverSound: {fileID: 8300000, guid: c14d804cc67079644bc2b87b6d68a53c, type: 3}
+  ElementType: 2
   Rarity: 0
-  ElementVigorValue: 2
-  ElementVigorMultiplier: 2
-  ElementTesteValue: 2
+  ElementVigorValue: 0
+  ElementVigorMultiplier: 1
+  ElementTesteValue: 7
   ElementTesteMultiplier: 2
   DropChanceValue: 1

@@ -11,5 +11,8 @@ namespace LevelAchievementsScripts
         public float LevelScoreToAchieve;
 
         public List<CoffeeElementDescription> BonusElementsForAchieved;
+
+        public int AdditionalHandSlot;
+        public int AdditionalSwap;
     }
 }

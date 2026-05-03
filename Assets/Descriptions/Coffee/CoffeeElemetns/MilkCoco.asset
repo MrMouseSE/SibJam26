@@ -15,9 +15,11 @@ MonoBehaviour:
   ElementName: MilkCoco
   Sprite: {fileID: 21300000, guid: 28a43ad1a0f47b84189d4a5420698507, type: 3}
   BackColor: {r: 0.3490566, g: 0.3181532, b: 0.24862051, a: 1}
+  HoverSound: {fileID: 8300000, guid: 96424a8dc80dd6f4aba0bd560959e595, type: 3}
+  ElementType: 1
   Rarity: 0
-  ElementVigorValue: 2
-  ElementVigorMultiplier: 2
+  ElementVigorValue: 0
+  ElementVigorMultiplier: 1
   ElementTesteValue: 2
-  ElementTesteMultiplier: 2
+  ElementTesteMultiplier: 1.1
   DropChanceValue: 1

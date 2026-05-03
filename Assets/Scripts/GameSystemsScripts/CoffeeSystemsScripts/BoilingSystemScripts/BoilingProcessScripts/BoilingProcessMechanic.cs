@@ -1,11 +1,14 @@
+using System.Threading;
 using AnimationDescriptionsScripts;
 using CoffeeScripts;
+using Cysharp.Threading.Tasks;
 using GameSystemsScripts.CameraSystem;
 using GameSystemsScripts.CoffeeSystemsScripts.BoilingSystemScripts.CompleteBoilingScripts;
 using GameSystemsScripts.CoffeeSystemsScripts.ElementSystemScripts.CompleteSelectionSystemScripts;
 using GameSystemsScripts.CoffeeSystemsScripts.RecipeSystemScripts.RecipeHandlerScripts;
 using GameSystemsScripts.GameSpeedScripts;
 using ScenesOperatingScripts;
+using SoundsComponentsScripts;
 using UnityEngine;
 
 namespace GameSystemsScripts.CoffeeSystemsScripts.BoilingSystemScripts.BoilingProcessScripts
@@ -34,6 +37,7 @@ namespace GameSystemsScripts.CoffeeSystemsScripts.BoilingSystemScripts.BoilingPr
             if (Component.BoilValue > boilingDescription.BoilExtreemeValue)
             {
                 compeleBoilingSystem.Component.IsBoilingComplete = true;
+                Component.BoilValue = 0f;
             }
             if (compeleBoilingSystem.Component.IsBoilingComplete)
             {
@@ -43,6 +47,7 @@ namespace GameSystemsScripts.CoffeeSystemsScripts.BoilingSystemScripts.BoilingPr
                 container.IndicatorArrowTransform.localRotation = Quaternion.Euler(0f, 0f, 0f);
                 container.IndicatorShakeTweenGroup.AnimateByUpdate = false;
                 container.ProcessBoilTweenGroup.AnimateByUpdate = false;
+                container.SoundContainer.Play(SoundType.DeathSound);
                 compeleBoilingSystem.Component.CompleteBoilingButtonContainer.ExtremeButtonSprite.color = new Color(1f, 1f, 1f, 0f);
             
                 GameCameraSystem cameraSystem = (GameCameraSystem)gameSystemsHandler.GetGameSystem(typeof(GameCameraSystem));
@@ -54,11 +59,28 @@ namespace GameSystemsScripts.CoffeeSystemsScripts.BoilingSystemScripts.BoilingPr
                 Component.BoilValue = 0f;
                 return;
             }
+
+            if (!container.SoundContainer.IsPlaing)
+            {
+                container.SoundContainer.IsPlaing = true;
+                PlayActionSound(container.SoundContainer).Forget();
+            }
             
             Component.BoilingTime += deltaTime;
             Component.BoilValue += deltaTime * Random.Range(boilingDescription.BoilAddRangeMultiplier.x, boilingDescription.BoilAddRangeMultiplier.y);
             
             SetIndicatorValues(boilingDescription, compeleBoilingSystem.Component.CompleteBoilingButtonContainer.ExtremeButtonSprite);
+        }
+
+        private async UniTaskVoid PlayActionSound(SoundContainer container)
+        {
+            var musicClip = container.ActionClips[Random.Range(0, container.ActionClips.Length)];
+            var length = musicClip.Sound.length;
+            container.CancelToken.Cancel();
+            container.CancelToken = new CancellationTokenSource();
+            container.Play(SoundType.ActionSound);
+            await UniTask.WaitForSeconds(length, cancellationToken: container.CancelToken.Token);
+            container.IsPlaing = false;
         }
 
         private void SetIndicatorValues(BoilDescription description, SpriteRenderer extremeButtonSprite)

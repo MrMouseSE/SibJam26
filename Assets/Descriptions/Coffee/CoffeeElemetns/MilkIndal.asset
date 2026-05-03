@@ -15,9 +15,11 @@ MonoBehaviour:
   ElementName: MilkIndal
   Sprite: {fileID: 21300000, guid: a7fba9398fa4f62438798869455bb73a, type: 3}
   BackColor: {r: 0.3490566, g: 0.3181532, b: 0.24862051, a: 1}
+  HoverSound: {fileID: 0}
+  ElementType: 1
   Rarity: 0
-  ElementVigorValue: 2
-  ElementVigorMultiplier: 2
+  ElementVigorValue: 0
+  ElementVigorMultiplier: 1
   ElementTesteValue: 2
-  ElementTesteMultiplier: 2
+  ElementTesteMultiplier: 1.5
   DropChanceValue: 1

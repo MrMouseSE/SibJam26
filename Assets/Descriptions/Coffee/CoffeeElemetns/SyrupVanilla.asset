@@ -15,9 +15,11 @@ MonoBehaviour:
   ElementName: SyrupVanilla
   Sprite: {fileID: 21300000, guid: eb361ffddfbdf6d4cb935363617f5240, type: 3}
   BackColor: {r: 0.7169812, g: 0.627117, b: 0.4024564, a: 1}
+  HoverSound: {fileID: 8300000, guid: c14d804cc67079644bc2b87b6d68a53c, type: 3}
+  ElementType: 2
   Rarity: 0
   ElementVigorValue: 2
-  ElementVigorMultiplier: 2
-  ElementTesteValue: 2
-  ElementTesteMultiplier: 2
+  ElementVigorMultiplier: 1
+  ElementTesteValue: 7
+  ElementTesteMultiplier: 3
   DropChanceValue: 1

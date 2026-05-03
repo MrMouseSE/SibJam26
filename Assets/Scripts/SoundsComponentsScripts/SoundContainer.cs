@@ -5,6 +5,7 @@ namespace SoundsComponentsScripts
         public SoundPair[] AppearClips;
         public SoundPair[] ActionClips;
         public SoundPair[] DeathClips;
+        public bool IsPlaing { get; set; }
 
         public override void Play(SoundType soundType)
         {

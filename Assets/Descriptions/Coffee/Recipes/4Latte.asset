@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d87cf679bd4e447fb94f2eab4f5814b1, type: 3}
+  m_Name: 4Latte
+  m_EditorClassIdentifier: Assembly-CSharp::CoffeeScripts.CoffeeRecipeDescription
+  RecipeName: Latte
+  RecipeTitle: "\u041B\u0430\u0442\u0442\u0435"
+  CoffeeSprite: {fileID: 1622716955, guid: b83dfbad7d6f4c64183c7685537ecd10, type: 3}
+  ElementTypes: 000000000100000001000000
+  ElementDescriptions: []
+  RecipeCost: 50
+  RecipeMultiplier: 1.7

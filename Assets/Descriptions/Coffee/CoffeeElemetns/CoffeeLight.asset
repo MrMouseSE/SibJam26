@@ -15,9 +15,11 @@ MonoBehaviour:
   ElementName: CoffeeLight
   Sprite: {fileID: 21300000, guid: 5e5aca70f0e9d2849889a085a3284e3b, type: 3}
   BackColor: {r: 0.31132078, g: 0.30165964, b: 0.27460843, a: 1}
+  HoverSound: {fileID: 8300000, guid: a5da62d42b226e548be9b0f6bda74a7f, type: 3}
+  ElementType: 0
   Rarity: 0
   ElementVigorValue: 1
   ElementVigorMultiplier: 1
-  ElementTesteValue: 1
+  ElementTesteValue: 2
   ElementTesteMultiplier: 1
   DropChanceValue: 1

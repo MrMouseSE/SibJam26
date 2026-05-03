@@ -6,11 +6,11 @@ namespace GameSystemsScripts.CoffeeSystemsScripts.ElementSystemScripts.ElementsH
     public class ElementsHandComponent
     {
         public bool IsValuesUpdateNeed;
-        public int AddDrawCapacityValue;
-        public int AddElementSwapCountValue;
+        public int AddHandSlotCapacityValue;
+        public int AddSwapCountValue;
         
-        public int CurrentElementsToDrawCapacity;
-        public int CurrentElementsSwapCount;
+        public int CurrentHandSlotCapacity;
+        public int CurrentSwapCount;
         public int UnusedSwaps;
         public ElementsHandDescription ElementsHandDescription;
 

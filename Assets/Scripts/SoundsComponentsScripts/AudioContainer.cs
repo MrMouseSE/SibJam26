@@ -1,3 +1,4 @@
+using System.Threading;
 using UnityEngine;
 
 namespace SoundsComponentsScripts
@@ -5,6 +6,8 @@ namespace SoundsComponentsScripts
     public class AudioContainer : MonoBehaviour
     {
         public Transform AudioTransform;
+
+        public CancellationTokenSource CancelToken = new CancellationTokenSource();
         
         private void OnValidate()
         {

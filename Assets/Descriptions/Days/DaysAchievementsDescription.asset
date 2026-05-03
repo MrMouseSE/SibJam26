@@ -14,3 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LevelAchievementsScripts.DaysAchievementsDescription
   DaysAchievementsDescriptions:
   - {fileID: 11400000, guid: 18d386bef9318794dbb149f22a986ca5, type: 2}
+  WinClip:
+    Name: 
+    Sound: {fileID: 8300000, guid: 2c0282d543aae5d4bbc5497c2b47da19, type: 3}
+  LoseClip:
+    Name: 
+    Sound: {fileID: 8300000, guid: b9ef85647f63dbe40b5c2fb6a70b958b, type: 3}

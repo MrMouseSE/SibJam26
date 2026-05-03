@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace CoffeeScripts
 {
@@ -8,7 +9,11 @@ namespace CoffeeScripts
         public string ElementName;
         public Sprite Sprite;
         public Color BackColor;
+        public AudioClip HoverSound;
 
+        [FormerlySerializedAs("Type")] [Space]
+        public ElementType ElementType;
+        
         [Space]
         public ElementRarity Rarity;
         public float ElementVigorValue;

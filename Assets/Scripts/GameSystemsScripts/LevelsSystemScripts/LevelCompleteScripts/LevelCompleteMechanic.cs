@@ -26,7 +26,7 @@ namespace GameSystemsScripts.LevelsSystemScripts.LevelCompleteScripts
                 Component.IsLevelCompleted = true;
             }
             
-            gameSystemsHandler.StateSystem.Mechanic.ChangeState(GameStates.ChangeLevel);
+            gameSystemsHandler.StateSystem.Mechanic.ChangeState(GameStates.RewardElements);
             //TODO: not complete restart levels
         }
 

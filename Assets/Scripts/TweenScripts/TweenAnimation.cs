@@ -8,6 +8,7 @@ namespace TweenScripts
         public float Duration;
         public bool IsRandomDelay;
         public Vector2 RandomDelayRange;
+        public bool Loop = true;
         
         [Space]
         public AnimationCurve AnimationRule;
@@ -26,6 +27,11 @@ namespace TweenScripts
             _currentTime -= Time.deltaTime;
             if (_currentTime < 0)
             {
+                if (!Loop)
+                {
+                    AnimateByUpdate = false;
+                    return;
+                }
                 _currentTime = Duration;
                 if (IsRandomDelay)
                     SetRandomDelay();

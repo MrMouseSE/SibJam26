@@ -18,6 +18,7 @@ namespace CoffeeScripts
         
         public BoxCollider ElementCollider;
         public SpriteRenderer SpriteRenderer;
+        public SpriteRenderer BackSpriteRenderer;
         
         public CancellationTokenSource CancelToken = new();
 
@@ -32,6 +33,7 @@ namespace CoffeeScripts
         [HideInInspector]
         public Sprite Sprite;
         
+        public ElementType ElementType;
         public ElementRarity Rarity {get;set;}
         public float ElementVigorValue {get;set;}
         public float ElementVigorMultiplier {get;set;}
@@ -52,7 +54,6 @@ namespace CoffeeScripts
         public void OnMouseExit()
         {
             _animCancelToken.Cancel();
-            SoundContainer.Play(SoundType.AppearSound);
         }
     }
 }

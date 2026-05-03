@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4ee72ab5170e4cb2ad055e6647b0cd23, type: 3}
-  m_Name: Level5
+  m_Name: Level6
   m_EditorClassIdentifier: Assembly-CSharp::LevelAchievementsScripts.LevelAchievementDescription
-  Level: 5
-  LevelScoreToAchieve: 320
+  Level: 6
+  LevelScoreToAchieve: 25000
   BonusElementsForAchieved:
   - {fileID: 11400000, guid: c99519b94204a8f4ca96ec33d05a1137, type: 2}
   - {fileID: 11400000, guid: a5089ffd402b30846904e1921b2139d0, type: 2}
@@ -23,5 +23,17 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 81a6bbee6850951458c6f606f13f7b58, type: 2}
   - {fileID: 11400000, guid: 46725a308b8c0ac4dbc2f8a2adee92db, type: 2}
   - {fileID: 11400000, guid: ed64a42ddc24a4f4ca61896812d8e307, type: 2}
+  - {fileID: 11400000, guid: 81a6bbee6850951458c6f606f13f7b58, type: 2}
+  - {fileID: 11400000, guid: 5881ea799cc59934c87becf8a2f8bbe8, type: 2}
+  - {fileID: 11400000, guid: 81a6bbee6850951458c6f606f13f7b58, type: 2}
+  - {fileID: 11400000, guid: 81a6bbee6850951458c6f606f13f7b58, type: 2}
+  - {fileID: 11400000, guid: a5089ffd402b30846904e1921b2139d0, type: 2}
+  - {fileID: 11400000, guid: a5089ffd402b30846904e1921b2139d0, type: 2}
+  - {fileID: 11400000, guid: c99519b94204a8f4ca96ec33d05a1137, type: 2}
+  - {fileID: 11400000, guid: a5089ffd402b30846904e1921b2139d0, type: 2}
+  - {fileID: 11400000, guid: c99519b94204a8f4ca96ec33d05a1137, type: 2}
+  - {fileID: 11400000, guid: c99519b94204a8f4ca96ec33d05a1137, type: 2}
+  - {fileID: 11400000, guid: a5089ffd402b30846904e1921b2139d0, type: 2}
+  - {fileID: 11400000, guid: 240c690af41b3e34b82f7c224bb3e570, type: 2}
   AdditionalHandSlot: 0
   AdditionalSwap: 0

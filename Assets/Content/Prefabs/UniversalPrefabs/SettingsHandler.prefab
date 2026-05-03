@@ -139,6 +139,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8ccb0906376440d893e167f55c8b894, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TweenScripts.RectPositionTweenAnimation
+  AnimateByUpdate: 0
+  Duration: 0
+  IsRandomDelay: 0
+  RandomDelayRange: {x: 0, y: 0}
+  Loop: 1
   AnimationRule:
     serializedVersion: 2
     m_Curve:
@@ -172,8 +177,6 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  AnimateByUpdate: 0
-  Duration: 0
   RectTransform: {fileID: 6608678501217985149}
   FromPosition: {x: 0, y: 5}
   ToPosition: {x: -16.5, y: 5}
@@ -265,6 +268,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae10b1cf7d701f3468581f435531bbc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TweenScripts.ColorTweenAnimation
+  AnimateByUpdate: 0
+  Duration: 0
+  IsRandomDelay: 0
+  RandomDelayRange: {x: 0, y: 0}
+  Loop: 1
   AnimationRule:
     serializedVersion: 2
     m_Curve:
@@ -289,8 +297,6 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  AnimateByUpdate: 0
-  Duration: 0
   Image: {fileID: 1936963712042237551}
   FromColor: {r: 1, g: 1, b: 1, a: 1}
   ToColor: {r: 1, g: 1, b: 1, a: 0}
@@ -1030,6 +1036,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8ccb0906376440d893e167f55c8b894, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TweenScripts.RectPositionTweenAnimation
+  AnimateByUpdate: 0
+  Duration: 0
+  IsRandomDelay: 0
+  RandomDelayRange: {x: 0, y: 0}
+  Loop: 1
   AnimationRule:
     serializedVersion: 2
     m_Curve:
@@ -1063,8 +1074,6 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  AnimateByUpdate: 0
-  Duration: 0
   RectTransform: {fileID: 5706733444081270150}
   FromPosition: {x: 0, y: 5}
   ToPosition: {x: -32.4, y: 5}
@@ -1286,6 +1295,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8ccb0906376440d893e167f55c8b894, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TweenScripts.RectPositionTweenAnimation
+  AnimateByUpdate: 0
+  Duration: 0
+  IsRandomDelay: 0
+  RandomDelayRange: {x: 0, y: 0}
+  Loop: 1
   AnimationRule:
     serializedVersion: 2
     m_Curve:
@@ -1319,8 +1333,6 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  AnimateByUpdate: 0
-  Duration: 0
   RectTransform: {fileID: 7123216928898111369}
   FromPosition: {x: 0, y: 0}
   ToPosition: {x: -32, y: 0}
@@ -1348,6 +1360,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0df570b210444058af6bcd6c86da0fc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TweenScripts.CanvasAlphaTweenAnimation
+  AnimateByUpdate: 0
+  Duration: 0
+  IsRandomDelay: 0
+  RandomDelayRange: {x: 0, y: 0}
+  Loop: 1
   AnimationRule:
     serializedVersion: 2
     m_Curve:
@@ -1381,8 +1398,6 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  AnimateByUpdate: 0
-  Duration: 0
   CanvasGroup: {fileID: 7882076759368165431}
   AlphaFrom: 0
   AlphaTo: 1
@@ -1732,6 +1747,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8edf47a5250a4021a94f3f885cd3e9ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TweenScripts.RectSizeTweenAnimation
+  AnimateByUpdate: 0
+  Duration: 0
+  IsRandomDelay: 0
+  RandomDelayRange: {x: 0, y: 0}
+  Loop: 1
   AnimationRule:
     serializedVersion: 2
     m_Curve:
@@ -1756,8 +1776,6 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  AnimateByUpdate: 0
-  Duration: 0
   RectTransform: {fileID: 350043606672274838}
   FromSize: {x: 50, y: 50}
   ToSize: {x: 150, y: 180}
@@ -1811,6 +1829,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8ccb0906376440d893e167f55c8b894, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TweenScripts.RectPositionTweenAnimation
+  AnimateByUpdate: 0
+  Duration: 0
+  IsRandomDelay: 0
+  RandomDelayRange: {x: 0, y: 0}
+  Loop: 1
   AnimationRule:
     serializedVersion: 2
     m_Curve:
@@ -1835,8 +1858,6 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  AnimateByUpdate: 0
-  Duration: 0
   RectTransform: {fileID: 5210358821811358581}
   FromPosition: {x: 0, y: 0}
   ToPosition: {x: 0, y: -41}
@@ -1870,8 +1891,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 6634436816655382762}
   - {fileID: 1440520964771199363}
+  - {fileID: 6634436816655382762}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
@@ -1909,14 +1930,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56398574961c7444f9054921a775a21a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TweenScripts.TweenGroupAnimation
+  AnimateByUpdate: 0
+  Duration: 0
+  IsRandomDelay: 0
+  RandomDelayRange: {x: 0, y: 0}
+  Loop: 1
   AnimationRule:
     serializedVersion: 2
     m_Curve: []
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  AnimateByUpdate: 0
-  Duration: 0
+  TweenGroupName: 
   Animations:
   - {fileID: 5339462682221337627}
   - {fileID: 766781197009922810}
@@ -2164,6 +2189,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae10b1cf7d701f3468581f435531bbc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TweenScripts.ColorTweenAnimation
+  AnimateByUpdate: 0
+  Duration: 0
+  IsRandomDelay: 0
+  RandomDelayRange: {x: 0, y: 0}
+  Loop: 1
   AnimationRule:
     serializedVersion: 2
     m_Curve:
@@ -2188,8 +2218,6 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  AnimateByUpdate: 0
-  Duration: 0
   Image: {fileID: 395837448007316262}
   FromColor: {r: 1, g: 1, b: 1, a: 0}
   ToColor: {r: 1, g: 1, b: 1, a: 1}

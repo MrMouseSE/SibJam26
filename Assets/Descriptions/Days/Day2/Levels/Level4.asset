@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Level4
   m_EditorClassIdentifier: Assembly-CSharp::LevelAchievementsScripts.LevelAchievementDescription
   Level: 4
-  LevelScoreToAchieve: 240
+  LevelScoreToAchieve: 12000
   BonusElementsForAchieved:
   - {fileID: 11400000, guid: c99519b94204a8f4ca96ec33d05a1137, type: 2}
   - {fileID: 11400000, guid: a5089ffd402b30846904e1921b2139d0, type: 2}
@@ -22,5 +22,14 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c4ab7b07ab68f59438b54b414dba0045, type: 2}
   - {fileID: 11400000, guid: 81a6bbee6850951458c6f606f13f7b58, type: 2}
   - {fileID: 11400000, guid: 83159c130c3192743a4d09c2c1e65dc9, type: 2}
+  - {fileID: 11400000, guid: a5089ffd402b30846904e1921b2139d0, type: 2}
+  - {fileID: 11400000, guid: c99519b94204a8f4ca96ec33d05a1137, type: 2}
+  - {fileID: 11400000, guid: 83159c130c3192743a4d09c2c1e65dc9, type: 2}
+  - {fileID: 11400000, guid: ae832b9155e2864418d6a70790344260, type: 2}
+  - {fileID: 11400000, guid: c4ab7b07ab68f59438b54b414dba0045, type: 2}
+  - {fileID: 11400000, guid: 73718ee6c0851c14ab5132f8d3a9642b, type: 2}
+  - {fileID: 11400000, guid: 83159c130c3192743a4d09c2c1e65dc9, type: 2}
+  - {fileID: 11400000, guid: bf9cb91aea7547342a844dc74edf73b4, type: 2}
+  - {fileID: 11400000, guid: 240c690af41b3e34b82f7c224bb3e570, type: 2}
   AdditionalHandSlot: 1
   AdditionalSwap: 0

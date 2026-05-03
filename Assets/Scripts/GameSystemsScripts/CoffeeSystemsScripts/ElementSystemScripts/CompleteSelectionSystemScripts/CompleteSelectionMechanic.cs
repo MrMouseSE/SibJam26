@@ -92,6 +92,8 @@ namespace GameSystemsScripts.CoffeeSystemsScripts.ElementSystemScripts.CompleteS
                     animObj.Play().Forget();
                     container.SoundContainer.Play(SoundType.DeathSound);
                 }
+
+                container.ElementCollider.enabled = false;
                 container.IsUsedInGame = false;
             }
             _gameSystemsHandler.StateSystem.Mechanic.ChangeState(GameStates.AwaitAnimation);

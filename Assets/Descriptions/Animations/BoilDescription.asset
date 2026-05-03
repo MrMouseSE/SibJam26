@@ -17,7 +17,7 @@ MonoBehaviour:
   ArrowExtreemeAngle: {x: 0, y: 0, z: 175}
   NormalColor: {r: 1, g: 1, b: 1, a: 1}
   ExtreemeColor: {r: 1, g: 0, b: 0, a: 1}
-  BoilAddRangeMultiplier: {x: -15, y: 20}
+  BoilAddRangeMultiplier: {x: -15, y: 60}
   BoilMultiplyerCurve:
     serializedVersion: 2
     m_Curve:

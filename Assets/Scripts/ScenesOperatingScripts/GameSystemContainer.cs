@@ -6,11 +6,14 @@ using GameSystemsScripts.CoffeeSystemsScripts.ElementSystemScripts.ElementsDrawS
 using GameSystemsScripts.CoffeeSystemsScripts.ElementSystemScripts.ElementsRedrawScripts;
 using GameSystemsScripts.CoffeeSystemsScripts.ElementSystemScripts.SelectionButtonsScripts;
 using GameSystemsScripts.ScoreViewScripts.InterfaceScoreScripts;
+using GameSystemsScripts.ScoreViewScripts.LevelViewScripts;
 
 namespace ScenesOperatingScripts
 {
     public class GameSystemContainer : SceneSystemsContainer
     {
+        public LevelViewContainer DayLevelViewContainer;
+        
         public BoilCoffeeContainer BoilCoffeeContainer;
         
         public GameButtonContainer RedrawButtonContainer;
@@ -41,7 +44,10 @@ namespace ScenesOperatingScripts
             completeBoilingSystem.Mechanic.SetButtonContainer(BoilCompleteButtonContainer);
             
             var interfaceSystem = (InterfaceScoreSystem)systemsHandler.GetGameSystem(typeof(InterfaceScoreSystem));
-            interfaceSystem.Mechanic.SetContainer(InterfaceScoreContainer);
+            interfaceSystem.Mechanic.SetContainer(InterfaceScoreContainer, systemsHandler);
+            
+            var levelSystem = (LevelViewSystem)systemsHandler.GetGameSystem(typeof(LevelViewSystem));
+            levelSystem.Mechanic.SetViewContainer(DayLevelViewContainer);
         }
     }
 }

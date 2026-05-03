@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace AnimationDescriptionsScripts
 {
@@ -17,6 +18,7 @@ namespace AnimationDescriptionsScripts
         public float ActivateAnimationDuration;
         public float HoverAnimationDuration;
         public float ClickAnimationsDuration;
+        [FormerlySerializedAs("TooltipAnimationDuration")] public float ButtonTooltipAnimationDuration;
         
         [Space]
         [Header("Button Settings")]

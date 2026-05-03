@@ -25,6 +25,7 @@ using GameSystemsScripts.LevelsSystemScripts.GameCompleteSystemScripts;
 using GameSystemsScripts.LevelsSystemScripts.LevelCompleteScripts;
 using GameSystemsScripts.LevelsSystemScripts.LevelHandlerScripts;
 using GameSystemsScripts.ScoreViewScripts.InterfaceScoreScripts;
+using GameSystemsScripts.ScoreViewScripts.LevelViewScripts;
 using LevelAchievementsScripts;
 using MainMenuScripts.SettingsHanlderScripts;
 using ScenesOperatingScripts;
@@ -83,6 +84,7 @@ namespace GameStartupScripts
             
             _gameSystemsHandler.AddGameSystem(new LevelCompleteSystem(DaysAchievementsDescription));
             _gameSystemsHandler.AddGameSystem(new LevelHandlerSystem(DaysAchievementsDescription));
+            _gameSystemsHandler.AddGameSystem(new LevelViewSystem());
             _gameSystemsHandler.AddGameSystem(new GameCompleteSystem());
             
             _audioMixerHandler = new AudioMixerHandler(GameAudioMixer);

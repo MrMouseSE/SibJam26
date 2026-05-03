@@ -16,7 +16,7 @@ namespace GameSystemsScripts.CoffeeSystemsScripts.ElementSystemScripts.ElementsH
         public void InitializeHandValues()
         {
             Component.CurrentElementsToDrawCapacity = PlayerPrefs.GetInt("ElementsHandCapacity", 0);
-            Component.CurrentElementsSwapCount = PlayerPrefs.GetInt("ElementsHandSwapCount", 0);
+            Component.CurrentElementsSwapCount = PlayerPrefs.GetInt("ElementsHandSwapCount", 2);
         }
 
         public void FixHandCounts()

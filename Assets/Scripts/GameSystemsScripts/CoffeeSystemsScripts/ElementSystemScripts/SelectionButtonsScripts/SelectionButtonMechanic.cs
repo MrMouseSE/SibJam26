@@ -15,6 +15,8 @@ namespace GameSystemsScripts.CoffeeSystemsScripts.ElementSystemScripts.Selection
 
         public void SetButtonsContainers(GameButtonContainer complete, GameButtonContainer redraw, GameSystemsHandler gameSystemsHandler)
         {
+            complete.ButtonTooltipContainer.AppearAnimation.SetForceState(true);
+            redraw.ButtonTooltipContainer.AppearAnimation.SetForceState(true);
             Component.CompleteButton = complete;
             Component.RedrawButton = redraw;
             GameSpeedSystem speedSystem = (GameSpeedSystem)gameSystemsHandler.GetGameSystem(typeof(GameSpeedSystem));

@@ -16,7 +16,6 @@ namespace GameSystemsScripts.ScoreViewScripts.InterfaceScoreScripts
         
         public void Initialize(GameSystemsHandler gameSystemsHandler)
         {
-            
         }
 
         public void UpdateSystem(GameSystemsHandler gameSystemsHandler, float deltaTime)

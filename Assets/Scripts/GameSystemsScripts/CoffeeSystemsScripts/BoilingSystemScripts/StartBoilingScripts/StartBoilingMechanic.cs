@@ -18,16 +18,19 @@ namespace GameSystemsScripts.CoffeeSystemsScripts.BoilingSystemScripts.StartBoil
 
         public void UpdateMechanic(GameSystemsHandler gameSystemsHandler, float deltaTime)
         {
-            CompleteBoilingSystem completeBoilingSystem = (CompleteBoilingSystem)gameSystemsHandler.GetGameSystem(typeof(CompleteBoilingSystem));
-            GameSpeedSystem speedSystem = (GameSpeedSystem)gameSystemsHandler.GetGameSystem(typeof(GameSpeedSystem));
+            var completeBoilingSystem = (CompleteBoilingSystem)gameSystemsHandler.GetGameSystem(typeof(CompleteBoilingSystem));
+            var speedSystem = (GameSpeedSystem)gameSystemsHandler.GetGameSystem(typeof(GameSpeedSystem));
+            var processSystem = (BoilingProcessSystem)gameSystemsHandler.GetGameSystem(typeof(BoilingProcessSystem));
+            GameCameraSystem cameraSystem = (GameCameraSystem)gameSystemsHandler.GetGameSystem(typeof(GameCameraSystem));
+            
             float duration = speedSystem.Component.AnimationsDescription.ClickAnimationsDuration;
             completeBoilingSystem.Component.CompleteBoilingButtonContainer.SetActive(true, duration);
-            BoilingProcessSystem processSystem = (BoilingProcessSystem)gameSystemsHandler.GetGameSystem(typeof(BoilingProcessSystem));
+            completeBoilingSystem.Mechanic.PlayTooltip(speedSystem);
+            
             var boilCoffeeContainer = processSystem.Component.Container;
             boilCoffeeContainer.IndicatorShakeTweenGroup.AnimateByUpdate = true;
             boilCoffeeContainer.ProcessBoilTweenGroup.AnimateByUpdate = true;
             
-            GameCameraSystem cameraSystem = (GameCameraSystem)gameSystemsHandler.GetGameSystem(typeof(GameCameraSystem));
             cameraSystem.Mechanic.AnimateCameraMovement(boilCoffeeContainer.NormalCameraPoint, boilCoffeeContainer.BoildFocusCameraPoint,
                 speedSystem.Component.AnimationsDescription.Camera);
             gameSystemsHandler.StateSystem.Mechanic.ChangeState(GameStates.BoilingCoffee);

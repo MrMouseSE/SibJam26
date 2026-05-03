@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ce1e94167624be292df2822238ec18a, type: 3}
   m_Name: DayAchievementsDescription
   m_EditorClassIdentifier: Assembly-CSharp::LevelAchievementsScripts.DayAchievementsDescription
+  DayIndex: 1
   LevelsAchievements:
   - {fileID: 11400000, guid: 6330cbb7570dadd478727730c5b485b5, type: 2}
   - {fileID: 11400000, guid: 94a0f7c790a881341bea052b87739ece, type: 2}

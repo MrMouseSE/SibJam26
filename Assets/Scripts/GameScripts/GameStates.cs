@@ -14,6 +14,7 @@ namespace GameScripts
         RewardElements,
         CompareLevelComplete,
         ChangeLevel,
+        UpdateLevelView,
         GameOver,
     }
 }

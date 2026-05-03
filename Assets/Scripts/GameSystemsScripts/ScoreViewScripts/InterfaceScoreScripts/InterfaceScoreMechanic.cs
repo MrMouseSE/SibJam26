@@ -1,6 +1,8 @@
 using CoffeeScripts;
 using CoffeeScripts.ElementsInventoryScripts;
 using GameSystemsScripts.CoffeeSystemsScripts.RecipeSystemScripts.RecipeHandlerScripts;
+using GameSystemsScripts.GameSpeedScripts;
+using GameSystemsScripts.LevelsSystemScripts.LevelHandlerScripts;
 using ScenesOperatingScripts;
 using TweenScripts;
 using UnityEngine;
@@ -16,11 +18,29 @@ namespace GameSystemsScripts.ScoreViewScripts.InterfaceScoreScripts
             Component = component;
         }
 
-        public void SetContainer(InterfaceScoreContainer interfaceScoreContainer)
+        public void SetContainer(InterfaceScoreContainer interfaceScoreContainer, GameSystemsHandler gameSystemsHandler)
         {
             Component.Container = interfaceScoreContainer;
             Component.Container.MaximumScoreText.ScoreText.text = PlayerPrefs.GetString("MaxScore");
             Component.Container.PreviousScoreText.ScoreText.text = PlayerPrefs.GetString("PreviousScore");
+            ShowRequiredScore(gameSystemsHandler);
+        }
+        
+        public void ShowRequiredScore(GameSystemsHandler gameSystemsHandler)
+        {
+            var levelHandler = (LevelHandlerSystem)gameSystemsHandler.GetGameSystem(typeof(LevelHandlerSystem));
+            var speedSystem = (GameSpeedSystem)gameSystemsHandler.GetGameSystem(typeof(GameSpeedSystem));
+            
+            var score = 
+                levelHandler.Component.DaysDescription.DaysAchievementsDescriptions[levelHandler.Component.Day].
+                    LevelsAchievements[levelHandler.Component.Level].LevelScoreToAchieve;
+
+            var containerRequireScore = Component.Container.RequireScore;
+            
+            containerRequireScore.SetScoreToAnimation(score);
+            UniTaskAnimationLazyObject animMaxObj = new(containerRequireScore.ScoreAnimation,
+                ref containerRequireScore.CancToken, speedSystem.Component.AnimationsDescription.ScoreAnimationDuration, true);
+            animMaxObj.Play().Forget();
         }
         
         public void UpdateScore(float resultValue, float duration)
@@ -36,8 +56,8 @@ namespace GameSystemsScripts.ScoreViewScripts.InterfaceScoreScripts
                 animMaxObj.Play().Forget();
             }
                 
-            Component.PreviousReachedScore = Component.CurrestReachedScore;
-            Component.CurrestReachedScore = resultValue;
+            Component.PreviousReachedScore = Component.CurrentReachedScore;
+            Component.CurrentReachedScore = resultValue;
 
             container.PreviousScoreText.SetScoreToAnimation(resultValue);
             UniTaskAnimationLazyObject animObj = new(container.PreviousScoreText.ScoreAnimation,

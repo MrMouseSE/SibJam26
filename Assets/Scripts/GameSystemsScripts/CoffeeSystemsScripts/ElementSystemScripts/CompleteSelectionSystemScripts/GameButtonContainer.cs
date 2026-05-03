@@ -17,6 +17,8 @@ namespace GameSystemsScripts.CoffeeSystemsScripts.ElementSystemScripts.CompleteS
         public TweenGroupAnimation ClickAnimations;
         public TweenGroupAnimation HoverAnimations;
         
+        public ButtonTooltipContainer ButtonTooltipContainer;
+        
         public Action OnButtonPressed;
         
         private CancellationTokenSource _ctsActivation = new CancellationTokenSource();

@@ -7,6 +7,7 @@ namespace LevelAchievementsScripts
     [CreateAssetMenu(menuName = "Levels/DayAchievementsDescription", fileName = "DayAchievementsDescription", order = 0)]
     public class DayAchievementsDescription : ScriptableObject
     {
+        public int DayIndex;
         public List<LevelAchievementDescription> LevelsAchievements;
 
         private void OnValidate()

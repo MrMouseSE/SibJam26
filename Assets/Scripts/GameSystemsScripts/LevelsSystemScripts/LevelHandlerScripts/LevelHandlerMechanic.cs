@@ -43,7 +43,7 @@ namespace GameSystemsScripts.LevelsSystemScripts.LevelHandlerScripts
                 Component.Day = 0;
             }
             
-            gameSystemsHandler.StateSystem.Mechanic.ChangeState(GameStates.DrawElements);
+            gameSystemsHandler.StateSystem.Mechanic.ChangeState(GameStates.UpdateLevelView);
         }
 
         public void DisposeMechanic()

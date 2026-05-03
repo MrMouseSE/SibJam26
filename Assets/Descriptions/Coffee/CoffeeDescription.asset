@@ -12,6 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b5c68227235431ead4700e67394f3e8, type: 3}
   m_Name: CoffeeDescription
   m_EditorClassIdentifier: Assembly-CSharp::CoffeeScripts.CoffeeDescription
+  StartElementCount: 5
+  StartAvailableElements:
+  - {fileID: 11400000, guid: c99519b94204a8f4ca96ec33d05a1137, type: 2}
+  - {fileID: 11400000, guid: a5089ffd402b30846904e1921b2139d0, type: 2}
   DefaultRecipe: {fileID: 11400000, guid: 4a12da8f3b865824ab27384d24fcb286, type: 2}
   Recipes:
   - {fileID: 11400000, guid: 8edc5e0664da6fb4d976aedb6fa0a669, type: 2}

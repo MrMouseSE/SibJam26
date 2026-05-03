@@ -7,6 +7,7 @@ namespace CoffeeScripts
     {
         public string ElementName;
         public Sprite Sprite;
+        public Color BackColor;
 
         [Space]
         public ElementRarity Rarity;

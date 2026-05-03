@@ -17,5 +17,10 @@ namespace AnimationDescriptionsScripts
         public float ActivateAnimationDuration;
         public float HoverAnimationDuration;
         public float ClickAnimationsDuration;
+        
+        [Space]
+        [Header("Button Settings")]
+        [Space]
+        public float ScoreAnimationDuration;
     }
 }

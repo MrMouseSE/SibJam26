@@ -1,6 +1,7 @@
 using System.Threading;
 using GameScripts;
 using GameSystemsScripts.CoffeeSystemsScripts.ElementSystemScripts.ElementsDrawScripts;
+using GameSystemsScripts.CoffeeSystemsScripts.ElementSystemScripts.SelectionButtonsScripts;
 using GameSystemsScripts.CoffeeSystemsScripts.RecipeSystemScripts.FillRecipeScripts;
 using GameSystemsScripts.GameSpeedScripts;
 using ScenesOperatingScripts;
@@ -39,10 +40,18 @@ namespace GameSystemsScripts.CoffeeSystemsScripts.ElementSystemScripts.CompleteS
         public void UpdateMechanic(GameSystemsHandler gameSystemsHandler, float deltaTime)
         {
             FillRecipeSystem fillSystem = (FillRecipeSystem)gameSystemsHandler.GetGameSystem(typeof(FillRecipeSystem));
-            if (fillSystem.Component.RecipeContainers.Count < 1) return;
+            if (fillSystem.Component.RecipeContainers.Count < 1)
+            {
+                Component.IsButtonPressedThisFrame = false;
+                return;
+            }
             if (!Component.IsButtonPressedThisFrame) return;
-            
             var speedSystem = (GameSpeedSystem)gameSystemsHandler.GetGameSystem(typeof(GameSpeedSystem));
+            var selectionSystem = (SelectionButtonsSystem)gameSystemsHandler.GetGameSystem(typeof(SelectionButtonsSystem));
+            selectionSystem.Component.CompleteButton.SetActive(false, speedSystem.Component.AnimationsDescription.ActivateAnimationDuration);
+            selectionSystem.Component.RedrawButton.SetActive(false, speedSystem.Component.AnimationsDescription.ActivateAnimationDuration);
+            
+            
             var cancelToken = new CancellationTokenSource();
             var animationObject = new UniTaskAnimationLazyObject(Component.CompleteButtonContainer.ButtonActivateAnimations, 
                 ref cancelToken, speedSystem.Component.AnimationsDescription.ActivateAnimationDuration, false);

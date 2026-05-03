@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace TweenScripts
 {
-    public class LightAnimateTween : TweenAnimation
+    public class LightTweenAnimation : TweenAnimation
     {
         public Light TweenLight;
         public float IntensityFrom;

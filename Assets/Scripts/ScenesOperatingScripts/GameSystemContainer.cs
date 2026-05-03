@@ -5,9 +5,9 @@ using GameSystemsScripts.CoffeeSystemsScripts.ElementSystemScripts.CompleteSelec
 using GameSystemsScripts.CoffeeSystemsScripts.ElementSystemScripts.ElementsDrawScripts;
 using GameSystemsScripts.CoffeeSystemsScripts.ElementSystemScripts.ElementsRedrawScripts;
 using GameSystemsScripts.CoffeeSystemsScripts.ElementSystemScripts.SelectionButtonsScripts;
-using ScenesOperatingScripts;
+using GameSystemsScripts.ScoreViewScripts.InterfaceScoreScripts;
 
-namespace SceneScripts
+namespace ScenesOperatingScripts
 {
     public class GameSystemContainer : SceneSystemsContainer
     {
@@ -17,6 +17,7 @@ namespace SceneScripts
         public GameButtonContainer CompleteButtonContainer;
         public BoilButtonContainer BoilCompleteButtonContainer;
         public ElementsDrawHandlerContainer ElementsDrawHandlerContainer;
+        public InterfaceScoreContainer InterfaceScoreContainer;
 
         public override void InitializeSceneSystems(GameSystemsHandler systemsHandler)
         {
@@ -38,6 +39,9 @@ namespace SceneScripts
             
             var completeBoilingSystem = (CompleteBoilingSystem)systemsHandler.GetGameSystem(typeof(CompleteBoilingSystem));
             completeBoilingSystem.Mechanic.SetButtonContainer(BoilCompleteButtonContainer);
+            
+            var interfaceSystem = (InterfaceScoreSystem)systemsHandler.GetGameSystem(typeof(InterfaceScoreSystem));
+            interfaceSystem.Mechanic.SetContainer(InterfaceScoreContainer);
         }
     }
 }

@@ -28,9 +28,9 @@ namespace GameSystemsScripts.CoffeeSystemsScripts.ElementSystemScripts.Selection
         {
             if (!Component.IsSelectionStateStartedThisFrame) return;
             Component.IsSelectionStateStartedThisFrame = false;
-            GameSpeedSystem gameSpeed = (GameSpeedSystem)gameSystemsHandler.GetGameSystem(typeof(GameSpeedSystem));
-            Component.CompleteButton.SetActive(true, gameSpeed.Component.AnimationsDescription.ActivateAnimationDuration);
-            Component.RedrawButton.SetActive(true, gameSpeed.Component.AnimationsDescription.ActivateAnimationDuration);
+            GameSpeedSystem speedSystem = (GameSpeedSystem)gameSystemsHandler.GetGameSystem(typeof(GameSpeedSystem));
+            Component.CompleteButton.SetActive(true, speedSystem.Component.AnimationsDescription.ActivateAnimationDuration);
+            Component.RedrawButton.SetActive(true, speedSystem.Component.AnimationsDescription.ActivateAnimationDuration);
         }
 
         public void DisposeMechanic()

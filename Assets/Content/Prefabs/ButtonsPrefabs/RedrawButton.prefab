@@ -79,7 +79,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3588365907275199171}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09b8355444ce43e8b2780420dbeab026, type: 3}
+  m_Script: {fileID: 11500000, guid: b0d0a36e3d2a4f60b9ba768855a1c410, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameSystemsScripts.CoffeeSystemsScripts.ElementSystemScripts.CompleteSelectionSystemScripts.ElementDrawStateButtonContainer
   ButtonGameObject: {fileID: 3588365907275199171}
@@ -89,7 +89,6 @@ MonoBehaviour:
   ButtonActivateAnimations: {fileID: 8856539708477753153}
   ClickAnimations: {fileID: 3618214274767696225}
   HoverAnimations: {fileID: 7335835876787149623}
-  ExtremeButtonSprite: {fileID: 0}
 --- !u!114 &7113339757721753455
 MonoBehaviour:
   m_ObjectHideFlags: 0

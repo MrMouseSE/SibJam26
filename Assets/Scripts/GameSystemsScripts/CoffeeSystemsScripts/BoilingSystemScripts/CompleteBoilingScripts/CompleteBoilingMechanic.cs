@@ -19,6 +19,8 @@ namespace GameSystemsScripts.CoffeeSystemsScripts.BoilingSystemScripts.CompleteB
         {
             Component.CompleteBoilingButtonContainer = buttonContainer;
             Component.CompleteBoilingButtonContainer.OnButtonPressed += OnButtonClicked;
+            Component.CompleteBoilingButtonContainer.ButtonActivateAnimations.SetForceState(true);
+            
         }
 
         public void UpdateMechanic(GameSystemsHandler gameSystemsHandler, float deltaTime)

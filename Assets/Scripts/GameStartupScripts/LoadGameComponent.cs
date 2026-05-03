@@ -24,6 +24,7 @@ using GameSystemsScripts.GameStateScripts;
 using GameSystemsScripts.LevelsSystemScripts.GameCompleteSystemScripts;
 using GameSystemsScripts.LevelsSystemScripts.LevelCompleteScripts;
 using GameSystemsScripts.LevelsSystemScripts.LevelHandlerScripts;
+using GameSystemsScripts.ScoreViewScripts.InterfaceScoreScripts;
 using LevelAchievementsScripts;
 using MainMenuScripts.SettingsHanlderScripts;
 using ScenesOperatingScripts;
@@ -60,6 +61,7 @@ namespace GameStartupScripts
             _gameSystemsHandler.AddGameSystem(new GameInputSystem());
             _gameSystemsHandler.AddGameSystem(new GameSpeedSystem(AnimationsDescription));
             _gameSystemsHandler.AddGameSystem(new RecipeHandlerSystem(CoffeeDescription));
+            _gameSystemsHandler.AddGameSystem(new InterfaceScoreSystem());
             
             _gameSystemsHandler.AddGameSystem(new ElementsHandSystem(CoffeeDescription.ElementsHand));
             _gameSystemsHandler.AddGameSystem(new ElementsDrawSystem());
@@ -87,6 +89,12 @@ namespace GameStartupScripts
             SettingsHandler.Mixer = _audioMixerHandler;
             SceneLoadingHandler.LoadScenes(ScenesLoadAtStart);
             SceneLoadingHandler.OnSceneLoaded += SetMenuSceneActive;
+
+            foreach (var startAvailableElement in CoffeeDescription.StartAvailableElements)
+            {
+                PlayerPrefs.SetInt(startAvailableElement.ElementName, CoffeeDescription.StartElementCount);
+            }
+            
             ElementsStaticInventory.LoadCurrentAvailableElements(CoffeeDescription);
             _gameSystemsHandler.InitializeSystems();
             

@@ -5,7 +5,7 @@ namespace CoffeeScripts.ElementsInventoryScripts
 {
     public static class ElementsStaticInventory
     {
-        private static readonly Dictionary<string, int> CurrentAvailableElements = new();
+        public static readonly Dictionary<string, int> CurrentAvailableElements = new();
 
         public static void AddElementToInventory(string element)
         {

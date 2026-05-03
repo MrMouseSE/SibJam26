@@ -3,6 +3,8 @@ using GameSystemsScripts.CoffeeSystemsScripts.BoilingSystemScripts.BoilingProces
 using GameSystemsScripts.CoffeeSystemsScripts.BoilingSystemScripts.CompleteBoilingScripts;
 using GameSystemsScripts.CoffeeSystemsScripts.RecipeSystemScripts.CompareRecipeScripts;
 using GameSystemsScripts.CoffeeSystemsScripts.RecipeSystemScripts.FillRecipeScripts;
+using GameSystemsScripts.GameSpeedScripts;
+using GameSystemsScripts.ScoreViewScripts.InterfaceScoreScripts;
 using ScenesOperatingScripts;
 
 namespace GameSystemsScripts.CoffeeSystemsScripts.CalculateResultSystemScripts
@@ -21,6 +23,8 @@ namespace GameSystemsScripts.CoffeeSystemsScripts.CalculateResultSystemScripts
             var fillRecipeSystem = (FillRecipeSystem)gameSystemsHandler.GetGameSystem(typeof(FillRecipeSystem));
             var compareSystem = (CompareRecipeSystem)gameSystemsHandler.GetGameSystem(typeof(CompareRecipeSystem));
             var boilSystem = (BoilingProcessSystem)gameSystemsHandler.GetGameSystem(typeof(BoilingProcessSystem));
+            var scoreSystem = (InterfaceScoreSystem)gameSystemsHandler.GetGameSystem(typeof(InterfaceScoreSystem));
+            var speedSystem = (GameSpeedSystem)gameSystemsHandler.GetGameSystem(typeof(GameSpeedSystem));
             
             float vigorSumm = 0f;
             float vigorMult = 0f;
@@ -43,6 +47,8 @@ namespace GameSystemsScripts.CoffeeSystemsScripts.CalculateResultSystemScripts
             Component.BoilMultiplier = boilSystem.Component.BoilMultiplier;
 
             Component.ResultValue = CalculateCoffeeValue();
+            scoreSystem.Mechanic.UpdateScore(Component.ResultValue, speedSystem.Component.AnimationsDescription.ScoreAnimationDuration);
+            
             gameSystemsHandler.StateSystem.Mechanic.ChangeState(GameStates.ApproveRecipe);
         }
 

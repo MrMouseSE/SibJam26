@@ -49,7 +49,9 @@ namespace GameSystemsScripts.CoffeeSystemsScripts.BoilingSystemScripts.BoilingPr
                 cameraSystem.Mechanic.AnimateCameraMovement(container.BoildFocusCameraPoint, container.NormalCameraPoint, 
                     speedSystem.Component.AnimationsDescription.Camera);
                 var normalizeBoilValue = Component.BoilValue/ boilingDescription.BoilExtreemeValue;
-                Component.BoilMultiplier = boilingDescription.BoilMultiplyerCurve.Evaluate(normalizeBoilValue) * boilingDescription.MultValue;
+                Component.BoilMultiplier = (boilingDescription.BoilMultiplyerCurve.Evaluate(normalizeBoilValue) + 1) * boilingDescription.MultValue;
+                
+                Component.BoilValue = 0f;
                 return;
             }
             

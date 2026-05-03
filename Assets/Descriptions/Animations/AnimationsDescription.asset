@@ -18,3 +18,4 @@ MonoBehaviour:
   ActivateAnimationDuration: 0.2
   HoverAnimationDuration: 0.1
   ClickAnimationsDuration: 0.25
+  ScoreAnimationDuration: 1

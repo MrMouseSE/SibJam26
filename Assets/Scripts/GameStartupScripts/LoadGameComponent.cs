@@ -4,6 +4,7 @@ using CameraScripts;
 using CoffeeScripts;
 using CoffeeScripts.ElementsInventoryScripts;
 using GameSystemsScripts.CameraSystem;
+using GameSystemsScripts.CoffeeSystemsScripts.BoostersSystemScripts;
 using GameSystemsScripts.CoffeeSystemsScripts.BoilingSystemScripts.BoilingProcessScripts;
 using GameSystemsScripts.CoffeeSystemsScripts.BoilingSystemScripts.CompleteBoilingScripts;
 using GameSystemsScripts.CoffeeSystemsScripts.BoilingSystemScripts.StartBoilingScripts;
@@ -20,6 +21,7 @@ using GameSystemsScripts.CoffeeSystemsScripts.RecipeSystemScripts.FillRecipeScri
 using GameSystemsScripts.CoffeeSystemsScripts.RecipeSystemScripts.RecipeHandlerScripts;
 using GameSystemsScripts.CoffeeSystemsScripts.RecipeSystemScripts.ShowCoffeScripts;
 using GameSystemsScripts.CoffeeSystemsScripts.RewardElementsSystemScripts;
+using GameSystemsScripts.EconomyScripts;
 using GameSystemsScripts.GameInputScripts;
 using GameSystemsScripts.GameSpeedScripts;
 using GameSystemsScripts.GameStateScripts;
@@ -27,6 +29,7 @@ using GameSystemsScripts.LevelsSystemScripts.GameCompleteSystemScripts;
 using GameSystemsScripts.LevelsSystemScripts.LevelCompleteScripts;
 using GameSystemsScripts.LevelsSystemScripts.LevelHandlerScripts;
 using GameSystemsScripts.ScoreViewScripts.InterfaceScoreScripts;
+using GameSystemsScripts.ScoreViewScripts.GameTimerScripts;
 using GameSystemsScripts.ScoreViewScripts.LevelViewScripts;
 using LevelAchievementsScripts;
 using MainMenuScripts.SettingsHanlderScripts;
@@ -48,6 +51,8 @@ namespace GameStartupScripts
         public CameraContainer CameraContainer;
         public AnimationsDescription AnimationsDescription;
         public CoffeeDescription CoffeeDescription;
+        public BoostersDescription BoostersDescription;
+        public RewardShopDescription RewardShopDescription;
         public DaysAchievementsDescription DaysAchievementsDescription;
         
         private GameSystemsHandler _gameSystemsHandler;
@@ -65,6 +70,8 @@ namespace GameStartupScripts
             _gameSystemsHandler.AddGameSystem(new GameSpeedSystem(AnimationsDescription));
             _gameSystemsHandler.AddGameSystem(new RecipeHandlerSystem(CoffeeDescription));
             _gameSystemsHandler.AddGameSystem(new InterfaceScoreSystem());
+            _gameSystemsHandler.AddGameSystem(new GameTimerSystem());
+            _gameSystemsHandler.AddGameSystem(new PlayerCurrencySystem());
             
             _gameSystemsHandler.AddGameSystem(new ElementsHandSystem(CoffeeDescription.ElementsHand));
             _gameSystemsHandler.AddGameSystem(new ElementsDrawSystem());
@@ -80,13 +87,14 @@ namespace GameStartupScripts
             _gameSystemsHandler.AddGameSystem(new BoilingProcessSystem(AnimationsDescription.Boil));
             _gameSystemsHandler.AddGameSystem(new CompleteBoilingSystem());
             
+            _gameSystemsHandler.AddGameSystem(new BoostersSystem(BoostersDescription));
             _gameSystemsHandler.AddGameSystem(new CalculateResultSystem());
             _gameSystemsHandler.AddGameSystem(new ApproveRecipeSystem());
             _gameSystemsHandler.AddGameSystem(new ShowCoffeeSystem());
             
             _gameSystemsHandler.AddGameSystem(new LevelCompleteSystem(DaysAchievementsDescription));
             _gameSystemsHandler.AddGameSystem(new LevelHandlerSystem(DaysAchievementsDescription));
-            _gameSystemsHandler.AddGameSystem(new RewardElementsSystem(DaysAchievementsDescription));
+            _gameSystemsHandler.AddGameSystem(new RewardElementsSystem(DaysAchievementsDescription, RewardShopDescription));
             _gameSystemsHandler.AddGameSystem(new LevelViewSystem());
             _gameSystemsHandler.AddGameSystem(new GameCompleteSystem());
             

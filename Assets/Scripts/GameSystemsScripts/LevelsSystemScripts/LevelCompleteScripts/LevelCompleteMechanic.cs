@@ -18,15 +18,18 @@ namespace GameSystemsScripts.LevelsSystemScripts.LevelCompleteScripts
         {
             var resultSystem = (CalculateResultSystem)gameSystemsHandler.GetGameSystem(typeof(CalculateResultSystem));
             var levelHandlerComponent = ((LevelHandlerSystem)gameSystemsHandler.GetGameSystem(typeof(LevelHandlerSystem))).Component;
+            Component.IsLevelCompleted = false;
             
             if (resultSystem.Component.ResultValue > 
                 Component.DaysDescription.DaysAchievementsDescriptions[levelHandlerComponent.Day].
                     LevelsAchievements[levelHandlerComponent.Level].LevelScoreToAchieve)
             {
                 Component.IsLevelCompleted = true;
+                gameSystemsHandler.StateSystem.Mechanic.ChangeState(GameStates.RewardElements);
+                return;
             }
             
-            gameSystemsHandler.StateSystem.Mechanic.ChangeState(GameStates.RewardElements);
+            gameSystemsHandler.StateSystem.Mechanic.ChangeState(GameStates.ChangeLevel);
             //TODO: not complete restart levels
         }
 

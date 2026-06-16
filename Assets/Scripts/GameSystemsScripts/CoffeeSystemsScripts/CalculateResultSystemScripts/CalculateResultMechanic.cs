@@ -1,4 +1,5 @@
 using GameScripts;
+using GameSystemsScripts.CoffeeSystemsScripts.BoostersSystemScripts;
 using GameSystemsScripts.CoffeeSystemsScripts.BoilingSystemScripts.BoilingProcessScripts;
 using GameSystemsScripts.CoffeeSystemsScripts.BoilingSystemScripts.CompleteBoilingScripts;
 using GameSystemsScripts.CoffeeSystemsScripts.RecipeSystemScripts.CompareRecipeScripts;
@@ -23,6 +24,7 @@ namespace GameSystemsScripts.CoffeeSystemsScripts.CalculateResultSystemScripts
             var fillRecipeSystem = (FillRecipeSystem)gameSystemsHandler.GetGameSystem(typeof(FillRecipeSystem));
             var compareSystem = (CompareRecipeSystem)gameSystemsHandler.GetGameSystem(typeof(CompareRecipeSystem));
             var boilSystem = (BoilingProcessSystem)gameSystemsHandler.GetGameSystem(typeof(BoilingProcessSystem));
+            var boostersSystem = (BoostersSystem)gameSystemsHandler.GetGameSystem(typeof(BoostersSystem));
             var scoreSystem = (InterfaceScoreSystem)gameSystemsHandler.GetGameSystem(typeof(InterfaceScoreSystem));
             var speedSystem = (GameSpeedSystem)gameSystemsHandler.GetGameSystem(typeof(GameSpeedSystem));
             
@@ -46,6 +48,7 @@ namespace GameSystemsScripts.CoffeeSystemsScripts.CalculateResultSystemScripts
             Component.RecipeCostSumm = compareSystem.Component.CurrentRecipe.RecipeCost;
             Component.RecipeMultiplier = compareSystem.Component.CurrentRecipe.RecipeMultiplier;
             Component.BoilMultiplier = boilSystem.Component.BoilMultiplier;
+            Component.BoostersMultiplier = boostersSystem.Component.CurrentMultiplier;
 
             Component.ResultValue = CalculateCoffeeValue();
             scoreSystem.Mechanic.UpdateScore(Component.ResultValue, speedSystem.Component.AnimationsDescription.ScoreAnimationDuration);
@@ -56,7 +59,7 @@ namespace GameSystemsScripts.CoffeeSystemsScripts.CalculateResultSystemScripts
         private float CalculateCoffeeValue()
         {
             return (Component.VigorSumm * Component.VigorMultiplierSumm + Component.TasteSumm * Component.TasteMultiplierSumm + Component.RecipeCostSumm)
-                   * Component.RecipeMultiplier * Component.BoilMultiplier;
+                   * Component.RecipeMultiplier * Component.BoilMultiplier * Component.BoostersMultiplier;
         }
 
         public void DisposeMechanic()

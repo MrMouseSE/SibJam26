@@ -9,9 +9,9 @@ namespace GameSystemsScripts.CoffeeSystemsScripts.RewardElementsSystemScripts
         public RewardElementsComponent Component;
         public RewardElementsMechanic Mechanic;
 
-        public RewardElementsSystem(DaysAchievementsDescription dayAchievementsDescription)
+        public RewardElementsSystem(DaysAchievementsDescription dayAchievementsDescription, RewardShopDescription rewardShopDescription)
         {
-            Component = new RewardElementsComponent(dayAchievementsDescription);
+            Component = new RewardElementsComponent(dayAchievementsDescription, rewardShopDescription);
             Mechanic = new RewardElementsMechanic(Component);
         }
 

@@ -9,6 +9,7 @@ namespace GameSystemsScripts.CoffeeSystemsScripts.CalculateResultSystemScripts
         public float RecipeCostSumm;
         public float RecipeMultiplier;
         public float BoilMultiplier;
+        public float BoostersMultiplier = 1f;
         public float ResultValue;
     }
 }

@@ -5,8 +5,10 @@ using GameSystemsScripts.CoffeeSystemsScripts.ElementSystemScripts.CompleteSelec
 using GameSystemsScripts.CoffeeSystemsScripts.ElementSystemScripts.ElementsDrawScripts;
 using GameSystemsScripts.CoffeeSystemsScripts.ElementSystemScripts.ElementsRedrawScripts;
 using GameSystemsScripts.CoffeeSystemsScripts.ElementSystemScripts.SelectionButtonsScripts;
+using GameSystemsScripts.CoffeeSystemsScripts.RewardElementsSystemScripts;
 using GameSystemsScripts.CoffeeSystemsScripts.RecipeSystemScripts.ShowCoffeScripts;
 using GameSystemsScripts.LevelsSystemScripts.LevelHandlerScripts;
+using GameSystemsScripts.ScoreViewScripts.GameTimerScripts;
 using GameSystemsScripts.ScoreViewScripts.InterfaceScoreScripts;
 using GameSystemsScripts.ScoreViewScripts.LevelViewScripts;
 using SoundsComponentsScripts;
@@ -28,6 +30,8 @@ namespace ScenesOperatingScripts
         public BoilButtonContainer BoilCompleteButtonContainer;
         public ElementsDrawHandlerContainer ElementsDrawHandlerContainer;
         public InterfaceScoreContainer InterfaceScoreContainer;
+        public GameTimerContainer GameTimerContainer;
+        public RewardShopContainer RewardShopContainer;
 
         public override void InitializeSceneSystems(GameSystemsHandler systemsHandler)
         {
@@ -52,6 +56,9 @@ namespace ScenesOperatingScripts
             
             var interfaceSystem = (InterfaceScoreSystem)systemsHandler.GetGameSystem(typeof(InterfaceScoreSystem));
             interfaceSystem.Mechanic.SetContainer(InterfaceScoreContainer, systemsHandler);
+
+            var timerSystem = (GameTimerSystem)systemsHandler.GetGameSystem(typeof(GameTimerSystem));
+            timerSystem.Mechanic.SetContainer(GameTimerContainer);
             
             var levelSystem = (LevelViewSystem)systemsHandler.GetGameSystem(typeof(LevelViewSystem));
             levelSystem.Mechanic.SetViewContainer(DayLevelViewContainer);
@@ -61,6 +68,9 @@ namespace ScenesOperatingScripts
             
             var showCoffee = (ShowCoffeeSystem)systemsHandler.GetGameSystem(typeof(ShowCoffeeSystem));
             showCoffee.Mechanic.SetContainer(ShowCoffeeContainer, systemsHandler);
+
+            var rewardSystem = (RewardElementsSystem)systemsHandler.GetGameSystem(typeof(RewardElementsSystem));
+            rewardSystem.Mechanic.SetContainer(RewardShopContainer);
         }
     }
 }
